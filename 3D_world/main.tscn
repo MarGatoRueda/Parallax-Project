@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhdbke7pgdfrl"]
+
+[ext_resource type="Script" path="res://3D_world/Player.gd" id="1_ylvb1"]
+[ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_uax5p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4w4j"]
+albedo_color = Color(0.929412, 0.184314, 0.145098, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r4ic1"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_cx73l"]
+sky_material = SubResource("ProceduralSkyMaterial_r4ic1")
+
+[sub_resource type="Environment" id="Environment_qnsc6"]
+background_mode = 2
+sky = SubResource("Sky_cx73l")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xltn8"]
+albedo_color = Color(0.113725, 1, 0.145098, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_83kt0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03s5u"]
+albedo_texture = ExtResource("2_uax5p")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1d21m"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -0.184942, 0)
+use_collision = true
+size = Vector3(0.454518, 2, 16)
+material = SubResource("StandardMaterial3D_c4w4j")
+
+[node name="Wall2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.184942, 0)
+use_collision = true
+size = Vector3(0.454518, 2, 16)
+material = SubResource("StandardMaterial3D_c4w4j")
+
+[node name="Wall3" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.184942, 8)
+use_collision = true
+size = Vector3(0.454518, 2, 18)
+material = SubResource("StandardMaterial3D_c4w4j")
+
+[node name="Wall4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.184942, -8)
+use_collision = true
+size = Vector3(0.454518, 2, 18)
+material = SubResource("StandardMaterial3D_c4w4j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.361625, -0.524044, 0.771107, 0, 0.827081, 0.562083, -0.932324, -0.203263, 0.299093, 0, 0, 0)
+light_energy = 1.2
+shadow_enabled = true
+directional_shadow_max_distance = 120.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qnsc6")
+
+[node name="Plane" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(16, 0.002, 16)
+material = SubResource("StandardMaterial3D_xltn8")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_ylvb1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_83kt0")
+surface_material_override/0 = SubResource("StandardMaterial3D_03s5u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_1d21m")
+
+[node name="Head" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500796, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head"]
