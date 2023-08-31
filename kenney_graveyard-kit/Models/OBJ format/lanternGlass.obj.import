@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byie07pnmae7x"
+path="res://.godot/imported/lanternGlass.obj-c6b597aef9dc22d3acaedcf0a3a931a7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lanternGlass.obj-c6b597aef9dc22d3acaedcf0a3a931a7.mesh"]
+
+source_file="res://kenney_graveyard-kit/Models/OBJ format/lanternGlass.obj"
+dest_files=["res://.godot/imported/lanternGlass.obj-c6b597aef9dc22d3acaedcf0a3a931a7.mesh", "res://.godot/imported/lanternGlass.obj-c6b597aef9dc22d3acaedcf0a3a931a7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

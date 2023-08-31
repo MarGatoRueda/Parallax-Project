@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dndjmsm8wegkt"
+path="res://.godot/imported/altarWood.obj-9441848783137a753471c5e85a00092e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/altarWood.obj-9441848783137a753471c5e85a00092e.mesh"]
+
+source_file="res://kenney_graveyard-kit/Models/OBJ format/altarWood.obj"
+dest_files=["res://.godot/imported/altarWood.obj-9441848783137a753471c5e85a00092e.mesh", "res://.godot/imported/altarWood.obj-9441848783137a753471c5e85a00092e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

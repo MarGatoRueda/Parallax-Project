@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2dqs1u0wompe"
+path="res://.godot/imported/ironFenceBar.obj-94ae3b366df804d6bf5f99a7352eb362.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ironFenceBar.obj-94ae3b366df804d6bf5f99a7352eb362.mesh"]
+
+source_file="res://kenney_graveyard-kit/Models/OBJ format/ironFenceBar.obj"
+dest_files=["res://.godot/imported/ironFenceBar.obj-94ae3b366df804d6bf5f99a7352eb362.mesh", "res://.godot/imported/ironFenceBar.obj-94ae3b366df804d6bf5f99a7352eb362.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
