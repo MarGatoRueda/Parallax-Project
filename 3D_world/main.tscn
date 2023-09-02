@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://dhdbke7pgdfrl"]
+[gd_scene load_steps=25 format=3 uid="uid://dhdbke7pgdfrl"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://earth-texture/696.jpg" id="1_erwqr"]
 [ext_resource type="Script" path="res://3D_world/Player.gd" id="1_ylvb1"]
 [ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_uax5p"]
 [ext_resource type="PackedScene" uid="uid://btsmd5w8xt7g" path="res://kenney_graveyard-kit/Models/FBX format/pine.fbx" id="3_d6mfb"]
 [ext_resource type="PackedScene" uid="uid://cmiqc2alxwf2a" path="res://kenney_graveyard-kit/Models/GLTF format/pineCrooked.glb" id="5_xwbsr"]
+[ext_resource type="PackedScene" uid="uid://bnay7lbasjnrt" path="res://kenney_graveyard-kit/Models/FBX format/bench.fbx" id="6_bu2tw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r4ic1"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -130,7 +131,7 @@ size = Vector3(16, 0.002, 16)
 material = SubResource("StandardMaterial3D_xltn8")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0)
 script = ExtResource("1_ylvb1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -1254,3 +1255,18 @@ transform = Transform3D(3.295, 0, 0, 0, 3.295, 0, 0, 0, 3.295, 0.746867, 0.00104
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pineCrooked/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.805, 0, 0, 0, 1, 0, 1.16065, 0)
 shape = SubResource("CylinderShape3D_8dtvd")
+
+[node name="pine3" parent="." instance=ExtResource("3_d6mfb")]
+transform = Transform3D(3.01655, 0, 0, 0, 3.01655, 0, 0, 0, 3.01655, 0.44376, -0.0950291, 9.87941)
+
+[node name="pine4" parent="." instance=ExtResource("3_d6mfb")]
+transform = Transform3D(3.01655, 0, 0, 0, 3.01655, 0, 0, 0, 3.01655, -5.55624, -0.0950291, 9.87941)
+
+[node name="pineCrooked2" parent="." instance=ExtResource("5_xwbsr")]
+transform = Transform3D(3.295, 0, 0, 0, 3.295, 0, 0, 0, 3.295, -4.25313, 0.00104567, 5.36453)
+
+[node name="bench" parent="." instance=ExtResource("6_bu2tw")]
+transform = Transform3D(-3, 0, 2.98023e-07, 0, 3, 0, -2.98023e-07, 0, -3, -3, 0, 12)
+
+[node name="pineCrooked3" parent="." instance=ExtResource("5_xwbsr")]
+transform = Transform3D(3.295, 0, 0, 0, 3.295, 0, 0, 0, 3.295, -3.25313, 0.00104567, 15.3645)
