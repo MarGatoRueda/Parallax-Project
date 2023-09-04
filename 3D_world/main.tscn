@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://dhdbke7pgdfrl"]
+[gd_scene load_steps=31 format=3 uid="uid://dhdbke7pgdfrl"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://earth-texture/696.jpg" id="1_erwqr"]
 [ext_resource type="Script" path="res://3D_world/Player.gd" id="1_ylvb1"]
 [ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_uax5p"]
 [ext_resource type="PackedScene" uid="uid://btsmd5w8xt7g" path="res://kenney_graveyard-kit/Models/FBX format/pine.fbx" id="3_d6mfb"]
+[ext_resource type="PackedScene" uid="uid://cringcldiyxf8" path="res://Menu/pause.tscn" id="5_3tkgp"]
 [ext_resource type="PackedScene" uid="uid://cmiqc2alxwf2a" path="res://kenney_graveyard-kit/Models/GLTF format/pineCrooked.glb" id="5_xwbsr"]
 [ext_resource type="PackedScene" uid="uid://bnay7lbasjnrt" path="res://kenney_graveyard-kit/Models/FBX format/bench.fbx" id="6_bu2tw"]
 [ext_resource type="PackedScene" uid="uid://b0d4nul7cfat8" path="res://kenney_graveyard-kit/activities_Camera.fbx" id="7_exmsv"]
@@ -174,7 +175,7 @@ size = Vector3(16, 0.002, 16)
 material = SubResource("StandardMaterial3D_xltn8")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_ylvb1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -194,6 +195,8 @@ far = 112.47
 
 [node name="activities_Camera" parent="Player/Head/Camera3D" instance=ExtResource("7_exmsv")]
 transform = Transform3D(-0.124601, -0.00943257, 0.00324754, -0.00839835, 0.121144, 0.0296399, -0.005384, 0.0293272, -0.121392, 0.38671, -0.338459, -0.493484)
+
+[node name="Pause" parent="Player" instance=ExtResource("5_3tkgp")]
 
 [node name="pine" parent="." instance=ExtResource("3_d6mfb")]
 transform = Transform3D(3.01655, 0, 0, 0, 3.01655, 0, 0, 0, 3.01655, 1.44376, -0.0950291, 2.87941)
