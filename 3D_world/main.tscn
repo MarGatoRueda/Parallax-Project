@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dhdbke7pgdfrl"]
+[gd_scene load_steps=43 format=3 uid="uid://dhdbke7pgdfrl"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://earth-texture/696.jpg" id="1_erwqr"]
 [ext_resource type="Script" path="res://3D_world/Player.gd" id="1_ylvb1"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cmiqc2alxwf2a" path="res://kenney_graveyard-kit/Models/GLTF format/pineCrooked.glb" id="5_xwbsr"]
 [ext_resource type="PackedScene" uid="uid://bnay7lbasjnrt" path="res://kenney_graveyard-kit/Models/FBX format/bench.fbx" id="6_bu2tw"]
 [ext_resource type="PackedScene" uid="uid://b0d4nul7cfat8" path="res://kenney_graveyard-kit/activities_Camera.fbx" id="7_exmsv"]
+[ext_resource type="Texture2D" uid="uid://dm3dpfxt8co8v" path="res://Resources/Easter Egg.png" id="7_ubyg3"]
+[ext_resource type="PackedScene" uid="uid://dx83v6ey6xx5c" path="res://kenney_graveyard-kit/Models/FBX format/lightpostDouble.fbx" id="9_d2v0n"]
+[ext_resource type="PackedScene" uid="uid://b4wjpr8nej55s" path="res://kenney_graveyard-kit/Models/FBX format/lightpostSingle.fbx" id="10_jrb2q"]
+[ext_resource type="PackedScene" uid="uid://dov0dg3cl7je7" path="res://kenney_graveyard-kit/Models/FBX format/ironFence.fbx" id="11_luca6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gtaye"]
 sky_top_color = Color(0.407843, 0.407843, 0.482353, 1)
@@ -107,7 +111,13 @@ shadow_mesh = SubResource("ArrayMesh_csa7l")
 albedo_color = Color(0.439216, 0.439216, 0.439216, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjktd"]
-albedo_color = Color(0.611765, 0.309804, 0.360784, 1)
+albedo_texture = ExtResource("7_ubyg3")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(0.415, 0.415, 0.185)
+uv1_offset = Vector3(0, -0.22, -0.53)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 3.99999
+uv1_world_triplanar = true
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ehbdm"]
 
@@ -115,6 +125,20 @@ albedo_color = Color(0.611765, 0.309804, 0.360784, 1)
 size = Vector3(0.245604, 0.001, 0.0125766)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8dtvd"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_16que"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kcsj0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7i8td"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_teqgw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_quenf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2eue8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m2hfh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vkeu"]
 resource_name = "stone"
@@ -155,6 +179,8 @@ shadow_mesh = SubResource("ArrayMesh_wbca0")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j376m"]
 albedo_color = Color(0.333333, 0.333333, 0.333333, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vhmg"]
+
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -169,13 +195,13 @@ directional_shadow_max_distance = 120.0
 environment = SubResource("Environment_qnsc6")
 
 [node name="Plane" type="CSGBox3D" parent="."]
-transform = Transform3D(8.8204, 0, 0, 0, 1.04575, 0, 0, 0, 6.04345, -0.583009, 0.526819, 0.931273)
+transform = Transform3D(8.8204, 0, 0, 0, 1.04575, 0, 0, 0, 6.04345, -0.596728, 0.526819, 0.970331)
 use_collision = true
 size = Vector3(16, 0.002, 16)
 material = SubResource("StandardMaterial3D_xltn8")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13443, 1, 4.55408)
 script = ExtResource("1_ylvb1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -184,10 +210,11 @@ mesh = SubResource("CapsuleMesh_83kt0")
 surface_material_override/0 = SubResource("StandardMaterial3D_03s5u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_1d21m")
 
 [node name="Head" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500796, 0)
+transform = Transform3D(-0.934229, 0, 0.356673, 0, 1, 0, -0.356673, 0, -0.934229, 0, 0.500796, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214083, 0, -1.87158e-08)
@@ -788,6 +815,13 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_5t4l4")
 surface_material_override/1 = SubResource("StandardMaterial3D_fjktd")
 
+[node name="stoneWall105" type="MeshInstance3D" parent="."]
+transform = Transform3D(15.127, 0, 37.8705, 0, 43.9021, 0, -40.9838, 0, 13.9779, -9.71577, 0.0990911, 6.54999)
+mesh = SubResource("ArrayMesh_rse1y")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_5t4l4")
+surface_material_override/1 = SubResource("StandardMaterial3D_fjktd")
+
 [node name="stoneWall97" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.0579492, 0, -40.3677, 0, 43.9021, 0, 43.6863, 0, -0.0535472, -64.1699, 0.133895, 9.56032)
 mesh = SubResource("ArrayMesh_rse1y")
@@ -1308,26 +1342,95 @@ transform = Transform3D(3.295, 0, 0, 0, 3.295, 0, 0, 0, 3.295, 0.746867, 0.00104
 transform = Transform3D(1, 0, 0, 0, 0.805, 0, 0, 0, 1, 0, 1.16065, 0)
 shape = SubResource("CylinderShape3D_8dtvd")
 
+[node name="pineCrooked5" parent="." instance=ExtResource("5_xwbsr")]
+transform = Transform3D(2.63648, 0, -1.97636, 0, 3.295, 0, 1.97636, 0, 2.63648, -9.41017, 0.043127, 9.11194)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pineCrooked5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pineCrooked5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.805, 0, 0, 0, 1, 0, 1.16065, 0)
+shape = SubResource("CylinderShape3D_8dtvd")
+
+[node name="pine5" parent="." instance=ExtResource("3_d6mfb")]
+transform = Transform3D(4.39511, 0, 0, 0, 4.39511, 0, 0, 0, 4.39511, -0.0271144, -0.175438, 13.1251)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pine5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pine5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.63, 0, 0, 0, 1, 0, 1.105, 0)
+shape = SubResource("CylinderShape3D_16que")
+
 [node name="pine3" parent="." instance=ExtResource("3_d6mfb")]
 transform = Transform3D(3.01655, 0, 0, 0, 3.01655, 0, 0, 0, 3.01655, 0.44376, -0.0950291, 9.87941)
 
-[node name="pine3" parent="pine3" instance=ExtResource("3_d6mfb")]
-transform = Transform3D(1.457, 0, 0, 0, 1.457, 0, 0, 0, 1.457, -0.156097, -0.026656, 1.07596)
+[node name="StaticBody3D" type="StaticBody3D" parent="pine3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pine3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.685, 0, 0, 0, 1, 0, 1.155, 0)
+shape = SubResource("CylinderShape3D_kcsj0")
 
 [node name="pine4" parent="." instance=ExtResource("3_d6mfb")]
 transform = Transform3D(3.01655, 0, 0, 0, 3.01655, 0, 0, 0, 3.01655, -5.55624, -0.0950291, 9.87941)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="pine4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pine4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.66, 0, 0, 0, 1, 0, 1.055, 0)
+shape = SubResource("CylinderShape3D_7i8td")
+
+[node name="pine6" parent="." instance=ExtResource("3_d6mfb")]
+transform = Transform3D(1.92384, 0, -2.32345, 0, 3.01655, 0, 2.32345, 0, 1.92384, -7.98948, -0.0950291, 4.69587)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pine6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pine6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.66, 0, 0, 0, 1, 0, 1.055, 0)
+shape = SubResource("CylinderShape3D_7i8td")
+
 [node name="pineCrooked2" parent="." instance=ExtResource("5_xwbsr")]
 transform = Transform3D(3.295, 0, 0, 0, 3.295, 0, 0, 0, 3.295, -4.25313, 0.00104567, 5.36453)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pineCrooked2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pineCrooked2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.695, 0, 0, 0, 1, 0, 1.04986, 0)
+shape = SubResource("CylinderShape3D_teqgw")
 
 [node name="bench" parent="." instance=ExtResource("6_bu2tw")]
 transform = Transform3D(-3, 0, 2.98023e-07, 0, 3, 0, -2.98023e-07, 0, -3, -3, 0.347996, 10.9478)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="bench"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bench/StaticBody3D"]
+transform = Transform3D(0.77, 0, 0, 0, 0.255, 0, 0, 0, 0.335, 0, 0.195, 0)
+shape = SubResource("BoxShape3D_quenf")
+
+[node name="pineCrooked4" parent="." instance=ExtResource("5_xwbsr")]
+transform = Transform3D(6.42525, 0, 0, 0, 6.42525, 0, 0, 0, 6.42525, -7.44549, -1.83054, 14.3203)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pineCrooked4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pineCrooked4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 1.18, 0)
+shape = SubResource("CylinderShape3D_2eue8")
+
+[node name="pineCrooked6" parent="." instance=ExtResource("5_xwbsr")]
+transform = Transform3D(6.42525, 0, 0, 0, 6.42525, 0, 0, 0, 6.42525, -1.18212, -1.83054, -1.41393)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pineCrooked6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pineCrooked6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 1.18, 0)
+shape = SubResource("CylinderShape3D_2eue8")
+
 [node name="pineCrooked3" parent="." instance=ExtResource("5_xwbsr")]
 transform = Transform3D(3.295, 0, 0, 0, 3.295, 0, 0, 0, 3.295, -3.25313, 0.00104567, 15.3645)
 
-[node name="pineCrooked3" parent="pineCrooked3" instance=ExtResource("5_xwbsr")]
-transform = Transform3D(1.95, 0, 0, 0, 1.95, 0, 0, 0, 1.95, -1.27234, -0.555867, -0.316904)
+[node name="StaticBody3D" type="StaticBody3D" parent="pineCrooked3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pineCrooked3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.665, 0, 0, 0, 1, 0, 1.075, 0)
+shape = SubResource("CylinderShape3D_m2hfh")
 
 [node name="road2" type="MeshInstance3D" parent="."]
 transform = Transform3D(18.0534, 0, -5.02601, 0, 18.74, 0, 5.02601, 0, 18.0534, -2.02347, 0.546721, 6.97606)
@@ -1346,3 +1449,41 @@ transform = Transform3D(-17.3189, 0, 7.15849, 0, 18.74, 0, -7.15849, 0, -17.3189
 mesh = SubResource("ArrayMesh_3tska")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_j376m")
+
+[node name="lightpostDouble" parent="." instance=ExtResource("9_d2v0n")]
+transform = Transform3D(-2.89788, 0, 0.495864, 0, 2.94, 0, -0.495864, 0, -2.89788, -9.34969, 0.527864, 6.72606)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="lightpostDouble"]
+transform = Transform3D(-0.058649, 0, 0.335042, 0, 0.340136, 0, -0.335042, 0, -0.058649, 0.0421751, 1.03589, -0.2378)
+light_color = Color(1, 0.913333, 0.6, 1)
+light_energy = 4.394
+light_volumetric_fog_energy = 2.131
+light_specular = 0.985
+omni_range = 4.374
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="lightpostDouble"]
+transform = Transform3D(-0.058649, 0, 0.335042, 0, 0.340136, 0, -0.335042, 0, -0.058649, 0.00665569, 1.03589, 0.222548)
+light_color = Color(1, 0.913333, 0.6, 1)
+light_energy = 4.394
+light_volumetric_fog_energy = 2.131
+light_specular = 0.985
+omni_range = 4.374
+
+[node name="lightpostSingle" parent="." instance=ExtResource("10_jrb2q")]
+transform = Transform3D(0.0111227, 0, -2.90998, 0, 2.91, 0, 2.90998, 0, 0.0111227, 0.328, 0.763, 4.57)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lightpostSingle"]
+transform = Transform3D(0.343643, 0, -8.14907e-10, 0, 0.343643, 0, 8.14907e-10, 0, 0.343643, -0.000870228, 1.095, 0.227687)
+light_color = Color(1, 0.913333, 0.6, 1)
+light_energy = 4.394
+light_volumetric_fog_energy = 2.131
+light_specular = 0.985
+
+[node name="ironFence" parent="." instance=ExtResource("11_luca6")]
+transform = Transform3D(1.2338, 0, 3.26998, 0, 3.495, 0, -3.26998, 0, 1.2338, -8.88369, 0.230436, 6.79549)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ironFence"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ironFence/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.77, 0, 0, 0, 0.075, -0.035, 0.545, -0.45)
+shape = SubResource("BoxShape3D_8vhmg")
