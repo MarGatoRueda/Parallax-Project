@@ -210,7 +210,6 @@ mesh = SubResource("CapsuleMesh_83kt0")
 surface_material_override/0 = SubResource("StandardMaterial3D_03s5u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_1d21m")
 
 [node name="Head" type="Node3D" parent="Player"]
