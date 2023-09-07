@@ -174,7 +174,7 @@ size = Vector3(16, 0.002, 16)
 material = SubResource("StandardMaterial3D_xltn8")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_ylvb1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
