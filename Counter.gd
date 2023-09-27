@@ -5,7 +5,6 @@ var count = 10
 @export var dead: PackedScene
 func _ready() -> void:
 	count_update()
-	
 
 func count_update():
 	count_label.text = str(count)

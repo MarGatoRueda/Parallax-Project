@@ -229,6 +229,16 @@ texture = ExtResource("4_mvdyx")
 [node name="activities_Camera" parent="Player/Head/Camera3D" instance=ExtResource("7_exmsv")]
 transform = Transform3D(-0.124695, -0.00871954, -1.06033e-08, -0.00846053, 0.120991, 0.0302403, -0.00210944, 0.0301665, -0.121287, 0.4, -0.4, -0.6)
 
+[node name="Viewfinder" type="TextureRect" parent="Player"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_mvdyx")
+expand_mode = 1
+
 [node name="Pause" parent="Player" instance=ExtResource("5_3tkgp")]
 
 [node name="Counter" parent="Player" instance=ExtResource("7_wpodp")]
