@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0mr2dvuiwqtr"]
+
+[ext_resource type="Script" path="res://Counter.gd" id="1_62bn5"]
+[ext_resource type="PackedScene" uid="uid://dglnejgrd3rrm" path="res://Menu/dead.tscn" id="2_fvfg7"]
+
+[node name="Counter" type="MarginContainer"]
+offset_right = 6.0
+offset_bottom = 23.0
+script = ExtResource("1_62bn5")
+dead = ExtResource("2_fvfg7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="remain" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Photo remain:"
+
+[node name="count" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "x"

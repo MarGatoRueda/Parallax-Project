@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dhdbke7pgdfrl"]
+[gd_scene load_steps=44 format=3 uid="uid://dhdbke7pgdfrl"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://earth-texture/696.jpg" id="1_erwqr"]
 [ext_resource type="Script" path="res://3D_world/Player.gd" id="1_ylvb1"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bnay7lbasjnrt" path="res://kenney_graveyard-kit/Models/FBX format/bench.fbx" id="6_bu2tw"]
 [ext_resource type="PackedScene" uid="uid://b0d4nul7cfat8" path="res://kenney_graveyard-kit/activities_Camera.fbx" id="7_exmsv"]
 [ext_resource type="Texture2D" uid="uid://dm3dpfxt8co8v" path="res://Resources/Easter Egg.png" id="7_ubyg3"]
-[ext_resource type="PackedScene" uid="uid://b0mr2dvuiwqtr" path="res://Menu/counter.tscn" id="7_wpodp"]
 [ext_resource type="PackedScene" uid="uid://dx83v6ey6xx5c" path="res://kenney_graveyard-kit/Models/FBX format/lightpostDouble.fbx" id="9_d2v0n"]
 [ext_resource type="PackedScene" uid="uid://b4wjpr8nej55s" path="res://kenney_graveyard-kit/Models/FBX format/lightpostSingle.fbx" id="10_jrb2q"]
 [ext_resource type="PackedScene" uid="uid://dov0dg3cl7je7" path="res://kenney_graveyard-kit/Models/FBX format/ironFence.fbx" id="11_luca6"]
@@ -230,8 +229,6 @@ texture = ExtResource("4_mvdyx")
 transform = Transform3D(-0.124695, -0.00871954, -1.06033e-08, -0.00846053, 0.120991, 0.0302403, -0.00210944, 0.0301665, -0.121287, 0.4, -0.4, -0.6)
 
 [node name="Pause" parent="Player" instance=ExtResource("5_3tkgp")]
-
-[node name="Counter" parent="Player" instance=ExtResource("7_wpodp")]
 
 [node name="pine" parent="." instance=ExtResource("3_d6mfb")]
 transform = Transform3D(3.01655, 0, 0, 0, 3.01655, 0, 0, 0, 3.01655, 1.44376, -0.0950291, 2.87941)

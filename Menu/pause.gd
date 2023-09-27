@@ -23,6 +23,7 @@ func _input(event: InputEvent) -> void:
 		get_tree().paused = visible
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
+
 func _on_resume_pressed():
 	hide()
 	get_tree().paused = false

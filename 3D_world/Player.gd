@@ -12,6 +12,11 @@ var gravity = 9.8
 @onready var camera = $Head/Camera3D
 @onready var activities_camera = $Head/Camera3D/activities_Camera
 @onready var viewfinder = $Head/Camera3D/Viewfinder
+@onready var count_counter = $Counter
+
+
+
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -52,10 +57,19 @@ func _physics_process(delta):
 		tween_vf.parallel().tween_property(activities_camera, "scale", Vector3(0.4, 0.4, 0.4), 0.3).set_ease(Tween.EASE_IN)
 		tween_vf.tween_property(activities_camera, "visible", false, 0.0001)
 		tween_vf.tween_property(viewfinder, "visible", true, 0.0001)
-		
+		if Input.is_action_just_pressed("left_click"):
+			count_counter.count -= 1
+			count_counter.count_update()
+			
+			
 	if Input.is_action_just_released("right_click"):
 		tween_vf.tween_property(viewfinder, "visible", false, 0.5)
 		tween_vf.parallel().tween_property(activities_camera, "visible", true, 0.5)
 		tween_vf.tween_property(activities_camera, "position", Vector3(0.4, -0.4, -0.6), 0.5).set_ease(Tween.EASE_IN)
 		tween_vf.parallel().tween_property(activities_camera, "rotation", Vector3(-PI/180*14, -PI, -PI/180*4), 0.5).set_ease(Tween.EASE_IN)
 		tween_vf.parallel().tween_property(activities_camera, "scale", Vector3(0.125, 0.125, 0.125), 0.5).set_ease(Tween.EASE_IN)
+
+
+
+
+
