@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b4amytmf8jy1"
+path="res://.godot/imported/ground_pathRocks.obj-a3f531e3ef50bb8fe87f7c489ae9ab11.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_pathRocks.obj-a3f531e3ef50bb8fe87f7c489ae9ab11.mesh"]
+
+source_file="res://Kenney Assets/Nature Kit/Models/OBJ format/ground_pathRocks.obj"
+dest_files=["res://.godot/imported/ground_pathRocks.obj-a3f531e3ef50bb8fe87f7c489ae9ab11.mesh", "res://.godot/imported/ground_pathRocks.obj-a3f531e3ef50bb8fe87f7c489ae9ab11.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

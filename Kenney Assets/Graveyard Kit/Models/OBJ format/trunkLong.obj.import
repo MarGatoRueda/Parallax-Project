@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rnime2w53y3d"
+path="res://.godot/imported/trunkLong.obj-cf94567ceb250121186b3bef3ec878af.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trunkLong.obj-cf94567ceb250121186b3bef3ec878af.mesh"]
+
+source_file="res://Kenney Assets/Graveyard Kit/Models/OBJ format/trunkLong.obj"
+dest_files=["res://.godot/imported/trunkLong.obj-cf94567ceb250121186b3bef3ec878af.mesh", "res://.godot/imported/trunkLong.obj-cf94567ceb250121186b3bef3ec878af.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

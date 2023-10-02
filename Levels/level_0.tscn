@@ -1,0 +1,91 @@
+[gd_scene load_steps=14 format=3 uid="uid://b1kpdm2080jb0"]
+
+[ext_resource type="Script" path="res://3D_world/Player.gd" id="1_shfs2"]
+[ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_cfsdd"]
+[ext_resource type="Texture2D" uid="uid://csljwcaew5kve" path="res://Resources/viewfinder.png" id="3_s2ylk"]
+[ext_resource type="PackedScene" uid="uid://b0d4nul7cfat8" path="res://kenney_graveyard-kit/activities_Camera.fbx" id="4_2gxvu"]
+[ext_resource type="PackedScene" uid="uid://cringcldiyxf8" path="res://Menu/pause.tscn" id="5_tcflw"]
+[ext_resource type="PackedScene" uid="uid://b0mr2dvuiwqtr" path="res://Menu/counter.tscn" id="6_tu0ei"]
+[ext_resource type="MeshLibrary" uid="uid://d2p0jfkg4ax25" path="res://Mesh Libraries/ground_tiles.tres" id="7_rukv0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5hyla"]
+sky_top_color = Color(0.407843, 0.407843, 0.482353, 1)
+sky_horizon_color = Color(0.788235, 0.415686, 0.247059, 1)
+sky_curve = 0.243675
+
+[sub_resource type="Sky" id="Sky_461c7"]
+sky_material = SubResource("ProceduralSkyMaterial_5hyla")
+
+[sub_resource type="Environment" id="Environment_bocdv"]
+background_mode = 2
+sky = SubResource("Sky_461c7")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5nbkx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f8f72"]
+albedo_texture = ExtResource("2_cfsdd")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mbnyl"]
+
+[node name="Level 0" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.950516, 0.0656537, -0.30366, 0, 0.977416, 0.211325, 0.310676, -0.200868, 0.929049, 0, 0, 0)
+light_color = Color(1, 0.545098, 0.278431, 1)
+light_energy = 1.2
+light_angular_distance = 0.91
+shadow_enabled = true
+directional_shadow_max_distance = 120.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bocdv")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_shfs2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(-0.999657, 0, 0.0261943, 0, 1, 0, -0.0261943, 0, -0.999657, 0, 0.482417, 0)
+mesh = SubResource("CapsuleMesh_5nbkx")
+surface_material_override/0 = SubResource("StandardMaterial3D_f8f72")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_mbnyl")
+
+[node name="Head" type="Node3D" parent="Player"]
+transform = Transform3D(-0.934229, 0, 0.356673, 0, 1, 0, -0.356673, 0, -0.934229, 0, 0.500796, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214083, 0, -1.87158e-08)
+far = 112.47
+
+[node name="Viewfinder" type="Sprite3D" parent="Player/Head/Camera3D"]
+transform = Transform3D(0.004, 3.49691e-10, -6.38931e-10, -3.49691e-10, 0.004, 0, -2.55572e-09, -2.23428e-16, -0.001, 0, 0, -0.085)
+visible = false
+texture = ExtResource("3_s2ylk")
+
+[node name="activities_Camera" parent="Player/Head/Camera3D" instance=ExtResource("4_2gxvu")]
+transform = Transform3D(-0.124695, -0.00871954, -1.06033e-08, -0.00846053, 0.120991, 0.0302403, -0.00210944, 0.0301665, -0.121287, 0.4, -0.4, -0.6)
+
+[node name="Viewfinder" type="TextureRect" parent="Player"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s2ylk")
+expand_mode = 1
+
+[node name="Pause" parent="Player" instance=ExtResource("5_tcflw")]
+
+[node name="Counter" parent="Player" instance=ExtResource("6_tu0ei")]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("7_rukv0")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(0, 65532, 6, 0, 65533, 6, 1, 65533, 6, 1, 65534, 6, 0, 65534, 6, 1, 65532, 6, 65535, 65532, 6, 65535, 65533, 6, 1, 65535, 6, 1, 0, 6, 1, 1, 6, 0, 1, 6, 65535, 1, 6, 65534, 1, 6, 65534, 0, 6, 65534, 65535, 6, 65534, 65534, 6, 65535, 65534, 6, 65535, 65535, 6, 65535, 0, 6, 0, 0, 6, 0, 65535, 6, 65534, 65533, 6, 65534, 65532, 6)
+}

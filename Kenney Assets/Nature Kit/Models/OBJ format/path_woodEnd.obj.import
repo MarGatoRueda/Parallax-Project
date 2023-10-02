@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3aupty5d2d48"
+path="res://.godot/imported/path_woodEnd.obj-9853ea92833ec7665b5edb20e360057e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/path_woodEnd.obj-9853ea92833ec7665b5edb20e360057e.mesh"]
+
+source_file="res://Kenney Assets/Nature Kit/Models/OBJ format/path_woodEnd.obj"
+dest_files=["res://.godot/imported/path_woodEnd.obj-9853ea92833ec7665b5edb20e360057e.mesh", "res://.godot/imported/path_woodEnd.obj-9853ea92833ec7665b5edb20e360057e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

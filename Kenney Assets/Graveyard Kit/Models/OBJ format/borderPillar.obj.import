@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dk0ygax0b0xm0"
+path="res://.godot/imported/borderPillar.obj-aac41b3933e2373f95f14d615a57371d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/borderPillar.obj-aac41b3933e2373f95f14d615a57371d.mesh"]
+
+source_file="res://Kenney Assets/Graveyard Kit/Models/OBJ format/borderPillar.obj"
+dest_files=["res://.godot/imported/borderPillar.obj-aac41b3933e2373f95f14d615a57371d.mesh", "res://.godot/imported/borderPillar.obj-aac41b3933e2373f95f14d615a57371d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

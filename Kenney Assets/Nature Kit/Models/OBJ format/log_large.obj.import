@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bkktfq3q1ig5n"
+path="res://.godot/imported/log_large.obj-e7b4e8ea7906bbcb473a56f1bdc35536.mesh"
+
+[deps]
+
+files=["res://.godot/imported/log_large.obj-e7b4e8ea7906bbcb473a56f1bdc35536.mesh"]
+
+source_file="res://Kenney Assets/Nature Kit/Models/OBJ format/log_large.obj"
+dest_files=["res://.godot/imported/log_large.obj-e7b4e8ea7906bbcb473a56f1bdc35536.mesh", "res://.godot/imported/log_large.obj-e7b4e8ea7906bbcb473a56f1bdc35536.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

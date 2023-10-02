@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjl0273vi2dwn"
+path="res://.godot/imported/characterZombie.obj-e4aa42ffa5e89b2b8f381fbad57e4168.mesh"
+
+[deps]
+
+files=["res://.godot/imported/characterZombie.obj-e4aa42ffa5e89b2b8f381fbad57e4168.mesh"]
+
+source_file="res://Kenney Assets/Graveyard Kit/Models/OBJ format/characterZombie.obj"
+dest_files=["res://.godot/imported/characterZombie.obj-e4aa42ffa5e89b2b8f381fbad57e4168.mesh", "res://.godot/imported/characterZombie.obj-e4aa42ffa5e89b2b8f381fbad57e4168.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

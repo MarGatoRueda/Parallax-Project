@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cj5h35bc60or5"
+path="res://.godot/imported/benchDamaged.obj-a92c38722af6e8b97e2bfd4d52bd8a93.mesh"
+
+[deps]
+
+files=["res://.godot/imported/benchDamaged.obj-a92c38722af6e8b97e2bfd4d52bd8a93.mesh"]
+
+source_file="res://Kenney Assets/Graveyard Kit/Models/OBJ format/benchDamaged.obj"
+dest_files=["res://.godot/imported/benchDamaged.obj-a92c38722af6e8b97e2bfd4d52bd8a93.mesh", "res://.godot/imported/benchDamaged.obj-a92c38722af6e8b97e2bfd4d52bd8a93.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://k73hossk0rel"
+path="res://.godot/imported/graveBorder.obj-65fddc746bdb94512cfdab74612ea27b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/graveBorder.obj-65fddc746bdb94512cfdab74612ea27b.mesh"]
+
+source_file="res://Kenney Assets/Graveyard Kit/Models/OBJ format/graveBorder.obj"
+dest_files=["res://.godot/imported/graveBorder.obj-65fddc746bdb94512cfdab74612ea27b.mesh", "res://.godot/imported/graveBorder.obj-65fddc746bdb94512cfdab74612ea27b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

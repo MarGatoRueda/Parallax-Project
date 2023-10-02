@@ -1,0 +1,119 @@
+[gd_scene load_steps=30 format=3 uid="uid://b6xmvjr245jxj"]
+
+[ext_resource type="PackedScene" uid="uid://cya3jke61hhbf" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_grass.glb" id="1_5krug"]
+[ext_resource type="PackedScene" uid="uid://dbtl2oe8co3t6" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathBend.glb" id="2_5m2vx"]
+[ext_resource type="PackedScene" uid="uid://bk7i8sotojfm8" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathBendBank.glb" id="3_8ulj4"]
+[ext_resource type="PackedScene" uid="uid://cpiwhex2vjxvg" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathCorner.glb" id="4_xf1mw"]
+[ext_resource type="PackedScene" uid="uid://fxfdsnfffnbd" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathCornerSmall.glb" id="5_wo485"]
+[ext_resource type="PackedScene" uid="uid://eyp40vm6lovh" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathCross.glb" id="6_bjird"]
+[ext_resource type="PackedScene" uid="uid://f6c001mcxtt2" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathEnd.glb" id="7_rl52d"]
+[ext_resource type="PackedScene" uid="uid://cvl3xhnh0k3fs" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathEndClosed.glb" id="8_k8eqp"]
+[ext_resource type="PackedScene" uid="uid://dhmcs56c5sjly" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathOpen.glb" id="9_q5wfr"]
+[ext_resource type="PackedScene" uid="uid://bjach6ovfn157" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathRocks.glb" id="10_x6boe"]
+[ext_resource type="PackedScene" uid="uid://d4kc64ri7c3yq" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathSide.glb" id="11_noar7"]
+[ext_resource type="PackedScene" uid="uid://mfdm5cbl7djr" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathSideOpen.glb" id="12_mbkyi"]
+[ext_resource type="PackedScene" uid="uid://pedqjf2o5jyq" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathSplit.glb" id="13_fhme8"]
+[ext_resource type="PackedScene" uid="uid://dpbxdbb56mv1d" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathStraight.glb" id="14_jmboy"]
+[ext_resource type="PackedScene" uid="uid://ddlpsrd0lmkcy" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_pathTile.glb" id="15_bueum"]
+[ext_resource type="PackedScene" uid="uid://dei0nddfdhjxu" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverBend.glb" id="16_fbtx2"]
+[ext_resource type="PackedScene" uid="uid://5ka21lfdkeu4" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverBendBank.glb" id="17_56u2n"]
+[ext_resource type="PackedScene" uid="uid://dae5y4hysq3gp" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverCorner.glb" id="18_2kaoq"]
+[ext_resource type="PackedScene" uid="uid://cowyog0xuqa68" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverCornerSmall.glb" id="19_1grsl"]
+[ext_resource type="PackedScene" uid="uid://brryh67w871eo" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverCross.glb" id="20_k7qil"]
+[ext_resource type="PackedScene" uid="uid://beqxhhrxjxmst" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverEnd.glb" id="21_v2x2v"]
+[ext_resource type="PackedScene" uid="uid://daj8so2bkaopg" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverEndClosed.glb" id="22_5u3vw"]
+[ext_resource type="PackedScene" uid="uid://q5djdvs1rhie" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverRocks.glb" id="23_juikv"]
+[ext_resource type="PackedScene" uid="uid://cbp2mdi3rwhro" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverOpen.glb" id="24_2a0ct"]
+[ext_resource type="PackedScene" uid="uid://b3dhapvyywbik" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverSide.glb" id="25_1mo4l"]
+[ext_resource type="PackedScene" uid="uid://q2uhajuwx6wf" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverSideOpen.glb" id="26_xfhti"]
+[ext_resource type="PackedScene" uid="uid://c5ex64n2rop2w" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverSplit.glb" id="27_2oc4l"]
+[ext_resource type="PackedScene" uid="uid://dprl0vrbf57ev" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverStraight.glb" id="28_trnkp"]
+[ext_resource type="PackedScene" uid="uid://bd1x6846775a" path="res://Kenney Assets/Nature Kit/Models/GLTF format/ground_riverTile.glb" id="29_8cbr4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ground_grass" parent="." instance=ExtResource("1_5krug")]
+
+[node name="ground_pathBend" parent="." instance=ExtResource("2_5m2vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="ground_pathBendBank" parent="." instance=ExtResource("3_8ulj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="ground_pathCorner" parent="." instance=ExtResource("4_xf1mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="ground_pathCornerSmall" parent="." instance=ExtResource("5_wo485")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="ground_pathCross" parent="." instance=ExtResource("6_bjird")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="ground_pathEnd" parent="." instance=ExtResource("7_rl52d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="ground_pathEndClosed" parent="." instance=ExtResource("8_k8eqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="ground_pathOpen" parent="." instance=ExtResource("9_q5wfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="ground_pathRocks" parent="." instance=ExtResource("10_x6boe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="ground_pathSide" parent="." instance=ExtResource("11_noar7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="ground_pathSideOpen" parent="." instance=ExtResource("12_mbkyi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="ground_pathSplit" parent="." instance=ExtResource("13_fhme8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="ground_pathStraight" parent="." instance=ExtResource("14_jmboy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="ground_pathTile" parent="." instance=ExtResource("15_bueum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="ground_riverBend" parent="." instance=ExtResource("16_fbtx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="ground_riverBendBank" parent="." instance=ExtResource("17_56u2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="ground_riverCorner" parent="." instance=ExtResource("18_2kaoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="ground_riverCornerSmall" parent="." instance=ExtResource("19_1grsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="ground_riverCross" parent="." instance=ExtResource("20_k7qil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="ground_riverEnd" parent="." instance=ExtResource("21_v2x2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="ground_riverEndClosed" parent="." instance=ExtResource("22_5u3vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4)
+
+[node name="ground_riverRocks" parent="." instance=ExtResource("23_juikv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="ground_riverOpen" parent="." instance=ExtResource("24_2a0ct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="ground_riverSide" parent="." instance=ExtResource("25_1mo4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="ground_riverSideOpen" parent="." instance=ExtResource("26_xfhti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
+
+[node name="ground_riverSplit" parent="." instance=ExtResource("27_2oc4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
+
+[node name="ground_riverStraight" parent="." instance=ExtResource("28_trnkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="ground_riverTile" parent="." instance=ExtResource("29_8cbr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)

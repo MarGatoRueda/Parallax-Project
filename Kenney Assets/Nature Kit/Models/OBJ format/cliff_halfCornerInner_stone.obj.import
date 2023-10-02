@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bs70c6x37ka60"
+path="res://.godot/imported/cliff_halfCornerInner_stone.obj-0b74ebfb816d2c6e8b0461b0ad335a2d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cliff_halfCornerInner_stone.obj-0b74ebfb816d2c6e8b0461b0ad335a2d.mesh"]
+
+source_file="res://Kenney Assets/Nature Kit/Models/OBJ format/cliff_halfCornerInner_stone.obj"
+dest_files=["res://.godot/imported/cliff_halfCornerInner_stone.obj-0b74ebfb816d2c6e8b0461b0ad335a2d.mesh", "res://.godot/imported/cliff_halfCornerInner_stone.obj-0b74ebfb816d2c6e8b0461b0ad335a2d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
