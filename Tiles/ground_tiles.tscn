@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=3 uid="uid://6788kk4musyb"]
+[gd_scene load_steps=155 format=3 uid="uid://6788kk4musyb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hjkl"]
 resource_name = "dirt"
@@ -88,8 +88,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8ws4p")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xmvlg"]
-size = Vector3(1, 0.001, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_j8k44"]
+size = Vector3(1, 0.01, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiqob"]
 resource_name = "dirt"
@@ -2727,6 +2727,42 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_elswq")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxwpx"]
+resource_name = "grass"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.45234, 0.929502, 0.865877, 1)
+metallic = 1.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tlrpn"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1.00001),
+"format": 4097,
+"index_count": 6,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0),
+"name": "grass",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_poree"]
+resource_name = "ground_grass_Mesh ground_grass"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1.00001),
+"attribute_data": PackedByteArray(246, 122, 157, 193, 246, 122, 165, 65, 246, 122, 157, 193, 246, 122, 149, 193, 246, 122, 157, 65, 246, 122, 165, 65, 246, 122, 157, 65, 246, 122, 149, 193),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("StandardMaterial3D_nxwpx"),
+"name": "grass",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 255, 127, 255, 255, 255, 255, 255, 191)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tlrpn")
+
 [node name="GroundTiles" type="Node3D"]
 
 [node name="ground_pathBend2" type="MeshInstance3D" parent="."]
@@ -2734,277 +2770,287 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.05, 0)
 mesh = SubResource("ArrayMesh_rxux7")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathBend2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathBend2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathBend2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathBend2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathBendBank2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.05, 0)
 mesh = SubResource("ArrayMesh_7s6ry")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathBendBank2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathBendBank2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathBendBank2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathBendBank2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathCorner2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.05, 0)
 mesh = SubResource("ArrayMesh_tjhkf")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathCorner2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathCorner2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathCorner2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathCorner2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathCross2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.05, 0)
 mesh = SubResource("ArrayMesh_n3f38")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathCross2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathCross2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathCross2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathCross2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathEnd2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.05, 0)
 mesh = SubResource("ArrayMesh_w5i8d")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathEnd2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathEnd2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathEnd2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathEnd2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathEndClosed2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 1)
 mesh = SubResource("ArrayMesh_tlcme")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathEndClosed2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathEndClosed2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathEndClosed2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathEndClosed2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathOpen2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.05, 1)
 mesh = SubResource("ArrayMesh_bt1ki")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathOpen2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathOpen2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathOpen2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathOpen2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathRocks2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.05, 1)
 mesh = SubResource("ArrayMesh_j6k7l")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathRocks2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathRocks2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathRocks2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathRocks2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathSide2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.05, 1)
 mesh = SubResource("ArrayMesh_ck2pm")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathSide2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathSide2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathSide2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathSide2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathSideOpen2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.05, 1)
 mesh = SubResource("ArrayMesh_gh4v3")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathSideOpen2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathSideOpen2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathSideOpen2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathSideOpen2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathSplit2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.05, 1)
 mesh = SubResource("ArrayMesh_x1hhw")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathSplit2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathSplit2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathSplit2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathSplit2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathStraight2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 2)
 mesh = SubResource("ArrayMesh_7540q")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathStraight2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathStraight2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathStraight2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathStraight2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathTile2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.05, 2)
 mesh = SubResource("ArrayMesh_nik3l")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathTile2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathTile2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathTile2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathTile2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_pathCornerSmall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.05, 2)
 mesh = SubResource("ArrayMesh_xap8q")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_pathCornerSmall2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_pathCornerSmall2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathCornerSmall2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_pathCornerSmall2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverBend2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.05, 2)
 mesh = SubResource("ArrayMesh_60kan")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverBend2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverBend2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverBend2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverBend2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverBendBank2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.05, 2)
 mesh = SubResource("ArrayMesh_4cumv")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverBendBank2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverBendBank2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverBendBank2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverBendBank2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverCorner2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.05, 2)
 mesh = SubResource("ArrayMesh_vqwum")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverCorner2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverCorner2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverCorner2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverCorner2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverCornerSmall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 3)
 mesh = SubResource("ArrayMesh_a0f0p")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverCornerSmall2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverCornerSmall2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverCornerSmall2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverCornerSmall2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverCross2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.05, 3)
 mesh = SubResource("ArrayMesh_k726h")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverCross2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverCross2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverCross2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverCross2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverEnd2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.05, 3)
 mesh = SubResource("ArrayMesh_l0opt")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverEnd2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverEnd2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverEnd2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverEnd2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverEndClosed2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.05, 3)
 mesh = SubResource("ArrayMesh_ooqix")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverEndClosed2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverEndClosed2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverEndClosed2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverEndClosed2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverOpen2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.05, 3)
 mesh = SubResource("ArrayMesh_121d4")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverOpen2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverOpen2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverOpen2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverOpen2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverRocks2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.05, 3)
 mesh = SubResource("ArrayMesh_4m0v0")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverRocks2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverRocks2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverRocks2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverRocks2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverSide2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 4)
 mesh = SubResource("ArrayMesh_bffj4")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverSide2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverSide2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverSide2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverSide2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverSideOpen2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.05, 4)
 mesh = SubResource("ArrayMesh_lkhss")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverSideOpen2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverSideOpen2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverSideOpen2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverSideOpen2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverSplit2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.05, 4)
 mesh = SubResource("ArrayMesh_w4si7")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverSplit2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverSplit2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverSplit2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverSplit2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverStraight2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.05, 4)
 mesh = SubResource("ArrayMesh_imaof")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverStraight2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverStraight2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverStraight2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverStraight2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
 
 [node name="ground_riverTile2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 mesh = SubResource("ArrayMesh_nu88g")
 skeleton = NodePath("")
 
-[node name="Area3D" type="Area3D" parent="ground_riverTile2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_riverTile2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverTile2/Area3D"]
-shape = SubResource("BoxShape3D_xmvlg")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_riverTile2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
+
+[node name="ground_grass2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.05, 4)
+mesh = SubResource("ArrayMesh_poree")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground_grass2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_grass2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j8k44")
