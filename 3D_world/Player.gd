@@ -13,9 +13,12 @@ var gravity = 9.8
 @onready var activities_camera = $Head/Camera3D/activities_Camera
 @onready var viewfinder = $Viewfinder
 @onready var count_counter = $Counter
+@onready var debug_label = $Label
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	# Assign the reference to the debug Label node.
+	debug_label = $Label
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:	
@@ -30,6 +33,7 @@ func on_off_cam():
 	activities_camera.visible = !activities_camera.visible
 
 func _physics_process(delta):
+	print("Camera Position: ", global_transform.origin)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -70,7 +74,23 @@ func _physics_process(delta):
 		tween_vf.tween_property(activities_camera, "position", Vector3(0.4, -0.4, -0.6), 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 		tween_vf.parallel().tween_property(activities_camera, "rotation", Vector3(-PI/180*14, -PI, -PI/180*4), 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 		tween_vf.parallel().tween_property(activities_camera, "scale", Vector3(0.125, 0.125, 0.125), 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	
+	# Get the player's current position and rotation.
+	var player_position = global_transform.origin
+	var player_rotation = global_transform.basis.get_euler()
 
+	# Convert rotation angles to degrees for readability.
+	var player_rotation_degrees = Vector3(
+		rad_to_deg(player_rotation.x),
+		rad_to_deg(player_rotation.y),
+		rad_to_deg(player_rotation.z)
+	)
+
+	# Create a string with the player's position and rotation.
+	var debug_text = "Position: " + str(player_position) + "\nRotation: " + str(player_rotation_degrees)
+
+	# Update the debug Label with the player's information.
+	debug_label.text = debug_text
 
 
 

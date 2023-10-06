@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dhdbke7pgdfrl"]
+[gd_scene load_steps=50 format=3 uid="uid://dhdbke7pgdfrl"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://earth-texture/696.jpg" id="1_erwqr"]
 [ext_resource type="Script" path="res://3D_world/Player.gd" id="1_ylvb1"]
@@ -14,6 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://dx83v6ey6xx5c" path="res://kenney_graveyard-kit/Models/FBX format/lightpostDouble.fbx" id="9_d2v0n"]
 [ext_resource type="PackedScene" uid="uid://b4wjpr8nej55s" path="res://kenney_graveyard-kit/Models/FBX format/lightpostSingle.fbx" id="10_jrb2q"]
 [ext_resource type="PackedScene" uid="uid://dov0dg3cl7je7" path="res://kenney_graveyard-kit/Models/FBX format/ironFence.fbx" id="11_luca6"]
+[ext_resource type="PackedScene" uid="uid://cqf0r2ugfqgr6" path="res://Kenney Assets/Nature Kit/Models/GLTF format/statue_ring.glb" id="15_g21dy"]
+[ext_resource type="PackedScene" uid="uid://b7b26kkqulsf0" path="res://Kenney Assets/Nature Kit/Models/GLTF format/flower_purpleA.glb" id="16_bslfb"]
+[ext_resource type="PackedScene" uid="uid://bh32ypi450j4f" path="res://Kenney Assets/Nature Kit/Models/GLTF format/stump_roundDetailed.glb" id="17_2ca41"]
+[ext_resource type="PackedScene" uid="uid://cj3nmvous180r" path="res://Kenney Assets/Nature Kit/Models/GLTF format/stone_largeD.glb" id="18_21aw1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gtaye"]
 sky_top_color = Color(0.407843, 0.407843, 0.482353, 1)
@@ -183,6 +187,8 @@ albedo_color = Color(0.333333, 0.333333, 0.333333, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vhmg"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m4idm"]
+
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -228,6 +234,20 @@ texture = ExtResource("4_mvdyx")
 
 [node name="activities_Camera" parent="Player/Head/Camera3D" instance=ExtResource("7_exmsv")]
 transform = Transform3D(-0.124695, -0.00871954, -1.06033e-08, -0.00846053, 0.120991, 0.0302403, -0.00210944, 0.0301665, -0.121287, 0.4, -0.4, -0.6)
+
+[node name="Label" type="Label" parent="Player"]
+offset_left = 4.0
+offset_top = 42.0
+offset_right = 297.0
+offset_bottom = 129.0
+
+[node name="Spotted thing" type="Label" parent="Player"]
+visible = false
+offset_left = 506.0
+offset_top = 483.0
+offset_right = 652.0
+offset_bottom = 509.0
+text = "Hidden Sign Found"
 
 [node name="Viewfinder" type="TextureRect" parent="Player"]
 visible = false
@@ -1503,5 +1523,28 @@ transform = Transform3D(1.2338, 0, 3.26998, 0, 3.495, 0, -3.26998, 0, 1.2338, -8
 [node name="StaticBody3D" type="StaticBody3D" parent="ironFence"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ironFence/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.77, 0, 0, 0, 0.075, -0.035, 0.545, -0.45)
+transform = Transform3D(1, 0, 1.86265e-09, 0, 0.77, 0, -2.98023e-08, 0, 0.075, -0.0350001, 0.545, -0.45)
 shape = SubResource("BoxShape3D_8vhmg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.82908, 0, 8.47823)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.515, 0, 0, 0, 0.69, 0, 0, 0, 0.52, 0.853644, 1.48573, -0.284725)
+shape = SubResource("CylinderShape3D_m4idm")
+disabled = true
+
+[node name="statue_ring" parent="." instance=ExtResource("15_g21dy")]
+transform = Transform3D(1.525, 0, 0, 0, 1.525, 0, 0, 0, 1.525, -6.28235, 1.41392, 5.4208)
+
+[node name="flower_purpleA" parent="." instance=ExtResource("16_bslfb")]
+transform = Transform3D(3.045, 0, 0, 0, 3.045, 0, 0, 0, 3.045, -6.34882, 0.527865, -6.68602)
+
+[node name="stump_roundDetailed" parent="." instance=ExtResource("17_2ca41")]
+transform = Transform3D(4.55, 0, 0, 0, 4.55, 0, 0, 0, 4.55, -6.32813, 0.64081, 1.24691)
+
+[node name="stone_largeD" parent="." instance=ExtResource("18_21aw1")]
+transform = Transform3D(0.398333, 0, -0.917241, 0, 1, 0, 0.917241, 0, 0.398333, -6.36024, 0.829503, 5.56718)
+
+[node name="stone_largeD2" parent="." instance=ExtResource("18_21aw1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.39301, 0.527865, 5.74762)
