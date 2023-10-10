@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dhdbke7pgdfrl"]
+[gd_scene load_steps=51 format=3 uid="uid://dhdbke7pgdfrl"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://earth-texture/696.jpg" id="1_erwqr"]
 [ext_resource type="Script" path="res://3D_world/Player.gd" id="1_ylvb1"]
@@ -32,6 +32,8 @@ background_mode = 2
 sky = SubResource("Sky_0axjm")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7feix"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xltn8"]
 albedo_color = Color(0.392157, 0.27451, 0.0823529, 1)
@@ -202,6 +204,14 @@ directional_shadow_max_distance = 120.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qnsc6")
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.282, 1.439, 6.981)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_7feix")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
 [node name="Plane" type="CSGBox3D" parent="."]
 transform = Transform3D(8.8204, 0, 0, 0, 1.04575, 0, 0, 0, 6.04345, -0.596728, 0.526819, 0.970331)
 use_collision = true
@@ -213,15 +223,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13443, 1, 4.55408)
 script = ExtResource("1_ylvb1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(-0.999657, 0, 0.0261943, 0, 1, 0, -0.0261943, 0, -0.999657, 0, 0.482417, 0)
+transform = Transform3D(-0.999657, 0, 0.0261943, 0, 1, 0, -0.0261943, 0, -0.999657, 0, 0.55, 0)
 mesh = SubResource("CapsuleMesh_83kt0")
 surface_material_override/0 = SubResource("StandardMaterial3D_03s5u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 shape = SubResource("CapsuleShape3D_1d21m")
 
 [node name="Head" type="Node3D" parent="Player"]
-transform = Transform3D(-0.934229, 0, 0.356673, 0, 1, 0, -0.356673, 0, -0.934229, 0, 0.500796, 0)
+transform = Transform3D(-0.934229, 0, 0.356673, 0, 1, 0, -0.356673, 0, -0.934229, 0, 1.05, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214083, 0, -1.87158e-08)
@@ -1528,9 +1539,11 @@ shape = SubResource("BoxShape3D_8vhmg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.82908, 0, 8.47823)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(0.515, 0, 0, 0, 0.69, 0, 0, 0, 0.52, 0.853644, 1.48573, -0.284725)
+visible = false
 shape = SubResource("CylinderShape3D_m4idm")
 disabled = true
 
