@@ -1,6 +1,7 @@
-[gd_scene load_steps=51 format=3 uid="uid://dhdbke7pgdfrl"]
+[gd_scene load_steps=52 format=3 uid="uid://dhdbke7pgdfrl"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://earth-texture/696.jpg" id="1_erwqr"]
+[ext_resource type="Script" path="res://3D_world/Area3D.gd" id="1_yj2v5"]
 [ext_resource type="Script" path="res://3D_world/Player.gd" id="1_ylvb1"]
 [ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_uax5p"]
 [ext_resource type="PackedScene" uid="uid://btsmd5w8xt7g" path="res://kenney_graveyard-kit/Models/FBX format/pine.fbx" id="3_d6mfb"]
@@ -34,6 +35,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7feix"]
+size = Vector3(1.12634, 2.28049, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xltn8"]
 albedo_color = Color(0.392157, 0.27451, 0.0823529, 1)
@@ -206,11 +208,11 @@ environment = SubResource("Environment_qnsc6")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.282, 1.439, 6.981)
+script = ExtResource("1_yj2v5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275599, 0)
 shape = SubResource("BoxShape3D_7feix")
-
-[node name="Marker3D" type="Marker3D" parent="."]
 
 [node name="Plane" type="CSGBox3D" parent="."]
 transform = Transform3D(8.8204, 0, 0, 0, 1.04575, 0, 0, 0, 6.04345, -0.596728, 0.526819, 0.970331)
@@ -235,7 +237,6 @@ shape = SubResource("CapsuleShape3D_1d21m")
 transform = Transform3D(-0.934229, 0, 0.356673, 0, 1, 0, -0.356673, 0, -0.934229, 0, 1.05, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.214083, 0, -1.87158e-08)
 far = 112.47
 
 [node name="Viewfinder" type="Sprite3D" parent="Player/Head/Camera3D"]
@@ -245,6 +246,9 @@ texture = ExtResource("4_mvdyx")
 
 [node name="activities_Camera" parent="Player/Head/Camera3D" instance=ExtResource("7_exmsv")]
 transform = Transform3D(-0.124695, -0.00871954, -1.06033e-08, -0.00846053, 0.120991, 0.0302403, -0.00210944, 0.0301665, -0.121287, 0.4, -0.4, -0.6)
+
+[node name="Marker3D" type="Marker3D" parent="Player/Head"]
+transform = Transform3D(-0.93423, 0, -0.356673, 0, 1, 0, 0.356673, 0, -0.93423, 0, 0, 0)
 
 [node name="Label" type="Label" parent="Player"]
 offset_left = 4.0
@@ -1549,6 +1553,9 @@ disabled = true
 
 [node name="statue_ring" parent="." instance=ExtResource("15_g21dy")]
 transform = Transform3D(1.525, 0, 0, 0, 1.525, 0, 0, 0, 1.525, -6.28235, 1.41392, 5.4208)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(3.045, 0, 0, 0, 3.045, 0, 0, 0, 3.045, -6.34882, 1.13687, -6.68602)
 
 [node name="flower_purpleA" parent="." instance=ExtResource("16_bslfb")]
 transform = Transform3D(3.045, 0, 0, 0, 3.045, 0, 0, 0, 3.045, -6.34882, 0.527865, -6.68602)

@@ -33,7 +33,7 @@ func on_off_cam():
 	activities_camera.visible = !activities_camera.visible
 
 func _physics_process(delta):
-	print("Camera Position: ", global_transform.origin)
+	#print("Camera Position: ", global_transform.origin)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -77,17 +77,17 @@ func _physics_process(delta):
 	
 	# Get the player's current position and rotation.
 	var player_position = global_transform.origin
-	var player_rotation = global_transform.basis.get_euler()
+	var camera_rotation = camera.get_camera_transform().basis.get_euler()
 
 	# Convert rotation angles to degrees for readability.
-	var player_rotation_degrees = Vector3(
-		rad_to_deg(player_rotation.x),
-		rad_to_deg(player_rotation.y),
-		rad_to_deg(player_rotation.z)
+	var camera_rotation_degrees = Vector3(
+		rad_to_deg(camera_rotation.x),
+		rad_to_deg(camera_rotation.y),
+		rad_to_deg(camera_rotation.z)
 	)
 
 	# Create a string with the player's position and rotation.
-	var debug_text = "Position: " + str(player_position) + "\nRotation: " + str(player_rotation_degrees)
+	var debug_text = "Position: " + str(player_position) + "\nRotation: " + str(camera_rotation_degrees)
 
 	# Update the debug Label with the player's information.
 	debug_label.text = debug_text
