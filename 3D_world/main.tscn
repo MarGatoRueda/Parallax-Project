@@ -35,7 +35,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7feix"]
-size = Vector3(1.12634, 2.28049, 1)
+size = Vector3(0.35, 0.35, 0.35)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xltn8"]
 albedo_color = Color(0.392157, 0.27451, 0.0823529, 1)
@@ -211,7 +211,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.282, 1.439, 6.981)
 script = ExtResource("1_yj2v5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275599, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101417, 0)
 shape = SubResource("BoxShape3D_7feix")
 
 [node name="Plane" type="CSGBox3D" parent="."]
@@ -1554,11 +1554,11 @@ disabled = true
 [node name="statue_ring" parent="." instance=ExtResource("15_g21dy")]
 transform = Transform3D(1.525, 0, 0, 0, 1.525, 0, 0, 0, 1.525, -6.28235, 1.41392, 5.4208)
 
-[node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(3.045, 0, 0, 0, 3.045, 0, 0, 0, 3.045, -6.34882, 1.13687, -6.68602)
-
 [node name="flower_purpleA" parent="." instance=ExtResource("16_bslfb")]
 transform = Transform3D(3.045, 0, 0, 0, 3.045, 0, 0, 0, 3.045, -6.34882, 0.527865, -6.68602)
+
+[node name="flowerMarker" type="Marker3D" parent="flower_purpleA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.200002, 0)
 
 [node name="stump_roundDetailed" parent="." instance=ExtResource("17_2ca41")]
 transform = Transform3D(4.55, 0, 0, 0, 4.55, 0, 0, 0, 4.55, -6.32813, 0.64081, 1.24691)
