@@ -32,7 +32,7 @@ func _process(delta):
 		(rot_y < 0.39 + 3) and (0.39 - 3 < rot_y))
 		print(viewfinder.visible)
 		if within == true:
-			#new_posPlayer(player, collision_shape_3d, camera)
+			new_posPlayer(player, collision_shape_3d, camera)
 			teleportPlayer(player, flower_marker)
 			within == false
 			print("YESS")

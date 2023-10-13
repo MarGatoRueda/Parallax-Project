@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://be3b7jjq4nvfw"]
+
+[ext_resource type="PackedScene" uid="uid://b6d30lbpxr0no" path="res://3D_world/base_mecanica.tscn" id="1_g5xi0"]
+
+[node name="baseMecanica" instance=ExtResource("1_g5xi0")]

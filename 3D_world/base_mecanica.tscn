@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6d30lbpxr0no"]
+
+[ext_resource type="Script" path="res://detector.gd" id="1_jcc48"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tecvk"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="baseMecanica" type="Node3D"]
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="Detector" type="Area3D" parent="."]
+script = ExtResource("1_jcc48")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detector"]
+shape = SubResource("BoxShape3D_tecvk")
+
+[node name="LocalRotation" type="Marker3D" parent="Detector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Detector/LocalRotation"]
+far = 112.47
+
+[node name="Target" type="Marker3D" parent="."]

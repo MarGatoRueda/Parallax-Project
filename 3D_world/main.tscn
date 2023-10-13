@@ -1,17 +1,12 @@
-[gd_scene load_steps=52 format=3 uid="uid://dhdbke7pgdfrl"]
+[gd_scene load_steps=44 format=3 uid="uid://dhdbke7pgdfrl"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://earth-texture/696.jpg" id="1_erwqr"]
 [ext_resource type="Script" path="res://3D_world/Area3D.gd" id="1_yj2v5"]
-[ext_resource type="Script" path="res://3D_world/Player.gd" id="1_ylvb1"]
-[ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_uax5p"]
 [ext_resource type="PackedScene" uid="uid://btsmd5w8xt7g" path="res://kenney_graveyard-kit/Models/FBX format/pine.fbx" id="3_d6mfb"]
-[ext_resource type="Texture2D" uid="uid://csljwcaew5kve" path="res://Resources/viewfinder.png" id="4_mvdyx"]
-[ext_resource type="PackedScene" uid="uid://cringcldiyxf8" path="res://Menu/pause.tscn" id="5_3tkgp"]
+[ext_resource type="PackedScene" uid="uid://b71pytdfnhmfk" path="res://3D_world/player.tscn" id="3_houpy"]
 [ext_resource type="PackedScene" uid="uid://cmiqc2alxwf2a" path="res://kenney_graveyard-kit/Models/GLTF format/pineCrooked.glb" id="5_xwbsr"]
 [ext_resource type="PackedScene" uid="uid://bnay7lbasjnrt" path="res://kenney_graveyard-kit/Models/FBX format/bench.fbx" id="6_bu2tw"]
-[ext_resource type="PackedScene" uid="uid://b0d4nul7cfat8" path="res://kenney_graveyard-kit/activities_Camera.fbx" id="7_exmsv"]
 [ext_resource type="Texture2D" uid="uid://dm3dpfxt8co8v" path="res://Resources/Easter Egg.png" id="7_ubyg3"]
-[ext_resource type="PackedScene" uid="uid://b0mr2dvuiwqtr" path="res://Menu/counter.tscn" id="7_wpodp"]
 [ext_resource type="PackedScene" uid="uid://dx83v6ey6xx5c" path="res://kenney_graveyard-kit/Models/FBX format/lightpostDouble.fbx" id="9_d2v0n"]
 [ext_resource type="PackedScene" uid="uid://b4wjpr8nej55s" path="res://kenney_graveyard-kit/Models/FBX format/lightpostSingle.fbx" id="10_jrb2q"]
 [ext_resource type="PackedScene" uid="uid://dov0dg3cl7je7" path="res://kenney_graveyard-kit/Models/FBX format/ironFence.fbx" id="11_luca6"]
@@ -41,13 +36,6 @@ size = Vector3(0.35, 0.35, 0.35)
 albedo_color = Color(0.392157, 0.27451, 0.0823529, 1)
 albedo_texture = ExtResource("1_erwqr")
 uv1_triplanar = true
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_83kt0"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03s5u"]
-albedo_texture = ExtResource("2_uax5p")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1d21m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1mkf"]
 
@@ -220,63 +208,7 @@ use_collision = true
 size = Vector3(16, 0.002, 16)
 material = SubResource("StandardMaterial3D_xltn8")
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13443, 1, 4.55408)
-script = ExtResource("1_ylvb1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(-0.999657, 0, 0.0261943, 0, 1, 0, -0.0261943, 0, -0.999657, 0, 0.55, 0)
-mesh = SubResource("CapsuleMesh_83kt0")
-surface_material_override/0 = SubResource("StandardMaterial3D_03s5u")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
-shape = SubResource("CapsuleShape3D_1d21m")
-
-[node name="Head" type="Node3D" parent="Player"]
-transform = Transform3D(-0.934229, 0, 0.356673, 0, 1, 0, -0.356673, 0, -0.934229, 0, 1.05, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Player/Head"]
-far = 112.47
-
-[node name="Viewfinder" type="Sprite3D" parent="Player/Head/Camera3D"]
-transform = Transform3D(0.004, 3.49691e-10, -6.38931e-10, -3.49691e-10, 0.004, 0, -2.55572e-09, -2.23428e-16, -0.001, 0, 0, -0.085)
-visible = false
-texture = ExtResource("4_mvdyx")
-
-[node name="activities_Camera" parent="Player/Head/Camera3D" instance=ExtResource("7_exmsv")]
-transform = Transform3D(-0.124695, -0.00871954, -1.06033e-08, -0.00846053, 0.120991, 0.0302403, -0.00210944, 0.0301665, -0.121287, 0.4, -0.4, -0.6)
-
-[node name="Marker3D" type="Marker3D" parent="Player/Head"]
-transform = Transform3D(-0.93423, 0, -0.356673, 0, 1, 0, 0.356673, 0, -0.93423, 0, 0, 0)
-
-[node name="Label" type="Label" parent="Player"]
-offset_left = 4.0
-offset_top = 42.0
-offset_right = 297.0
-offset_bottom = 129.0
-
-[node name="Spotted thing" type="Label" parent="Player"]
-visible = false
-offset_left = 506.0
-offset_top = 483.0
-offset_right = 652.0
-offset_bottom = 509.0
-text = "Hidden Sign Found"
-
-[node name="Viewfinder" type="TextureRect" parent="Player"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_mvdyx")
-expand_mode = 1
-
-[node name="Pause" parent="Player" instance=ExtResource("5_3tkgp")]
-
-[node name="Counter" parent="Player" instance=ExtResource("7_wpodp")]
+[node name="Player" parent="." instance=ExtResource("3_houpy")]
 
 [node name="pine" parent="." instance=ExtResource("3_d6mfb")]
 transform = Transform3D(3.01655, 0, 0, 0, 3.01655, 0, 0, 0, 3.01655, 1.44376, -0.0950291, 2.87941)
