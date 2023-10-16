@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dhdbke7pgdfrl"]
+[gd_scene load_steps=45 format=3 uid="uid://dhdbke7pgdfrl"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://earth-texture/696.jpg" id="1_erwqr"]
 [ext_resource type="Script" path="res://3D_world/Area3D.gd" id="1_yj2v5"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b4wjpr8nej55s" path="res://kenney_graveyard-kit/Models/FBX format/lightpostSingle.fbx" id="10_jrb2q"]
 [ext_resource type="PackedScene" uid="uid://dov0dg3cl7je7" path="res://kenney_graveyard-kit/Models/FBX format/ironFence.fbx" id="11_luca6"]
 [ext_resource type="PackedScene" uid="uid://cqf0r2ugfqgr6" path="res://Kenney Assets/Nature Kit/Models/GLTF format/statue_ring.glb" id="15_g21dy"]
+[ext_resource type="PackedScene" uid="uid://be3b7jjq4nvfw" path="res://3D_world/flower_puzzle.tscn" id="15_u7vfk"]
 [ext_resource type="PackedScene" uid="uid://b7b26kkqulsf0" path="res://Kenney Assets/Nature Kit/Models/GLTF format/flower_purpleA.glb" id="16_bslfb"]
 [ext_resource type="PackedScene" uid="uid://bh32ypi450j4f" path="res://Kenney Assets/Nature Kit/Models/GLTF format/stump_roundDetailed.glb" id="17_2ca41"]
 [ext_resource type="PackedScene" uid="uid://cj3nmvous180r" path="res://Kenney Assets/Nature Kit/Models/GLTF format/stone_largeD.glb" id="18_21aw1"]
@@ -1486,18 +1487,26 @@ disabled = true
 
 [node name="statue_ring" parent="." instance=ExtResource("15_g21dy")]
 transform = Transform3D(1.525, 0, 0, 0, 1.525, 0, 0, 0, 1.525, -6.28235, 1.41392, 5.4208)
+visible = false
 
 [node name="flower_purpleA" parent="." instance=ExtResource("16_bslfb")]
 transform = Transform3D(3.045, 0, 0, 0, 3.045, 0, 0, 0, 3.045, -6.34882, 0.527865, -6.68602)
+visible = false
 
 [node name="flowerMarker" type="Marker3D" parent="flower_purpleA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.200002, 0)
 
 [node name="stump_roundDetailed" parent="." instance=ExtResource("17_2ca41")]
 transform = Transform3D(4.55, 0, 0, 0, 4.55, 0, 0, 0, 4.55, -6.32813, 0.64081, 1.24691)
+visible = false
 
 [node name="stone_largeD" parent="." instance=ExtResource("18_21aw1")]
 transform = Transform3D(0.398333, 0, -0.917241, 0, 1, 0, 0.917241, 0, 0.398333, -6.36024, 0.829503, 5.56718)
+visible = false
 
 [node name="stone_largeD2" parent="." instance=ExtResource("18_21aw1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.39301, 0.527865, 5.74762)
+visible = false
+
+[node name="baseMecanica" parent="." instance=ExtResource("15_u7vfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25374, 0.833689, 6.28281)

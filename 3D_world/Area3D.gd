@@ -33,7 +33,7 @@ func _process(delta):
 		print(viewfinder.visible)
 		if within == true:
 			#new_posPlayer(player, collision_shape_3d, camera)
-			teleportPlayer(player, flower_marker)
+			#teleportPlayer(player, flower_marker)
 			within == false
 			print("YESS")
 		if within == false:
