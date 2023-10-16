@@ -209,6 +209,7 @@ size = Vector3(16, 0.002, 16)
 material = SubResource("StandardMaterial3D_xltn8")
 
 [node name="Player" parent="." instance=ExtResource("3_houpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.055, 3.857)
 
 [node name="pine" parent="." instance=ExtResource("3_d6mfb")]
 transform = Transform3D(3.01655, 0, 0, 0, 3.01655, 0, 0, 0, 3.01655, 1.44376, -0.0950291, 2.87941)

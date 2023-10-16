@@ -19,15 +19,20 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
-		visible = !visible
-		get_tree().paused = visible
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if visible:
+			hide()
+			get_tree().paused = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		else:
+			visible = !visible
+			get_tree().paused = visible
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _on_resume_pressed():
 	hide()
 	get_tree().paused = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	
 func _on_retry_pressed():
