@@ -197,6 +197,7 @@ environment = SubResource("Environment_qnsc6")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.282, 1.439, 6.981)
+visible = false
 script = ExtResource("1_yj2v5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
@@ -1509,4 +1510,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.39301, 0.527865, 5.74762)
 visible = false
 
 [node name="baseMecanica" parent="." instance=ExtResource("15_u7vfk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25374, 0.833689, 6.28281)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.254, 0.95651, 6.283)

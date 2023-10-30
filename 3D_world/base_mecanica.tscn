@@ -22,3 +22,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 far = 112.47
 
 [node name="Target" type="Marker3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
