@@ -40,8 +40,12 @@ texture = ExtResource("3_gtpyx")
 [node name="activities_Camera" parent="Head/Camera3D" instance=ExtResource("4_uiu4r")]
 transform = Transform3D(-0.124695, -0.00871954, -1.06033e-08, -0.00846053, 0.120991, 0.0302403, -0.00210944, 0.0301665, -0.121287, 0.4, -0.4, -0.6)
 
-[node name="Marker3D" type="Marker3D" parent="Head"]
-transform = Transform3D(-0.93423, 0, -0.356673, 0, 1, 0, 0.356673, 0, -0.93423, 0, 0, 0)
+[node name="RayDetector" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, 1, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="Label" type="Label" parent="."]
 offset_left = 4.0

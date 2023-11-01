@@ -1,7 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://dhdbke7pgdfrl"]
+[gd_scene load_steps=43 format=3 uid="uid://dhdbke7pgdfrl"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://earth-texture/696.jpg" id="1_erwqr"]
-[ext_resource type="Script" path="res://3D_world/Area3D.gd" id="1_yj2v5"]
 [ext_resource type="PackedScene" uid="uid://btsmd5w8xt7g" path="res://kenney_graveyard-kit/Models/FBX format/pine.fbx" id="3_d6mfb"]
 [ext_resource type="PackedScene" uid="uid://b71pytdfnhmfk" path="res://3D_world/player.tscn" id="3_houpy"]
 [ext_resource type="PackedScene" uid="uid://cmiqc2alxwf2a" path="res://kenney_graveyard-kit/Models/GLTF format/pineCrooked.glb" id="5_xwbsr"]
@@ -29,9 +28,6 @@ background_mode = 2
 sky = SubResource("Sky_0axjm")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7feix"]
-size = Vector3(0.35, 0.35, 0.35)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xltn8"]
 albedo_color = Color(0.392157, 0.27451, 0.0823529, 1)
@@ -194,15 +190,6 @@ directional_shadow_max_distance = 120.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qnsc6")
-
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.282, 1.439, 6.981)
-visible = false
-script = ExtResource("1_yj2v5")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101417, 0)
-shape = SubResource("BoxShape3D_7feix")
 
 [node name="Plane" type="CSGBox3D" parent="."]
 transform = Transform3D(8.8204, 0, 0, 0, 1.04575, 0, 0, 0, 6.04345, -0.596728, 0.526819, 0.970331)

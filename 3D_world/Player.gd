@@ -4,7 +4,7 @@ class_name Player
 const SPEED = 3.5
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.01
-
+	
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 
@@ -14,6 +14,7 @@ var gravity = 9.8
 @onready var viewfinder = $Viewfinder
 @onready var count_counter = $Counter
 @onready var debug_label = $Label
+@onready var ray_detector : RayCast3D = $Head/Camera3D/RayDetector
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

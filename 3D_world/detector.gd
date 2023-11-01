@@ -20,8 +20,6 @@ func _physics_process(delta):
 	if not is_instance_valid(player):
 		return
 	var camera_rotation = player.camera.quaternion
-	var raycast : RayCast3D = player.ray_detector
-	raycast.is_colliding()
 	var diff = local_rotation.quaternion.dot(camera_rotation)
 	print(abs(1-diff))
 
