@@ -6,6 +6,8 @@ var rotation_threshold = 0.0005
 @onready var local_rotation : Marker3D = $LocalRotation
 @onready var target : Marker3D = $"../TargetArea/Target"
 
+var tween;
+
 @export var lerp_speed = 3.0
 @export var offset = Vector3.ZERO
 
@@ -33,13 +35,14 @@ func _physics_process(delta):
 		# Tween for locking player's position and camera view
 		var new_pos = local_rotation.global_position
 		new_pos[1] = player.position.y
-		
-#		var tween = create_tween()
-#		tween.tween_property(player, "position", new_pos, 0.5).set_ease(Tween.EASE_IN)
-		
+		if not tween:
+			tween = create_tween()
+			tween.tween_property(player, "position", new_pos, 0.5).set_ease(Tween.EASE_IN)
+			tween.finished.connect(func (): tween = null)
+			
 		if Input.is_action_just_pressed("left_click"):
+			tween.kill()
 			# Teleport
-			vf.modulate = Color.WHITE
 			var tp_to = target.global_position
 			tp_to[1] = player.position.y
 			player.global_position = tp_to + Vector3(1, 0, -1)
