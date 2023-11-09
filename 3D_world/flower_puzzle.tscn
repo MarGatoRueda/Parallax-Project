@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://be3b7jjq4nvfw"]
+[gd_scene load_steps=12 format=3 uid="uid://be3b7jjq4nvfw"]
 
 [ext_resource type="PackedScene" uid="uid://b6d30lbpxr0no" path="res://3D_world/base_mecanica.tscn" id="1_g5xi0"]
 [ext_resource type="PackedScene" uid="uid://cqf0r2ugfqgr6" path="res://Kenney Assets/Nature Kit/Models/GLTF format/statue_ring.glb" id="2_ytmyx"]
@@ -12,6 +12,9 @@ size = Vector3(0.962404, 2.14483, 0.893658)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_m4sqp"]
 height = 0.217194
 radius = 0.190622
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ief2k"]
+albedo_color = Color(1, 0.278431, 0.278431, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_j3unj"]
 height = 0.233344
@@ -27,26 +30,28 @@ size = Vector3(1, 1, 0.459701)
 
 [node name="baseMecanica" instance=ExtResource("1_g5xi0")]
 
+[node name="Meshes" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.32)
+
 [node name="Statue" type="Node3D" parent="Meshes" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.805, -0.745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1)
 
 [node name="statue_ring" parent="Meshes/Statue" index="0" instance=ExtResource("2_ytmyx")]
-transform = Transform3D(1.525, 0, 0, 0, 1.525, 0, 0, 0, 1.525, 0, 1.36, 0)
+transform = Transform3D(1.525, 0, 0, 0, 1.525, 0, 0, 0, 1.525, 0, 0, 0)
 
 [node name="stone_largeD" parent="Meshes/Statue" index="1" instance=ExtResource("3_d5r40")]
-transform = Transform3D(0.398333, 0, -0.917241, 0, 1, 0, 0.917241, 0, 0.398333, 0, 0.83, 0)
+transform = Transform3D(0.398333, 0, -0.917241, 0, 1, 0, 0.917241, 0, 0.398333, 0, -0.5, 0)
 
 [node name="stone_largeD2" parent="Meshes/Statue" index="2" instance=ExtResource("3_d5r40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.528, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Meshes/Statue" index="3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Meshes/Statue/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4603, 0)
 shape = SubResource("BoxShape3D_i85p5")
 
 [node name="stump_roundDetailed" parent="Meshes" index="1" instance=ExtResource("4_nqdxj")]
-transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, 0, -3.095)
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 0, -0.84, -4.395)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Meshes/stump_roundDetailed" index="1"]
 
@@ -55,7 +60,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.056514, 0)
 shape = SubResource("CylinderShape3D_m4sqp")
 
 [node name="flower_purpleA" parent="Meshes" index="2" instance=ExtResource("5_puva6")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -14.775)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -0.82, -15.845)
+
+[node name="flower_purpleA2" parent="Meshes/flower_purpleA/tmpParent" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_ief2k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Meshes/flower_purpleA" index="1"]
 
@@ -63,16 +71,16 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -14.775)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0880034, 0)
 shape = SubResource("CylinderShape3D_j3unj")
 
-[node name="Detector" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.265)
-
 [node name="CollisionShape3D" parent="Detector" index="0"]
 shape = SubResource("BoxShape3D_he8a2")
 
 [node name="TargetArea" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.679095, -18.3281)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" parent="TargetArea" index="0"]
 shape = SubResource("BoxShape3D_g3ysv")
+
+[editable path="Meshes/stump_roundDetailed"]
+[editable path="Meshes/flower_purpleA"]
