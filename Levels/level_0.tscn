@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://b1kpdm2080jb0"]
+[gd_scene load_steps=21 format=3 uid="uid://b1kpdm2080jb0"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://Resources/earth_texture.jpg" id="1_0i838"]
 [ext_resource type="PackedScene" uid="uid://b71pytdfnhmfk" path="res://3D_world/player.tscn" id="2_rscun"]
-[ext_resource type="PackedScene" uid="uid://su06exlt4wqt" path="res://kenney_graveyard-kit/Models/GLTF format/pine.glb" id="3_7fdno"]
-[ext_resource type="PackedScene" uid="uid://cmiqc2alxwf2a" path="res://kenney_graveyard-kit/Models/GLTF format/pineCrooked.glb" id="5_nwfqe"]
+[ext_resource type="PackedScene" uid="uid://b5yotjol732ss" path="res://Kenney Assets/Graveyard Kit/Models/GLTF format/pine.glb" id="4_gny67"]
 [ext_resource type="PackedScene" uid="uid://bxytbpfgwxcqe" path="res://Kenney Assets/Graveyard Kit/Models/GLTF format/bench.glb" id="5_phexn"]
+[ext_resource type="PackedScene" uid="uid://61p3p0ueqjeq" path="res://Kenney Assets/Graveyard Kit/Models/GLTF format/pineCrooked.glb" id="5_rnmkt"]
 [ext_resource type="PackedScene" uid="uid://bn7nne7s4vcp8" path="res://Kenney Assets/Graveyard Kit/Models/GLTF format/road.glb" id="6_7x5fb"]
 [ext_resource type="PackedScene" uid="uid://drlmmkanynadb" path="res://Kenney Assets/Graveyard Kit/Models/GLTF format/lightpostDouble.glb" id="9_rwgcd"]
 [ext_resource type="PackedScene" uid="uid://dqv35yvdp63cf" path="res://Kenney Assets/Graveyard Kit/Models/GLTF format/lightpostSingle.glb" id="10_aiyxj"]
@@ -44,12 +44,6 @@ height = 2.12141
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8dtvd"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_teqgw"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_m2hfh"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_2eue8"]
-
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2tobq"]
 points = PackedVector3Array(0.437451, 0.8239, 0.45, 0.459965, 0.753898, 0.4725, 0.459965, 0.753898, 0.4275, -0.437549, 0.8239, 0.45, 0.452428, 4.06075e-15, 0.464999, 0.5, 0.0899225, 0.457497, 0.5, 0.623893, 0.457497, -0.460063, 0.753898, 0.4725, 0.5, 0.623893, 0.442499, 0.5, 0.0899225, 0.442499, 0.452428, 4.06075e-15, 0.434997, -0.460063, 0.753898, 0.4275, -0.452525, 4.06075e-15, 0.464999, -0.5, 0.623893, 0.457497, -0.5, 0.0899225, 0.457497, -0.452525, 4.06075e-15, 0.434997, -0.5, 0.0899225, 0.442499, -0.5, 0.623893, 0.442499)
 
@@ -85,20 +79,20 @@ shape = SubResource("ConvexPolygonShape3D_jmhs2")
 
 [node name="Trees" type="Node3D" parent="."]
 
-[node name="pine" parent="Trees" instance=ExtResource("3_7fdno")]
+[node name="pine1" parent="Trees" instance=ExtResource("4_gny67")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.444, 0, 2.879)
 
-[node name="pine2" parent="Trees/pine" index="0"]
+[node name="pine2" parent="Trees/pine1" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_j3ssr")
 surface_material_override/1 = SubResource("StandardMaterial3D_628ig")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Trees/pine"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Trees/pine1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Trees/pine/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trees/pine1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08093, 0)
 shape = SubResource("CylinderShape3D_17mjy")
 
-[node name="pine2" parent="Trees" instance=ExtResource("3_7fdno")]
+[node name="pine2" parent="Trees" instance=ExtResource("4_gny67")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.868, 0, 2.879)
 
 [node name="pine2" parent="Trees/pine2" index="0"]
@@ -111,7 +105,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_628ig")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08093, 0)
 shape = SubResource("CylinderShape3D_17mjy")
 
-[node name="pine3" parent="Trees" instance=ExtResource("3_7fdno")]
+[node name="pine3" parent="Trees" instance=ExtResource("4_gny67")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.444, 0, 9.879)
 
 [node name="pine2" parent="Trees/pine3" index="0"]
@@ -124,7 +118,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_628ig")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08093, 0)
 shape = SubResource("CylinderShape3D_17mjy")
 
-[node name="pine4" parent="Trees" instance=ExtResource("3_7fdno")]
+[node name="pine4" parent="Trees" instance=ExtResource("4_gny67")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.556, 0, 9.879)
 
 [node name="pine2" parent="Trees/pine4" index="0"]
@@ -137,7 +131,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_628ig")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08093, 0)
 shape = SubResource("CylinderShape3D_17mjy")
 
-[node name="pine5" parent="Trees" instance=ExtResource("3_7fdno")]
+[node name="pine5" parent="Trees" instance=ExtResource("4_gny67")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.027, 0, 13.125)
 
 [node name="pine2" parent="Trees/pine5" index="0"]
@@ -150,7 +144,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_628ig")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08093, 0)
 shape = SubResource("CylinderShape3D_17mjy")
 
-[node name="pine6" parent="Trees" instance=ExtResource("3_7fdno")]
+[node name="pine6" parent="Trees" instance=ExtResource("4_gny67")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -7.989, 0, 4.696)
 
 [node name="pine2" parent="Trees/pine6" index="0"]
@@ -163,59 +157,59 @@ surface_material_override/1 = SubResource("StandardMaterial3D_628ig")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08093, 0)
 shape = SubResource("CylinderShape3D_17mjy")
 
-[node name="pineCrooked1" parent="Trees" instance=ExtResource("5_nwfqe")]
+[node name="pineCrooked1" parent="Trees" instance=ExtResource("5_rnmkt")]
 transform = Transform3D(3.295, 0, 0, 0, 3.295, 0, 0, 0, 3.295, 0.747, -0.5, 6.365)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Trees/pineCrooked1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trees/pineCrooked1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.805, 0, 0, 0, 1, 0, 1.16065, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16065, 0)
 shape = SubResource("CylinderShape3D_8dtvd")
 
-[node name="pineCrooked2" parent="Trees" instance=ExtResource("5_nwfqe")]
+[node name="pineCrooked2" parent="Trees" instance=ExtResource("5_rnmkt")]
 transform = Transform3D(3.295, 0, 0, 0, 3.295, 0, 0, 0, 3.295, -4.253, -0.5, 5.365)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Trees/pineCrooked2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trees/pineCrooked2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.695, 0, 0, 0, 1, 0, 1.04986, 0)
-shape = SubResource("CylinderShape3D_teqgw")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16065, 0)
+shape = SubResource("CylinderShape3D_8dtvd")
 
-[node name="pineCrooked3" parent="Trees" instance=ExtResource("5_nwfqe")]
+[node name="pineCrooked3" parent="Trees" instance=ExtResource("5_rnmkt")]
 transform = Transform3D(3.295, 0, 0, 0, 3.295, 0, 0, 0, 3.295, -3.253, -0.5, 15.365)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Trees/pineCrooked3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trees/pineCrooked3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.665, 0, 0, 0, 1, 0, 1.075, 0)
-shape = SubResource("CylinderShape3D_m2hfh")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16065, 0)
+shape = SubResource("CylinderShape3D_8dtvd")
 
-[node name="pineCrooked4" parent="Trees" instance=ExtResource("5_nwfqe")]
+[node name="pineCrooked4" parent="Trees" instance=ExtResource("5_rnmkt")]
 transform = Transform3D(6.42525, 0, 0, 0, 6.42525, 0, 0, 0, 6.42525, -7.445, -2.5, 14.32)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Trees/pineCrooked4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trees/pineCrooked4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 1.18, 0)
-shape = SubResource("CylinderShape3D_2eue8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16065, 0)
+shape = SubResource("CylinderShape3D_8dtvd")
 
-[node name="pineCrooked5" parent="Trees" instance=ExtResource("5_nwfqe")]
-transform = Transform3D(2.63648, 0, -1.97636, 0, 3.295, 0, 1.97636, 0, 2.63648, -9.41, -0.5, 9.112)
+[node name="pineCrooked5" parent="Trees" instance=ExtResource("5_rnmkt")]
+transform = Transform3D(3.295, 0, 0, 0, 3.295, 0, 0, 0, 3.295, -9.41, -0.5, 9.112)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Trees/pineCrooked5"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trees/pineCrooked5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.805, 0, 0, 0, 1, 0, 1.16065, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16065, 0)
 shape = SubResource("CylinderShape3D_8dtvd")
 
-[node name="pineCrooked6" parent="Trees" instance=ExtResource("5_nwfqe")]
+[node name="pineCrooked6" parent="Trees" instance=ExtResource("5_rnmkt")]
 transform = Transform3D(6.42525, 0, 0, 0, 6.42525, 0, 0, 0, 6.42525, -1.182, -2.5, -1.414)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Trees/pineCrooked6"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trees/pineCrooked6/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 1.18, 0)
-shape = SubResource("CylinderShape3D_2eue8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16065, 0)
+shape = SubResource("CylinderShape3D_8dtvd")
 
 [node name="road1" parent="." instance=ExtResource("6_7x5fb")]
 transform = Transform3D(1.87355, 0, -0.7684, 0, 2.025, 0, 0.7684, 0, 1.87355, -2.436, 0, 8.772)
@@ -269,7 +263,7 @@ transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_2tobq")
 
 [editable path="bench"]
-[editable path="Trees/pine"]
+[editable path="Trees/pine1"]
 [editable path="Trees/pine2"]
 [editable path="Trees/pine3"]
 [editable path="Trees/pine4"]

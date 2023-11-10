@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://3D_world/player.gd" id="1_knt7k"]
 [ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_jrm2f"]
 [ext_resource type="Texture2D" uid="uid://csljwcaew5kve" path="res://Resources/viewfinder.png" id="3_gtpyx"]
-[ext_resource type="PackedScene" uid="uid://b0d4nul7cfat8" path="res://kenney_graveyard-kit/activities_Camera.fbx" id="4_uiu4r"]
+[ext_resource type="PackedScene" uid="uid://dnc2w48ud5155" path="res://Resources/activities_Camera.fbx" id="4_xrau4"]
 [ext_resource type="PackedScene" uid="uid://cringcldiyxf8" path="res://Menu/pause.tscn" id="5_d5iig"]
 [ext_resource type="PackedScene" uid="uid://b0mr2dvuiwqtr" path="res://Menu/counter.tscn" id="6_nljdm"]
 
@@ -43,8 +43,8 @@ transform = Transform3D(0.004, 3.49691e-10, -6.38931e-10, -3.49691e-10, 0.004, 0
 visible = false
 texture = SubResource("CameraTexture_sqiu1")
 
-[node name="activities_Camera" parent="Head/Camera3D" instance=ExtResource("4_uiu4r")]
-transform = Transform3D(-0.124695, -0.00871954, -1.06033e-08, -0.00846053, 0.120991, 0.0302403, -0.00210944, 0.0301665, -0.121287, 0.4, -0.4, -0.6)
+[node name="activities_Camera" parent="Head/Camera3D" instance=ExtResource("4_xrau4")]
+transform = Transform3D(-0.124695, -0.00871953, -1.83138e-08, -0.00846053, 0.120991, 0.0302403, -0.00210943, 0.0301665, -0.121287, 0.4, -0.4, -0.6)
 
 [node name="RayDetector" type="RayCast3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
