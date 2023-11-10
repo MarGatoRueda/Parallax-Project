@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dnc2w48ud5155"
-path="res://.godot/imported/activities_Camera.fbx-63c86492ce066c50aef873de847c1199.scn"
+uid="uid://cc017rqtkcq50"
+path="res://.godot/imported/activities_Camera.glb-e5958feccb78c330bca1f7568a58fffc.scn"
 
 [deps]
 
-source_file="res://Resources/activities_Camera.fbx"
-dest_files=["res://.godot/imported/activities_Camera.fbx-63c86492ce066c50aef873de847c1199.scn"]
+source_file="res://Resources/activities_Camera.glb"
+dest_files=["res://.godot/imported/activities_Camera.glb-e5958feccb78c330bca1f7568a58fffc.scn"]
 
 [params]
 

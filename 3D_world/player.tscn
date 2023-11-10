@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b71pytdfnhmfk"]
+[gd_scene load_steps=14 format=3 uid="uid://b71pytdfnhmfk"]
 
 [ext_resource type="Script" path="res://3D_world/player.gd" id="1_knt7k"]
 [ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_jrm2f"]
 [ext_resource type="Texture2D" uid="uid://csljwcaew5kve" path="res://Resources/viewfinder.png" id="3_gtpyx"]
-[ext_resource type="PackedScene" uid="uid://dnc2w48ud5155" path="res://Resources/activities_Camera.fbx" id="4_xrau4"]
+[ext_resource type="PackedScene" uid="uid://cc017rqtkcq50" path="res://Resources/activities_Camera.glb" id="4_iiwkr"]
 [ext_resource type="PackedScene" uid="uid://cringcldiyxf8" path="res://Menu/pause.tscn" id="5_d5iig"]
 [ext_resource type="PackedScene" uid="uid://b0mr2dvuiwqtr" path="res://Menu/counter.tscn" id="6_nljdm"]
 
@@ -15,6 +15,43 @@ albedo_texture = ExtResource("2_jrm2f")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1d21m"]
 
 [sub_resource type="CameraTexture" id="CameraTexture_sqiu1"]
+
+[sub_resource type="Animation" id="Animation_32171"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flash:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kfixj"]
+resource_name = "flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flash:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_np4wf"]
+_data = {
+"RESET": SubResource("Animation_32171"),
+"flash": SubResource("Animation_kfixj")
+}
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_knt7k")
@@ -43,7 +80,7 @@ transform = Transform3D(0.004, 3.49691e-10, -6.38931e-10, -3.49691e-10, 0.004, 0
 visible = false
 texture = SubResource("CameraTexture_sqiu1")
 
-[node name="activities_Camera" parent="Head/Camera3D" instance=ExtResource("4_xrau4")]
+[node name="activities_Camera" parent="Head/Camera3D" instance=ExtResource("4_iiwkr")]
 transform = Transform3D(-0.124695, -0.00871953, -1.83138e-08, -0.00846053, 0.120991, 0.0302403, -0.00210943, 0.0301665, -0.121287, 0.4, -0.4, -0.6)
 
 [node name="RayDetector" type="RayCast3D" parent="Head/Camera3D"]
@@ -80,3 +117,30 @@ expand_mode = 1
 [node name="Pause" parent="." instance=ExtResource("5_d5iig")]
 
 [node name="Counter" parent="." instance=ExtResource("6_nljdm")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Flash" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Viewfinder" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_gtpyx")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_np4wf")
+}

@@ -11,10 +11,11 @@ var gravity = 9.8
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var activities_camera = $Head/Camera3D/activities_Camera
-@onready var viewfinder = $Viewfinder
+#@onready var viewfinder = $Viewfinder
 @onready var count_counter = $Counter
 @onready var debug_label = $Label
 @onready var ray_detector : RayCast3D = $Head/Camera3D/RayDetector
+@onready var viewfinder = $CanvasLayer/Viewfinder
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -66,6 +67,7 @@ func _physics_process(delta):
 		tween_vf.tween_property(viewfinder, "visible", true, 0.0001)
 			
 		if Input.is_action_just_pressed("left_click"):
+			$CanvasLayer/AnimationPlayer.play("flash")
 			count_counter.count -= 1
 			count_counter.count_update()
 			
