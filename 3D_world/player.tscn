@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b71pytdfnhmfk"]
 
-[ext_resource type="Script" path="res://3D_world/Player.gd" id="1_s4xol"]
+[ext_resource type="Script" path="res://3D_world/player.gd" id="1_knt7k"]
 [ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_jrm2f"]
 [ext_resource type="Texture2D" uid="uid://csljwcaew5kve" path="res://Resources/viewfinder.png" id="3_gtpyx"]
 [ext_resource type="PackedScene" uid="uid://b0d4nul7cfat8" path="res://kenney_graveyard-kit/activities_Camera.fbx" id="4_uiu4r"]
@@ -17,7 +17,7 @@ albedo_texture = ExtResource("2_jrm2f")
 [sub_resource type="CameraTexture" id="CameraTexture_sqiu1"]
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_s4xol")
+script = ExtResource("1_knt7k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.999657, 0, 0.0261943, 0, 1, 0, -0.0261943, 0, -0.999657, 0, 0, 0)

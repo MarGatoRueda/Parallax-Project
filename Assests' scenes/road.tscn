@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgu7nvnj42aov"]
-
-[ext_resource type="PackedScene" uid="uid://bk63xmwtpg5wt" path="res://kenney_graveyard-kit/Models/FBX format/road.fbx" id="1_bvv0e"]
-
-[node name="road" instance=ExtResource("1_bvv0e")]
