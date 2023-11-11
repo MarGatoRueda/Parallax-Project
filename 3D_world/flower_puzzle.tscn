@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cqf0r2ugfqgr6" path="res://Kenney Assets/Nature Kit/Models/GLTF format/statue_ring.glb" id="2_ytmyx"]
 [ext_resource type="PackedScene" uid="uid://cj3nmvous180r" path="res://Kenney Assets/Nature Kit/Models/GLTF format/stone_largeD.glb" id="3_d5r40"]
 [ext_resource type="PackedScene" uid="uid://bh32ypi450j4f" path="res://Kenney Assets/Nature Kit/Models/GLTF format/stump_roundDetailed.glb" id="4_nqdxj"]
-[ext_resource type="PackedScene" uid="uid://b7b26kkqulsf0" path="res://Kenney Assets/Nature Kit/Models/GLTF format/flower_purpleA.glb" id="5_puva6"]
+[ext_resource type="PackedScene" uid="uid://dy3rtk3q50d1p" path="res://Kenney Assets/Nature Kit/Models/GLTF format/flower_purpleA.glb" id="5_puva6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i85p5"]
 size = Vector3(0.962404, 2.14483, 0.893658)
@@ -14,7 +14,7 @@ height = 0.217194
 radius = 0.190622
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ief2k"]
-albedo_color = Color(1, 0.278431, 0.278431, 1)
+albedo_color = Color(1, 0.764706, 0.0588235, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_j3unj"]
 height = 0.233344
