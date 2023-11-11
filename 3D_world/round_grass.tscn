@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwsgqp4p7ryqm"]
+
+[ext_resource type="PackedScene" uid="uid://ry4jcyjrgyss" path="res://Kenney Assets/Nature Kit/Models/GLTF format/grass.glb" id="1_5shop"]
+[ext_resource type="PackedScene" uid="uid://hl8lc47shq3l" path="res://Kenney Assets/Nature Kit/Models/GLTF format/grass_leafs.glb" id="2_qntvg"]
+
+[node name="RoundGrass" type="Node3D"]
+
+[node name="grass" parent="." instance=ExtResource("1_5shop")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.301589, 0, 0.176352)
+
+[node name="grass2" parent="." instance=ExtResource("1_5shop")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15315, 0, 0.483886)
+
+[node name="grass3" parent="." instance=ExtResource("1_5shop")]
+transform = Transform3D(0.799181, 0, 0.60109, 0, 1, 0, -0.60109, 0, 0.799181, -0.340788, 0, -0.174264)
+
+[node name="grass_leafs" parent="." instance=ExtResource("2_qntvg")]
+transform = Transform3D(0.694658, 0, 0.71934, 0, 1, 0, -0.71934, 0, 0.694658, 0.263404, 0, -0.174104)
+
+[node name="grass_leafs2" parent="." instance=ExtResource("2_qntvg")]
+transform = Transform3D(0.640767, 0, -0.767736, 0, 1, 0, 0.767736, 0, 0.640767, 0, 0, 0.355058)
+
+[node name="grass_leafs3" parent="." instance=ExtResource("2_qntvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.340325)
+
+[node name="grass_leafs4" parent="." instance=ExtResource("2_qntvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.337603, 0, 0.15654)

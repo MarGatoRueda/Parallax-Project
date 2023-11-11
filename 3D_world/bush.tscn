@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm5dnvxplbiqe"]
+
+[ext_resource type="PackedScene" uid="uid://dnp6qs5f8kr63" path="res://Kenney Assets/Nature Kit/Models/GLTF format/tree_fat.glb" id="1_fws6j"]
+
+[node name="Bush" type="Node3D"]
+
+[node name="tree_fat" parent="." instance=ExtResource("1_fws6j")]
+
+[node name="tree_fat2" parent="." instance=ExtResource("1_fws6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.500937)
+
+[node name="tree_fat3" parent="." instance=ExtResource("1_fws6j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.998644)
