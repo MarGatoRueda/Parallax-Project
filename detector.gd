@@ -45,7 +45,7 @@ func _physics_process(delta):
 			# Teleport
 			var tp_to = target.global_position
 			tp_to[1] = player.position.y
-			player.global_position = tp_to + Vector3(1, 0, -1)
+			player.global_position = tp_to #+ Vector3(1, 0, -1)
 
 func _on_body_entered(body: Node3D):
 	if not body is Player:

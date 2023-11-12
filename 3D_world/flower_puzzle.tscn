@@ -26,7 +26,7 @@ size = Vector3(0.3, 0.3, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g3ysv"]
 resource_local_to_scene = true
-size = Vector3(1, 1, 0.459701)
+size = Vector3(1, 2.27034, 0.459701)
 
 [node name="baseMecanica" instance=ExtResource("1_g5xi0")]
 
@@ -80,7 +80,11 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" parent="TargetArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.761869, 0)
 shape = SubResource("BoxShape3D_g3ysv")
+
+[node name="Target" parent="TargetArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23453, 0, -0.848658)
 
 [editable path="Meshes/stump_roundDetailed"]
 [editable path="Meshes/flower_purpleA"]

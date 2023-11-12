@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmpe6hcamxmxs"]
+
+[ext_resource type="PackedScene" uid="uid://b6d30lbpxr0no" path="res://3D_world/base_mecanica.tscn" id="1_q5xiv"]
+[ext_resource type="PackedScene" uid="uid://csb1cs8iwtjx0" path="res://3D_world/benchSprite.tscn" id="2_k06ta"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0gkdc"]
+resource_local_to_scene = true
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dbr1c"]
+resource_local_to_scene = true
+size = Vector3(0.4, 0.104, 0.4)
+
+[node name="baseMecanica" instance=ExtResource("1_q5xiv")]
+
+[node name="benchPuzzle" parent="Meshes" index="0" instance=ExtResource("2_k06ta")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 2, 0, 2.62268e-07, 0, -3, 0, -1.5, 0.09)
+
+[node name="CollisionShape3D" parent="Detector" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.386988)
+shape = SubResource("BoxShape3D_0gkdc")
+
+[node name="LocalRotation" parent="Detector" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.139173, 0.990268, 0, -0.990268, 0.139173, 0, 0.5, 0)
+
+[node name="TargetArea" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5000, 0, 5000)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" parent="TargetArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.241922, -0.970296, 0, 0.970296, 0.241922, -5000, -0.654174, -5000.26)
+shape = SubResource("BoxShape3D_dbr1c")
