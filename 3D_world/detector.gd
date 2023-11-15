@@ -34,4 +34,4 @@ func _on_body_exit(body: Node3D):
 		return
 	player = null
 	set_physics_process(false)	
-	
+

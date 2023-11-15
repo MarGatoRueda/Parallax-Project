@@ -22,6 +22,12 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	# Assign the reference to the debug Label node.
 	debug_label = $Label
+	$"../AudioStreamPlayer3D".play()
+	$"../AudioStreamPlayer3D2".play()
+	$"../AudioStreamPlayer3D3".play()
+	$"../AudioStreamPlayer3D4".play()
+
+
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:	
@@ -56,6 +62,12 @@ func _physics_process(delta):
 		velocity.x = 0.0
 		velocity.z = 0.0
 
+	if is_on_floor() and (velocity.x !=0 or velocity.z !=0):
+		if $"../Timer".time_left <=0:
+			$AudioStreamPlayer2D2.pitch_scale = randf_range(0.7,1.3)
+			$AudioStreamPlayer2D2.play()
+			$"../Timer".start(0.65)
+			
 	move_and_slide()
 	
 	var tween_vf = create_tween()
@@ -69,8 +81,9 @@ func _physics_process(delta):
 		viewfinder_on = true
 		tween_vf.tween_property(viewfinder, "visible", true, 0.0001)
 			
-	if Input.is_action_just_pressed("left_click") and viewfinder_on:
+	if Input.is_action_just_pressed("left_click"):
 		$CanvasLayer/AnimationPlayer.play("flash")
+		$AudioStreamPlayer2D.play()
 		count_counter.count -= 1
 		count_counter.count_update()
 			
@@ -87,10 +100,9 @@ func _physics_process(delta):
 	var camera_rotation = camera.get_camera_transform().basis.get_euler()
 
 	# Convert rotation angles to degrees for readability.
-	var camera_rotation_degrees = Vector3(
+	var camera_rotation_degrees = Vector2(
 		rad_to_deg(camera_rotation.x),
 		rad_to_deg(camera_rotation.y),
-		rad_to_deg(camera_rotation.z)
 	)
 
 	# Create a string with the player's position and rotation.

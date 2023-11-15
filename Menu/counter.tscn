@@ -14,7 +14,7 @@ layout_mode = 2
 
 [node name="remain" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-text = "Photo remain:"
+text = "Remaining photos:"
 
 [node name="count" type="Label" parent="HBoxContainer"]
 layout_mode = 2

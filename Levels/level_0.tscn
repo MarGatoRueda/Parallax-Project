@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b1kpdm2080jb0"]
+[gd_scene load_steps=52 format=3 uid="uid://b1kpdm2080jb0"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://Resources/earth_texture.jpg" id="1_0i838"]
 [ext_resource type="PackedScene" uid="uid://b71pytdfnhmfk" path="res://3D_world/player.tscn" id="2_rscun"]
@@ -9,12 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://bn7nne7s4vcp8" path="res://Kenney Assets/Graveyard Kit/Models/GLTF format/road.glb" id="6_7x5fb"]
 [ext_resource type="PackedScene" uid="uid://dmpe6hcamxmxs" path="res://3D_world/bench_puzzle.tscn" id="7_lc6om"]
 [ext_resource type="PackedScene" uid="uid://dm8numcp3scwa" path="res://3D_world/lightpost_single_lit.tscn" id="8_01c0e"]
+[ext_resource type="AudioStream" uid="uid://dk7ccjpnoxh1b" path="res://Audio/water_fountain.mp3" id="8_8a14b"]
+[ext_resource type="AudioStream" uid="uid://8ptpxn4n3wta" path="res://Audio/forest.mp3" id="9_2mvva"]
+[ext_resource type="AudioStream" uid="uid://nvrcsdj0fftt" path="res://Audio/void.mp3" id="10_avouy"]
 [ext_resource type="PackedScene" uid="uid://b2ff20kajcub3" path="res://3D_world/three_trees_a.tscn" id="10_fs5v2"]
 [ext_resource type="PackedScene" uid="uid://oxso7vmbovuw" path="res://Kenney Assets/Nature Kit/Models/GLTF format/tree_oak_dark.glb" id="11_7dqwu"]
 [ext_resource type="MeshLibrary" uid="uid://bsqady3vcm4yl" path="res://MeshLibraries/brickWalls.tres" id="11_lqcrb"]
 [ext_resource type="PackedScene" uid="uid://chrbq14gqp4h0" path="res://3D_world/lightpost_double_lit.tscn" id="11_ppyjm"]
+[ext_resource type="AudioStream" uid="uid://b8gxmpcm4x7c6" path="res://Audio/camera.wav" id="11_xcimj"]
 [ext_resource type="MeshLibrary" uid="uid://drg8igatkjia6" path="res://MeshLibraries/grassAndFlowers.tres" id="12_estea"]
 [ext_resource type="PackedScene" uid="uid://b855ck22cnbi4" path="res://3D_world/three_trees_b.tscn" id="12_nchf4"]
+[ext_resource type="AudioStream" uid="uid://dqjw8vyl5lks3" path="res://Audio/dirt_steps.wav" id="12_xhfm7"]
 [ext_resource type="PackedScene" uid="uid://bg4is5lcld668" path="res://3D_world/fountain_square.tscn" id="13_hj0fr"]
 [ext_resource type="MeshLibrary" uid="uid://df542cw6b1rfu" path="res://MeshLibraries/paths.tres" id="13_q2tfk"]
 [ext_resource type="PackedScene" uid="uid://bcxvytd10owp" path="res://Kenney Assets/Nature Kit/Models/GLTF format/path_stoneCircle.glb" id="14_6b4f4"]
@@ -24,8 +29,12 @@
 [ext_resource type="PackedScene" uid="uid://cvfwbqub8v8yj" path="res://3D_world/fountain_round.tscn" id="16_u4cqe"]
 [ext_resource type="PackedScene" uid="uid://bafd48gkg4pw0" path="res://3D_world/lightpost_all_lit.tscn" id="17_xnwl5"]
 [ext_resource type="PackedScene" uid="uid://bwsgqp4p7ryqm" path="res://3D_world/round_grass.tscn" id="18_82xkb"]
+[ext_resource type="Script" path="res://Levels/easter_egg_area.gd" id="18_cyrc0"]
 [ext_resource type="PackedScene" uid="uid://dm5dnvxplbiqe" path="res://3D_world/bush.tscn" id="19_32i52"]
+[ext_resource type="AudioStream" uid="uid://bp1dydxkmo4wg" path="res://Audio/wow.wav" id="19_55g54"]
 [ext_resource type="PackedScene" uid="uid://dho7kcx77p6k" path="res://3D_world/flowers.tscn" id="20_en0sj"]
+[ext_resource type="Script" path="res://Levels/easter_egg_area2.gd" id="21_5itol"]
+[ext_resource type="AudioStream" uid="uid://b52wsdgk5vli7" path="res://Audio/easter_parable.wav" id="22_3g7ol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hspuq"]
 albedo_color = Color(0.27451, 0.501961, 0.180392, 1)
@@ -53,6 +62,8 @@ size = Vector3(0.3, 0.3, 0.3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_psbhj"]
 resource_local_to_scene = true
 size = Vector3(0.4, 0.104, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mrnf7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3ssr"]
 albedo_color = Color(0.341176, 0.478431, 0.341176, 1)
@@ -138,8 +149,41 @@ use_collision = true
 size = Vector3(4.33591, 0.002, 8.58735)
 material = SubResource("StandardMaterial3D_hspuq")
 
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.99542, 0.91405, 6.62067)
+stream = ExtResource("8_8a14b")
+volume_db = 12.0
+pitch_scale = 0.7
+max_distance = 15.0
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.946981, 0.321291, 0, -0.321291, 0.946981, 0, 0, 0, 1, -5004.05, 2.4359, -4992.78)
+stream = ExtResource("10_avouy")
+volume_db = 10.0
+max_distance = 50.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0106, 0.36117, -2.18693)
+stream = ExtResource("8_8a14b")
+volume_db = 12.0
+max_distance = 15.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65596, 5.23487, 2.60437)
+stream = ExtResource("9_2mvva")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [node name="Player" parent="." instance=ExtResource("2_rscun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21405, 1, 3.26276)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("11_xcimj")
+volume_db = 12.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("12_xhfm7")
 
 [node name="Walls" type="GridMap" parent="."]
 mesh_library = ExtResource("11_lqcrb")
@@ -173,6 +217,34 @@ shape = SubResource("BoxShape3D_jh67j")
 
 [node name="CollisionShape3D" parent="benchPuzzle/TargetArea" index="0"]
 shape = SubResource("BoxShape3D_psbhj")
+
+[node name="easter_egg" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5002.1, 1.5, -4971.89)
+
+[node name="easter_egg_area" type="Area3D" parent="easter_egg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5000.24, -1.00635, -4996.94)
+script = ExtResource("18_cyrc0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="easter_egg/easter_egg_area"]
+shape = SubResource("BoxShape3D_mrnf7")
+
+[node name="wow" type="AudioStreamPlayer3D" parent="easter_egg/easter_egg_area"]
+stream = ExtResource("19_55g54")
+
+[node name="easter_egg2" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5002.1, 1.5, -4971.89)
+
+[node name="easter_egg_area2" type="Area3D" parent="easter_egg2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.928853, 1.60449)
+script = ExtResource("21_5itol")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="easter_egg2/easter_egg_area2"]
+transform = Transform3D(3.15, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_mrnf7")
+
+[node name="parable" type="AudioStreamPlayer2D" parent="easter_egg2/easter_egg_area2"]
+stream = ExtResource("22_3g7ol")
+volume_db = 4.0
 
 [node name="CenterTrees" type="Node3D" parent="."]
 
