@@ -81,7 +81,7 @@ func _physics_process(delta):
 		viewfinder_on = true
 		tween_vf.tween_property(viewfinder, "visible", true, 0.0001)
 			
-	if Input.is_action_just_pressed("left_click"):
+	if Input.is_action_just_pressed("left_click") and viewfinder_on:
 		$CanvasLayer/AnimationPlayer.play("flash")
 		$AudioStreamPlayer2D.play()
 		count_counter.count -= 1
