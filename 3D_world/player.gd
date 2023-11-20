@@ -55,7 +55,14 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	var shift = Input.is_key_pressed(KEY_SHIFT)
+	var running = false
+	if direction and shift:
+		running = true
+		velocity.x = direction.x * 4*SPEED
+		velocity.z = direction.z * 4*SPEED
+		
+	elif direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
@@ -66,7 +73,10 @@ func _physics_process(delta):
 		if $"../Timer".time_left <=0:
 			$AudioStreamPlayer2D2.pitch_scale = randf_range(0.7,1.3)
 			$AudioStreamPlayer2D2.play()
-			$"../Timer".start(0.65)
+			if running:
+				$"../Timer".start(0.25)
+			else:
+				$"../Timer".start(0.65)
 			
 	move_and_slide()
 	

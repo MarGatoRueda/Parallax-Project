@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctx0oebky6eda"
+path="res://.godot/imported/light_squareDouble.obj-cd7db917459bd2f8c4aa3cde74b92579.mesh"
+
+[deps]
+
+files=["res://.godot/imported/light_squareDouble.obj-cd7db917459bd2f8c4aa3cde74b92579.mesh"]
+
+source_file="res://Kenney Assets/City Kit - Roads/Models/OBJ format/light_squareDouble.obj"
+dest_files=["res://.godot/imported/light_squareDouble.obj-cd7db917459bd2f8c4aa3cde74b92579.mesh", "res://.godot/imported/light_squareDouble.obj-cd7db917459bd2f8c4aa3cde74b92579.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

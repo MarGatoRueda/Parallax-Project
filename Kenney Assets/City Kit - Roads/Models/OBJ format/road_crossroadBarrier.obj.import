@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bibn2fe6de4gb"
+path="res://.godot/imported/road_crossroadBarrier.obj-f2840172681359caf7610ce8b65a011a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_crossroadBarrier.obj-f2840172681359caf7610ce8b65a011a.mesh"]
+
+source_file="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_crossroadBarrier.obj"
+dest_files=["res://.godot/imported/road_crossroadBarrier.obj-f2840172681359caf7610ce8b65a011a.mesh", "res://.godot/imported/road_crossroadBarrier.obj-f2840172681359caf7610ce8b65a011a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

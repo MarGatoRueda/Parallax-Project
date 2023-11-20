@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ct8y4r4gnykhe"
+path="res://.godot/imported/road_crossing.obj-b1d3e06ad3e70c4999e37a672caf5245.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_crossing.obj-b1d3e06ad3e70c4999e37a672caf5245.mesh"]
+
+source_file="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_crossing.obj"
+dest_files=["res://.godot/imported/road_crossing.obj-b1d3e06ad3e70c4999e37a672caf5245.mesh", "res://.godot/imported/road_crossing.obj-b1d3e06ad3e70c4999e37a672caf5245.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

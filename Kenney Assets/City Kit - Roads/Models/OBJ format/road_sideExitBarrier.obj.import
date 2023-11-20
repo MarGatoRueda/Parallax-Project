@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c1gj6v36m5xp1"
+path="res://.godot/imported/road_sideExitBarrier.obj-225485420b029c0c4d0c67d599b44bb9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_sideExitBarrier.obj-225485420b029c0c4d0c67d599b44bb9.mesh"]
+
+source_file="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_sideExitBarrier.obj"
+dest_files=["res://.godot/imported/road_sideExitBarrier.obj-225485420b029c0c4d0c67d599b44bb9.mesh", "res://.godot/imported/road_sideExitBarrier.obj-225485420b029c0c4d0c67d599b44bb9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

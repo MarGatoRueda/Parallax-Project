@@ -311,12 +311,12 @@ sky_top_color = Color(0.407843, 0.407843, 0.482353, 1)
 sky_horizon_color = Color(0.788235, 0.415686, 0.247059, 1)
 sky_curve = 0.243675
 
-[sub_resource type="Sky" id="Sky_memx3"]
+[sub_resource type="Sky" id="Sky_mek6t"]
 sky_material = SubResource("ProceduralSkyMaterial_gtaye")
 
 [sub_resource type="Environment" id="Environment_qnsc6"]
 background_mode = 2
-sky = SubResource("Sky_memx3")
+sky = SubResource("Sky_mek6t")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -328,11 +328,11 @@ spread = 10.0
 initial_velocity_min = 3.0
 initial_velocity_max = 3.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6fpe"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rojhx"]
 albedo_color = Color(0.129412, 0.603922, 0.611765, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yvgcd"]
-material = SubResource("StandardMaterial3D_e6fpe")
+material = SubResource("StandardMaterial3D_rojhx")
 size = Vector3(0.1, 0.5, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jh67j"]
@@ -835,7 +835,7 @@ directional_shadow_max_distance = 120.0
 environment = SubResource("Environment_qnsc6")
 
 [node name="Plane" type="CSGBox3D" parent="."]
-transform = Transform3D(8.8204, 0, 0, 0, 1.04575, 0, 0, 0, 6.04345, -1.55126, 0, 8.60136)
+transform = Transform3D(8.8204, 0, 0, 0, 1.04575, 0, 0, 0, 6.04345, -1.53635, -0.0446262, 8.58252)
 use_collision = true
 size = Vector3(4.33591, 0.002, 8.58735)
 material = SubResource("StandardMaterial3D_hspuq")

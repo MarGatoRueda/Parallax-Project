@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://sm6qjgkkj1as"
+path="res://.godot/imported/road_drivewayDouble.obj-91c007d73057382382d322cf933f9a5a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_drivewayDouble.obj-91c007d73057382382d322cf933f9a5a.mesh"]
+
+source_file="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_drivewayDouble.obj"
+dest_files=["res://.godot/imported/road_drivewayDouble.obj-91c007d73057382382d322cf933f9a5a.mesh", "res://.godot/imported/road_drivewayDouble.obj-91c007d73057382382d322cf933f9a5a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

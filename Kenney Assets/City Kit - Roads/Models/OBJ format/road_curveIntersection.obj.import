@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5rj04k22ihwt"
+path="res://.godot/imported/road_curveIntersection.obj-af46a866430d94cdcfde34c69950eaba.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_curveIntersection.obj-af46a866430d94cdcfde34c69950eaba.mesh"]
+
+source_file="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_curveIntersection.obj"
+dest_files=["res://.godot/imported/road_curveIntersection.obj-af46a866430d94cdcfde34c69950eaba.mesh", "res://.godot/imported/road_curveIntersection.obj-af46a866430d94cdcfde34c69950eaba.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

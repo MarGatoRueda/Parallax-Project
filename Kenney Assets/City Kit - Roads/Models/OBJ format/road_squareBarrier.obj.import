@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cbhitp1diyykj"
+path="res://.godot/imported/road_squareBarrier.obj-d0be5a8b20206ff107a3b8f034b26fa2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_squareBarrier.obj-d0be5a8b20206ff107a3b8f034b26fa2.mesh"]
+
+source_file="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_squareBarrier.obj"
+dest_files=["res://.godot/imported/road_squareBarrier.obj-d0be5a8b20206ff107a3b8f034b26fa2.mesh", "res://.godot/imported/road_squareBarrier.obj-d0be5a8b20206ff107a3b8f034b26fa2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

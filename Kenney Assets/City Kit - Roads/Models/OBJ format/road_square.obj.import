@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ds86ib2wh5qgy"
+path="res://.godot/imported/road_square.obj-8259c2edc05efaf61b60b2acbf1614aa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_square.obj-8259c2edc05efaf61b60b2acbf1614aa.mesh"]
+
+source_file="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_square.obj"
+dest_files=["res://.godot/imported/road_square.obj-8259c2edc05efaf61b60b2acbf1614aa.mesh", "res://.godot/imported/road_square.obj-8259c2edc05efaf61b60b2acbf1614aa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
