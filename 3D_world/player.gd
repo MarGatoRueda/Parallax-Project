@@ -22,6 +22,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	# Assign the reference to the debug Label node.
 	debug_label = $Label
+	camera.current = true	
 	$"../AudioStreamPlayer3D".play()
 	$"../AudioStreamPlayer3D2".play()
 	$"../AudioStreamPlayer3D3".play()
