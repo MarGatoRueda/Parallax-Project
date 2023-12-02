@@ -5,6 +5,8 @@ var raycast : RayCast3D = null
 var rotation_threshold = 0.0005
 @onready var local_rotation : Marker3D = $LocalRotation
 @onready var target : Marker3D = $"../TargetArea/Target"
+@onready var city_polaroid_rain : GPUParticles3D = $"../CityPolaroidRain"
+@onready var city_polaroid_puzzle = $"../cityPolaroid_puzzle"
 
 var tween;
 
@@ -42,10 +44,10 @@ func _physics_process(delta):
 			
 		if Input.is_action_just_pressed("left_click"):
 			tween.kill()
-			# Teleport
-			var tp_to = target.global_position
-			tp_to[1] = player.position.y
-			player.global_position = tp_to #+ Vector3(1, 0, -1)
+			tween = null
+			# Emit polaroid "rain" and discover the subpuzzle
+			city_polaroid_rain.emitting = true
+			city_polaroid_puzzle.visible = true
 
 func _on_body_entered(body: Node3D):
 	if not body is Player:
@@ -60,6 +62,8 @@ func _on_body_exit(body: Node3D):
 	raycast.target_position = Vector3(0, 1, 0)
 	raycast = null
 	player = null
+	await get_tree().create_timer(3.0).timeout
+	city_polaroid_rain.emitting = false
 	set_physics_process(false)
 	
 func get_rotation_from_direction(look_direction : Vector3) -> Basis:

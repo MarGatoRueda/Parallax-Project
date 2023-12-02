@@ -44,9 +44,7 @@ func _physics_process(delta):
 			tween.kill()
 			tween = null
 			# Teleport
-			var tp_to = target.global_position
-			tp_to[1] = player.position.y
-			player.global_position = tp_to #+ Vector3(1, 0, -1)
+			get_tree().change_scene_to_file("res://Levels/level_2.tscn")
 
 func _on_body_entered(body: Node3D):
 	if not body is Player:

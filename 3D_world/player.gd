@@ -23,10 +23,10 @@ func _ready():
 	# Assign the reference to the debug Label node.
 	debug_label = $Label
 	camera.current = true	
-	$"../AudioStreamPlayer3D".play()
-	$"../AudioStreamPlayer3D2".play()
-	$"../AudioStreamPlayer3D3".play()
-	$"../AudioStreamPlayer3D4".play()
+#	$"../AudioStreamPlayer3D".play()
+#	$"../AudioStreamPlayer3D2".play()
+#	$"../AudioStreamPlayer3D3".play()
+#	$"../AudioStreamPlayer3D4".play()
 
 
 	
@@ -70,14 +70,14 @@ func _physics_process(delta):
 		velocity.x = 0.0
 		velocity.z = 0.0
 
-	if is_on_floor() and (velocity.x !=0 or velocity.z !=0):
-		if $"../Timer".time_left <=0:
-			$AudioStreamPlayer2D2.pitch_scale = randf_range(0.7,1.3)
-			$AudioStreamPlayer2D2.play()
-			if running:
-				$"../Timer".start(0.25)
-			else:
-				$"../Timer".start(0.65)
+#	if is_on_floor() and (velocity.x !=0 or velocity.z !=0):
+#		if $"../Timer".time_left <=0:
+#			$AudioStreamPlayer2D2.pitch_scale = randf_range(0.7,1.3)
+#			$AudioStreamPlayer2D2.play()
+#			if running:
+#				$"../Timer".start(0.25)
+#			else:
+#				$"../Timer".start(0.65)
 			
 	move_and_slide()
 	
@@ -93,8 +93,8 @@ func _physics_process(delta):
 		tween_vf.tween_property(viewfinder, "visible", true, 0.0001)
 			
 	if Input.is_action_just_pressed("left_click") and viewfinder_on:
-		$CanvasLayer/AnimationPlayer.play("flash")
-		$AudioStreamPlayer2D.play()
+#		$CanvasLayer/AnimationPlayer.play("flash")
+#		$AudioStreamPlayer2D.play()
 		count_counter.count -= 1
 		count_counter.count_update()
 			
