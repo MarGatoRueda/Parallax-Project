@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b1kpdm2080jb0"]
+[gd_scene load_steps=62 format=3 uid="uid://b1kpdm2080jb0"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://Resources/earth_texture.jpg" id="1_0i838"]
 [ext_resource type="PackedScene" uid="uid://bm0l38bdx7bfw" path="res://Levels/level_0_1.tscn" id="1_atbcd"]
@@ -35,6 +35,16 @@
 [ext_resource type="PackedScene" uid="uid://dho7kcx77p6k" path="res://3D_world/flowers.tscn" id="20_en0sj"]
 [ext_resource type="Script" path="res://Levels/easter_egg_area2.gd" id="21_5itol"]
 [ext_resource type="AudioStream" uid="uid://b52wsdgk5vli7" path="res://Audio/easter_parable.wav" id="22_3g7ol"]
+[ext_resource type="Texture2D" uid="uid://df0mb1gj7nwu3" path="res://Resources/WASD-01.png" id="36_piy1n"]
+[ext_resource type="Texture2D" uid="uid://gb5uxl3ioa32" path="res://Resources/Move.png" id="37_o4x1e"]
+[ext_resource type="Texture2D" uid="uid://cxx1ppucj7nbf" path="res://Resources/Click-02.png" id="38_tlevo"]
+[ext_resource type="Texture2D" uid="uid://bhvkcix8na2xd" path="res://Resources/Point.png" id="39_xm4c8"]
+[ext_resource type="Texture2D" uid="uid://0vdvfcwc1u5j" path="res://Resources/Click-03.png" id="40_tduv8"]
+[ext_resource type="Texture2D" uid="uid://bek82k78ui6yk" path="res://Resources/Shoot.png" id="41_4eq1i"]
+[ext_resource type="PackedScene" uid="uid://dnkjc1hob8p0j" path="res://3D_world/flower_hint.tscn" id="42_q3bjt"]
+[ext_resource type="Texture2D" uid="uid://bj3781ab60yvh" path="res://Resources/LineUp.png" id="43_1bo5r"]
+[ext_resource type="Texture2D" uid="uid://c8nqdbuvxnjcs" path="res://Resources/Aim.png" id="44_mnkq2"]
+[ext_resource type="PackedScene" uid="uid://dnfs1ts15vb5l" path="res://3D_world/a_hint.tscn" id="45_awt2p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gtaye"]
 sky_top_color = Color(0.407843, 0.407843, 0.482353, 1)
@@ -875,6 +885,49 @@ transform = Transform3D(0.66596, 0, 0.977244, 0, 1, 0, -0.745988, 0, 0.872407, -
 
 [node name="flowers10" parent="FlowersAndBushes" instance=ExtResource("20_en0sj")]
 transform = Transform3D(-0.0326668, 0, -1.3093, 0, 1, 0, 0.999466, 0, -0.0427934, -9.50668, 0, -10.5293)
+
+[node name="Tutorials" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, -0.135)
+
+[node name="WASD" type="Sprite3D" parent="Tutorials"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -1.847, 1.136, 1.792)
+texture = ExtResource("36_piy1n")
+
+[node name="Move" type="Sprite3D" parent="Tutorials"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -1.847, 1.5, 1.792)
+texture = ExtResource("37_o4x1e")
+
+[node name="RightClick" type="Sprite3D" parent="Tutorials"]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -1.11612, 1.13611, 1.79246)
+texture = ExtResource("38_tlevo")
+
+[node name="Point" type="Sprite3D" parent="Tutorials"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -1.116, 1.5, 1.792)
+texture = ExtResource("39_xm4c8")
+
+[node name="LeftClick" type="Sprite3D" parent="Tutorials"]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -0.447365, 1.13611, 1.79246)
+texture = ExtResource("40_tduv8")
+
+[node name="Shoot" type="Sprite3D" parent="Tutorials"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.447, 1.5, 1.792)
+texture = ExtResource("41_4eq1i")
+
+[node name="Hint" type="Node3D" parent="."]
+
+[node name="FlowerHint" parent="Hint" instance=ExtResource("42_q3bjt")]
+transform = Transform3D(-0.378456, 0.137851, 0.0999677, -0.0357568, 0.173867, -0.375122, -0.166487, -0.350703, -0.14668, -3.40706, 0.740977, 11.2069)
+
+[node name="LineUp" type="Sprite3D" parent="Hint"]
+transform = Transform3D(-0.0269004, 0, 0.0132804, 0, 0.03, 0, -0.0132804, 0, -0.0269004, -3.45258, 1.53305, 11.2965)
+texture = ExtResource("43_1bo5r")
+
+[node name="AimFlower" type="Sprite3D" parent="Hint"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -6.26, 1.985, 5.222)
+texture = ExtResource("44_mnkq2")
+
+[node name="AHint" parent="Hint" instance=ExtResource("45_awt2p")]
+transform = Transform3D(0.172078, 0.275382, 0.380203, -0.424024, 0.26496, 0, -0.201477, -0.32243, 0.324724, -9.05356, 0.193179, -4.33972)
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 

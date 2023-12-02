@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bm0l38bdx7bfw"]
+[gd_scene load_steps=31 format=3 uid="uid://bm0l38bdx7bfw"]
 
 [ext_resource type="Texture2D" uid="uid://bil7r23xvf7nx" path="res://Resources/earth_texture.jpg" id="1_l8p1w"]
 [ext_resource type="PackedScene" uid="uid://csb1cs8iwtjx0" path="res://3D_world/benchSprite.tscn" id="2_r65up"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bwsgqp4p7ryqm" path="res://3D_world/round_grass.tscn" id="6_y46ld"]
 [ext_resource type="PackedScene" uid="uid://dm8numcp3scwa" path="res://3D_world/lightpost_single_lit.tscn" id="7_w8pjd"]
 [ext_resource type="PackedScene" uid="uid://bafd48gkg4pw0" path="res://3D_world/lightpost_all_lit.tscn" id="8_tbmmw"]
-[ext_resource type="PackedScene" uid="uid://b71pytdfnhmfk" path="res://3D_world/player.tscn" id="9_5hqhw"]
 [ext_resource type="PackedScene" uid="uid://b5rqhpdobfvkp" path="res://3D_world/MILA_puzzle.tscn" id="9_f65b3"]
+[ext_resource type="PackedScene" uid="uid://dcklfptreh154" path="res://3D_world/mila_hint.tscn" id="10_lfn61"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hspuq"]
 albedo_color = Color(0.27451, 0.501961, 0.180392, 1)
@@ -223,14 +223,6 @@ size = Vector3(0.201572, 1.38651, 0.207707)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oluqx"]
 size = Vector3(1, 3, 7.83671)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_q4nyk"]
-resource_local_to_scene = true
-size = Vector3(0.637319, 0.3, 0.503224)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ijhkk"]
-resource_local_to_scene = true
-size = Vector3(1.58515, 1, 1)
 
 [node name="Level 0_1" type="Node3D"]
 
@@ -1703,17 +1695,8 @@ shape = SubResource("BoxShape3D_oluqx")
 [node name="puzzleMila" parent="." instance=ExtResource("9_f65b3")]
 transform = Transform3D(0.786568, 0, 0.617503, 0, 1, 0, -0.617503, 0, 0.786568, -5.0949, 0.7, 1.12632)
 
-[node name="CollisionShape3D" parent="puzzleMila/Detector" index="0"]
-shape = SubResource("BoxShape3D_q4nyk")
-
-[node name="CollisionShape3D" parent="puzzleMila/TargetArea" index="0"]
-shape = SubResource("BoxShape3D_ijhkk")
-
-[node name="Player" parent="." instance=ExtResource("9_5hqhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1631, 0.7, 22.8456)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0191974, 0.999816, 0, -0.999816, -0.0191974, 0, 0, 0)
 
-[editable path="puzzleMila"]
-[editable path="puzzleMila/Meshes/thetherball_I"]
+[node name="MilaHint" parent="." instance=ExtResource("10_lfn61")]
+transform = Transform3D(0.087835, 0.56738, -0.391651, -0.686819, 0.106325, 3.16874e-09, 0.059917, 0.38704, 0.574138, -5.84478, 0.34877, 11.2328)

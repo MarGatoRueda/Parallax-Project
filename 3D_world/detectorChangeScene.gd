@@ -44,6 +44,7 @@ func _physics_process(delta):
 			tween.kill()
 			tween = null
 			# Teleport
+			await get_tree().create_timer(0.3).timeout
 			get_tree().change_scene_to_file("res://Levels/level_2.tscn")
 
 func _on_body_entered(body: Node3D):
