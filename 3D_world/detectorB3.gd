@@ -8,6 +8,9 @@ var rotation_threshold = 0.0005
 @onready var detector = $"."
 @onready var third_giggle = $"../ThirdGiggle"
 @onready var thirdGirl = $"../Third"
+@onready var lalala = $"../Lalala"
+@onready var crash_detector = $"../CrashDetector"
+@onready var truck_crash_2 = $"../TruckCrash2"
 
 var tween;
 
@@ -50,6 +53,9 @@ func _physics_process(delta):
 			thirdGirl.visible = false
 			detector.monitoring = false
 			third_giggle.play()
+			lalala.monitoring = true
+			crash_detector.monitoring = true
+			truck_crash_2.monitoring = true
 
 func _on_body_entered(body: Node3D):
 	if not body is Player:
