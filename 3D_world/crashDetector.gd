@@ -39,6 +39,7 @@ func _physics_process(delta):
 	#tween.kill()
 	camera_3d.current = true
 	player.set_physics_process(false)
+	player.visible = false
 	truck_crash.play("Tragedy")
 	
 

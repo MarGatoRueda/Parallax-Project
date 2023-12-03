@@ -38,7 +38,7 @@ func _physics_process(delta):
 	if raycast.is_colliding() and vf.visible:
 		# Tween for locking player's position and camera view
 		var new_pos = local_rotation.global_position
-		#new_pos[1] = player.position.y
+		new_pos[1] = player.position.y
 		if not tween:
 			tween = create_tween()
 			tween.tween_property(player, "position", new_pos, 0.5).set_ease(Tween.EASE_IN)

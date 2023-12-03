@@ -589,7 +589,39 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 9.31323e-10, -2.98535e-08, 1, -4.32641e-10, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/RoadStraight9/StaticBody3D"]
-transform = Transform3D(1, 5.96244e-08, -5.58794e-09, -5.11669e-11, 1, -2.52812e-09, 1.86265e-09, -5.18455e-10, 1, 0, 1.19209e-07, 0)
+transform = Transform3D(1, 5.96244e-08, -6.51926e-09, -5.1164e-11, 1, -2.52812e-09, 1.86265e-09, -5.18455e-10, 1, 0, 1.19209e-07, 0)
+shape = SubResource("BoxShape3D_duxq6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Roads/RoadStraight9/StaticBody3D"]
+transform = Transform3D(1, 5.96244e-08, -9.31323e-09, -5.1164e-11, 1, -2.52812e-09, 1.86265e-09, -5.18455e-10, 1, -0.995311, 8.94896e-08, -0.0135505)
+shape = SubResource("BoxShape3D_duxq6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Roads/RoadStraight9/StaticBody3D"]
+transform = Transform3D(1, 5.96244e-08, -9.31323e-09, -5.1164e-11, 1, -2.52812e-09, 0, -5.18455e-10, 1, -1.99041, 5.97765e-08, -0.0270982)
+shape = SubResource("BoxShape3D_duxq6")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Roads/RoadStraight9/StaticBody3D"]
+transform = Transform3D(1, 5.96244e-08, -9.31323e-09, -5.1164e-11, 1, -2.52812e-09, -9.31323e-10, -5.18455e-10, 1, -2.98849, 2.99747e-08, -0.0406864)
+shape = SubResource("BoxShape3D_duxq6")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Roads/RoadStraight9/StaticBody3D"]
+transform = Transform3D(1, 5.96244e-08, -9.31323e-09, -5.1164e-11, 1, -2.52812e-09, -9.31323e-10, -5.18455e-10, 1, -3.00196, 3.00006e-08, 0.948992)
+shape = SubResource("BoxShape3D_duxq6")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Roads/RoadStraight9/StaticBody3D"]
+transform = Transform3D(1, 5.96244e-08, -9.31323e-09, -5.1164e-11, 1, -2.52812e-09, -9.31323e-10, -5.18455e-10, 1, -2.26926, 5.18786e-08, 0.958967)
+shape = SubResource("BoxShape3D_duxq6")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Roads/RoadStraight9/StaticBody3D"]
+transform = Transform3D(1, 5.96244e-08, -9.31323e-09, -5.1164e-11, 1, -2.52812e-09, -9.31323e-10, -5.18455e-10, 1, -2.24244, 5.1827e-08, -1.011)
+shape = SubResource("BoxShape3D_duxq6")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Roads/RoadStraight9/StaticBody3D"]
+transform = Transform3D(1, 5.96244e-08, -9.31323e-09, -5.1164e-11, 1, -2.52812e-09, -9.31323e-10, -5.18455e-10, 1, -3.24232, 2.19712e-08, -1.02461)
+shape = SubResource("BoxShape3D_duxq6")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Roads/RoadStraight9/StaticBody3D"]
+transform = Transform3D(1, 5.96244e-08, -9.31323e-09, -5.1164e-11, 1, -2.52812e-09, -9.31323e-10, -5.18455e-10, 1, -1.24703, 8.15494e-08, -0.997448)
 shape = SubResource("BoxShape3D_duxq6")
 
 [node name="RoadStraight10" type="MeshInstance3D" parent="Roads"]
@@ -857,7 +889,7 @@ transform = Transform3D(1, 5.96244e-08, -5.58794e-09, -5.11669e-11, 1, -2.52812e
 shape = SubResource("BoxShape3D_duxq6")
 
 [node name="RoadCurveIntersection" type="MeshInstance3D" parent="Roads"]
-transform = Transform3D(-0.0572392, 0, 1.48189, 0, 1.483, 0, -1.48189, 0, -0.0572392, 2.82286, 1.43051e-07, 14.9177)
+transform = Transform3D(-0.0572391, 0, 1.48189, 0, 1.483, 0, -1.48189, 0, -0.0572391, 2.82286, 1.43051e-07, 14.9177)
 mesh = ExtResource("11_axge4")
 skeleton = NodePath("../..")
 
@@ -865,7 +897,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 9.31323e-10, -2.98535e-08, 1, -4.32641e-10, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Roads/RoadCurveIntersection/StaticBody3D"]
-transform = Transform3D(1, 5.96244e-08, -5.58794e-09, -5.11669e-11, 1, -2.52812e-09, 1.86265e-09, -5.18455e-10, 1, 0, 1.19209e-07, 0)
+transform = Transform3D(1, 5.96244e-08, -5.58794e-09, -5.11698e-11, 1, -2.52812e-09, 1.86265e-09, -5.18455e-10, 1, 0, 1.19209e-07, 0)
 shape = SubResource("BoxShape3D_duxq6")
 
 [node name="RoadCurveIntersection2" type="MeshInstance3D" parent="Roads"]
@@ -902,8 +934,8 @@ skeleton = NodePath("../..")
 [node name="SpotLight3D" type="SpotLight3D" parent="Lightning/LightSquare2"]
 transform = Transform3D(0.0831911, 0.00347592, 0.00340697, -0.00347592, 0.00159688, 0.0832455, 0.00340697, -0.0832455, 0.00173914, 0.017992, 0.57077, -0.190424)
 light_color = Color(1, 0.686275, 0.376471, 1)
-light_energy = 9.579
-light_volumetric_fog_energy = 5.0
+light_energy = 8.539
+light_volumetric_fog_energy = 0.956
 shadow_enabled = true
 spot_range = 9.27113
 spot_attenuation = 0.203063

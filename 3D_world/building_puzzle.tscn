@@ -231,7 +231,7 @@ script = ExtResource("8_ylloj")
 shape = SubResource("BoxShape3D_rir86")
 
 [node name="LocalRotation" parent="Detector" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11263, -0.150011, 0)
 
 [node name="Camera3D" parent="Detector/LocalRotation" index="0"]
 transform = Transform3D(0.586372, -0.380292, -0.715224, 0, 0.882948, -0.469472, 0.810042, 0.275285, 0.517736, -0.2, 0, 0)
