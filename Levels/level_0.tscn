@@ -43,7 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://bek82k78ui6yk" path="res://Resources/Shoot.png" id="41_4eq1i"]
 [ext_resource type="PackedScene" uid="uid://dnkjc1hob8p0j" path="res://3D_world/flower_hint.tscn" id="42_q3bjt"]
 [ext_resource type="Texture2D" uid="uid://bj3781ab60yvh" path="res://Resources/LineUp.png" id="43_1bo5r"]
-[ext_resource type="Texture2D" uid="uid://c8nqdbuvxnjcs" path="res://Resources/Aim.png" id="44_mnkq2"]
+[ext_resource type="Texture2D" uid="uid://bvspw5fs0ja4s" path="res://Resources/AimAt.png" id="44_1dh3t"]
 [ext_resource type="PackedScene" uid="uid://dnfs1ts15vb5l" path="res://3D_world/a_hint.tscn" id="45_awt2p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gtaye"]
@@ -924,7 +924,7 @@ texture = ExtResource("43_1bo5r")
 
 [node name="AimFlower" type="Sprite3D" parent="Hint"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -6.26, 1.985, 5.222)
-texture = ExtResource("44_mnkq2")
+texture = ExtResource("44_1dh3t")
 
 [node name="AHint" parent="Hint" instance=ExtResource("45_awt2p")]
 transform = Transform3D(0.172078, 0.275382, 0.380203, -0.424024, 0.26496, 0, -0.201477, -0.32243, 0.324724, -9.05356, 0.193179, -4.33972)

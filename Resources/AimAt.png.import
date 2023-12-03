@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8nqdbuvxnjcs"
-path.s3tc="res://.godot/imported/Aim.png-4ca7432a95a8e675a8ea609b7fcba0ee.s3tc.ctex"
+uid="uid://bvspw5fs0ja4s"
+path.s3tc="res://.godot/imported/AimAt.png-7a6f03b3508660f5971a6a7c94f70c1f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Resources/Aim.png"
-dest_files=["res://.godot/imported/Aim.png-4ca7432a95a8e675a8ea609b7fcba0ee.s3tc.ctex"]
+source_file="res://Resources/AimAt.png"
+dest_files=["res://.godot/imported/AimAt.png-7a6f03b3508660f5971a6a7c94f70c1f.s3tc.ctex"]
 
 [params]
 

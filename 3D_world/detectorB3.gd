@@ -4,7 +4,10 @@ var player : Player = null
 var raycast : RayCast3D = null
 var rotation_threshold = 0.0005
 @onready var local_rotation : Marker3D = $LocalRotation
-@onready var target : Marker3D = $"../TargetArea/Target"
+@onready var target : Marker3D = $"../TargetArea3/Target"
+@onready var detector = $"."
+@onready var third_giggle = $"../ThirdGiggle"
+@onready var thirdGirl = $"../Third"
 
 var tween;
 
@@ -43,10 +46,10 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("left_click"):
 			tween.kill()
 			tween = null
-			# Teleport
-			var tp_to = target.global_position
-			tp_to[1] = player.position.y
-			player.global_position = tp_to #+ Vector3(1, 0, -1)
+			
+			thirdGirl.visible = false
+			detector.monitoring = false
+			third_giggle.play()
 
 func _on_body_entered(body: Node3D):
 	if not body is Player:

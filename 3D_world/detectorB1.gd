@@ -5,6 +5,10 @@ var raycast : RayCast3D = null
 var rotation_threshold = 0.0005
 @onready var local_rotation : Marker3D = $LocalRotation
 @onready var target : Marker3D = $"../TargetArea/Target"
+@onready var firstGirl = $"../First"
+@onready var detector = $"."
+@onready var first_giggle = $"../FirstGiggle"
+@onready var secondGirl = $"../Second"
 
 var tween;
 
@@ -34,7 +38,7 @@ func _physics_process(delta):
 	if raycast.is_colliding() and vf.visible:
 		# Tween for locking player's position and camera view
 		var new_pos = local_rotation.global_position
-		new_pos[1] = player.position.y
+		#new_pos[1] = player.position.y
 		if not tween:
 			tween = create_tween()
 			tween.tween_property(player, "position", new_pos, 0.5).set_ease(Tween.EASE_IN)
@@ -47,6 +51,10 @@ func _physics_process(delta):
 			var tp_to = target.global_position
 			tp_to[1] = player.position.y
 			player.global_position = tp_to #+ Vector3(1, 0, -1)
+			firstGirl.visible = false
+			detector.monitoring = false
+			first_giggle.play()
+			secondGirl.visible = true
 
 func _on_body_entered(body: Node3D):
 	if not body is Player:

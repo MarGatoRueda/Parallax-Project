@@ -1,9 +1,10 @@
-[gd_scene load_steps=60 format=3 uid="uid://bonsxs3vn5nsq"]
+[gd_scene load_steps=59 format=3 uid="uid://bonsxs3vn5nsq"]
 
 [ext_resource type="PackedScene" uid="uid://b71pytdfnhmfk" path="res://3D_world/player.tscn" id="1_u45h2"]
 [ext_resource type="AudioStream" uid="uid://dp4bmogxwfdcj" path="res://Audio/concrete-step.wav" id="4_qijl8"]
 [ext_resource type="AudioStream" uid="uid://b8gxmpcm4x7c6" path="res://Audio/camera.wav" id="5_tgqmf"]
 [ext_resource type="AudioStream" uid="uid://5tcrbpw0unt6" path="res://Audio/city_rain.mp3" id="5_uoshl"]
+[ext_resource type="PackedScene" uid="uid://br10j87t0xqmh" path="res://3D_world/building_puzzle.tscn" id="5_uqfs7"]
 [ext_resource type="ArrayMesh" uid="uid://das48dgqntjgw" path="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_intersectionPath.obj" id="6_32h7k"]
 [ext_resource type="ArrayMesh" uid="uid://dcdob16atevlp" path="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_curve.obj" id="7_l6g5e"]
 [ext_resource type="ArrayMesh" uid="uid://c6jyf0nd57jpe" path="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_straight.obj" id="8_6q3ba"]
@@ -25,12 +26,10 @@
 [ext_resource type="ArrayMesh" uid="uid://dq8xbo2snvdqw" path="res://Kenney Assets/City Kit - Commercial/Models/OBJ format/detail_umbrellaDetailed.obj" id="22_8og6n"]
 [ext_resource type="ArrayMesh" uid="uid://cbefvu1j8pbv4" path="res://Kenney Assets/City Kit - Commercial/Models/OBJ format/small_buildingD.obj" id="24_fl6d7"]
 [ext_resource type="ArrayMesh" uid="uid://bv4mhx3ayu30s" path="res://Kenney Assets/City Kit - Commercial/Models/OBJ format/skyscraperA.obj" id="25_sdt8h"]
-[ext_resource type="ArrayMesh" uid="uid://carkrjampmqqr" path="res://Kenney Assets/City Kit - Commercial/Models/OBJ format/wall_doorB.obj" id="26_hf01s"]
 [ext_resource type="PackedScene" uid="uid://b8nxpyxanyskw" path="res://Kenney Assets/Fantasy Town Kit/Models/GLTF format/fountainRoundDetail.glb" id="27_04u20"]
 [ext_resource type="ArrayMesh" uid="uid://csiaxw2b4be72" path="res://Kenney Assets/City Kit - Commercial/Models/OBJ format/large_buildingF.obj" id="28_niapj"]
 [ext_resource type="ArrayMesh" uid="uid://dale5y4tiay80" path="res://Kenney Assets/City Kit - Roads/Models/OBJ format/road_bend.obj" id="28_y3ie3"]
 [ext_resource type="ArrayMesh" uid="uid://btp6hngxmskcl" path="res://Kenney Assets/City Kit - Roads/Models/OBJ format/light_square.obj" id="29_ka2ya"]
-[ext_resource type="ArrayMesh" uid="uid://6a4p7b3gch6d" path="res://Kenney Assets/City Kit - Commercial/Models/OBJ format/large_buildingG.obj" id="30_dh625"]
 [ext_resource type="ArrayMesh" uid="uid://dm3asqri5j36p" path="res://Kenney Assets/City Kit - Commercial/Models/OBJ format/small_buildingE.obj" id="31_i865s"]
 [ext_resource type="ArrayMesh" uid="uid://iyfedhqlxssf" path="res://Kenney Assets/City Kit - Commercial/Models/OBJ format/low_buildingD.obj" id="32_fwpjj"]
 [ext_resource type="ArrayMesh" uid="uid://dpkk5rwkosdg2" path="res://Kenney Assets/City Kit - Commercial/Models/OBJ format/small_buildingF.obj" id="33_ac020"]
@@ -133,18 +132,17 @@ trail_lifetime = 0.48
 process_material = SubResource("ParticleProcessMaterial_13g2a")
 draw_pass_1 = SubResource("BoxMesh_vvxug")
 
-[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.99542, 0.91405, 6.62067)
-volume_db = 12.0
-pitch_scale = 0.7
-max_distance = 15.0
-
 [node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.946981, 0.321291, 0, -0.321291, 0.946981, 0, 0, 0, 1, -5004.05, 2.4359, -4992.78)
 volume_db = 10.0
 max_distance = 50.0
 
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0106, 0.36117, -2.18693)
+volume_db = 12.0
+max_distance = 15.0
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0106, 0.36117, -2.18693)
 volume_db = 12.0
 max_distance = 15.0
@@ -156,6 +154,9 @@ attenuation_model = 3
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="baseMecanica" parent="." instance=ExtResource("5_uqfs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8632, 0, -33.488)
 
 [node name="Buildings" type="Node3D" parent="."]
 
@@ -229,16 +230,6 @@ transform = Transform3D(0.151839, 0, 11.999, 0, 12, 0, -11.999, 0, 0.151839, 57.
 mesh = ExtResource("24_fl6d7")
 skeleton = NodePath("../..")
 
-[node name="SkyscraperA" type="MeshInstance3D" parent="Buildings"]
-transform = Transform3D(-0.0737229, 0, 11.9998, 0, 12, 0, -11.9998, 0, -0.0737229, 100.081, -6.67572e-06, -55.6953)
-mesh = ExtResource("25_sdt8h")
-skeleton = NodePath("../..")
-
-[node name="WallDoorB" type="MeshInstance3D" parent="Buildings"]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 100.234, 0.297994, -48.2373)
-mesh = ExtResource("26_hf01s")
-skeleton = NodePath("../..")
-
 [node name="fountainRoundDetail" parent="Buildings" instance=ExtResource("27_04u20")]
 transform = Transform3D(4.13, 0, 0, 0, 4.13, 0, 0, 0, 4.13, 175.559, 0.297194, -42.369)
 
@@ -254,11 +245,6 @@ light_volumetric_fog_energy = 7.0
 spot_range = 14.1749
 spot_attenuation = 0.225312
 spot_angle = 21.7013
-
-[node name="LargeBuildingG" type="MeshInstance3D" parent="Buildings"]
-transform = Transform3D(-0.064507, 0, -11.9998, 0, 12, 0, 11.9998, 0, -0.064507, 68.0969, -7.62939e-06, -31.7394)
-mesh = ExtResource("30_dh625")
-skeleton = NodePath("../..")
 
 [node name="SmallBuildingE" type="MeshInstance3D" parent="Buildings"]
 transform = Transform3D(0.123776, 0, 11.9994, 0, 12, 0, -11.9994, 0, 0.123776, 40.616, -7.62939e-06, 15.1341)
@@ -283,6 +269,136 @@ skeleton = NodePath("../..")
 [node name="SmallBuildingF" type="MeshInstance3D" parent="Buildings"]
 transform = Transform3D(-0.454165, 0, -11.9914, 0, 12, 0, 11.9914, 0, -0.454165, 15.803, -7.62939e-06, 8.54899)
 mesh = ExtResource("33_ac020")
+skeleton = NodePath("../..")
+
+[node name="LargeBuildingF2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 156.387, -6.67572e-06, 7.5009)
+mesh = ExtResource("28_niapj")
+skeleton = NodePath("../..")
+
+[node name="LowBuildingA" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 154.209, -7.62939e-06, 16.7025)
+mesh = ExtResource("40_44epq")
+skeleton = NodePath("../..")
+
+[node name="LowBuildingC" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 140.396, -5.72204e-06, 17.8224)
+mesh = ExtResource("41_jeurv")
+skeleton = NodePath("../..")
+
+[node name="SkyscraperF" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 99.9985, -7.62939e-06, 4.39079)
+mesh = ExtResource("42_vdisg")
+skeleton = NodePath("../..")
+
+[node name="SmallBuildingD2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(0.282508, 0, 11.9967, 0, 12, 0, -11.9967, 0, 0.282508, 100.854, -5.72204e-06, -68.2016)
+mesh = ExtResource("24_fl6d7")
+skeleton = NodePath("../..")
+
+[node name="SmallBuildingF2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(-0.568416, 0, -11.9865, 0, 12, 0, 11.9865, 0, -0.568416, 116.295, 0.0360727, -66.6233)
+mesh = ExtResource("33_ac020")
+skeleton = NodePath("../..")
+
+[node name="SmallBuildingB" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(9.85487, 0, 6.84702, 0, 12, 0, -6.84702, 0, 9.85487, 193.63, 0.092226, -26.4339)
+mesh = ExtResource("44_uaah3")
+skeleton = NodePath("../..")
+
+[node name="SmallBuildingA" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(0.461073, 0, -11.9911, 0, 12, 0, 11.9911, 0, 0.461073, 73.6759, -9.53674e-06, -63.2917)
+mesh = ExtResource("45_3f8p6")
+skeleton = NodePath("../..")
+
+[node name="SkyscraperD" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(-0.0052362, 0, -12, 0, 12, 0, 12, 0, -0.0052362, 12.1427, -6.67572e-06, -3.67724)
+mesh = ExtResource("46_xa8sj")
+skeleton = NodePath("../..")
+
+[node name="LargeBuildingA2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(0.455422, 0, 11.9914, 0, 12, 0, -11.9914, 0, 0.455422, 13.5536, -8.58306e-06, -23.4609)
+mesh = ExtResource("18_1tss6")
+skeleton = NodePath("../..")
+
+[node name="SkyscraperE3" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(-11.9968, 0, -0.279158, 0, 12, 0, 0.279158, 0, -11.9968, 40.7163, -8.58306e-06, -99.5005)
+mesh = ExtResource("15_ecu1y")
+skeleton = NodePath("../..")
+
+[node name="LowBuildingM2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 31.8645, -9.53674e-06, -114.282)
+mesh = ExtResource("35_8gopf")
+skeleton = NodePath("../..")
+
+[node name="LargeBuildingB2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(-10.471, 0, -5.86163, 0, 12, 0, 5.86163, 0, -10.471, 26.87, -7.62939e-06, -93.7652)
+mesh = ExtResource("17_nt75b")
+skeleton = NodePath("../..")
+
+[node name="LargeBuildingE2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(-11.9979, 0, -0.224926, 0, 12, 0, 0.224926, 0, -11.9979, 13.9973, -5.72204e-06, -70.8732)
+mesh = ExtResource("34_cbej7")
+skeleton = NodePath("../..")
+
+[node name="LargeBuildingC2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(-0.204404, 0, -11.9983, 0, 12, 0, 11.9983, 0, -0.204404, 15.2419, -7.62939e-06, -43.3831)
+mesh = ExtResource("19_lugie")
+skeleton = NodePath("../..")
+
+[node name="LowBuildingK" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(17.49, 0, -9.70047, 0, 20, 0, 9.70047, 0, 17.49, 18.5278, -1.14441e-05, -85.0057)
+mesh = ExtResource("47_8e7bq")
+skeleton = NodePath("../..")
+
+[node name="BridgePillarWide" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 88.1735, -7.62939e-06, -15.86)
+mesh = ExtResource("48_5agkn")
+skeleton = NodePath("../..")
+
+[node name="BridgePillarWide2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 88.1735, -7.62939e-06, -7.59554)
+mesh = ExtResource("48_5agkn")
+skeleton = NodePath("../..")
+
+[node name="LargeBuildingE3" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 53.7775, -7.62939e-06, 5.76457)
+mesh = ExtResource("34_cbej7")
+skeleton = NodePath("../..")
+
+[node name="SkyscraperA2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 77.146, -7.62939e-06, 4.01515)
+mesh = ExtResource("25_sdt8h")
+skeleton = NodePath("../..")
+
+[node name="LowBuildingL" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(-19.9648, 0, -1.18613, 0, 20, 0, 1.18613, 0, -19.9648, 89.1109, -7.62939e-06, 8.86367)
+mesh = ExtResource("49_p6aat")
+skeleton = NodePath("../..")
+
+[node name="LowBuildingL2" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(-19.9982, 0, 0.271916, 0, 20, 0, -0.271916, 0, -19.9982, 65.6035, -7.62939e-06, 8.86367)
+mesh = ExtResource("49_p6aat")
+skeleton = NodePath("../..")
+
+[node name="LowBuildingG" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 14.935, 119.921, -7.62939e-06, -28.2838)
+mesh = ExtResource("50_c4msl")
+skeleton = NodePath("../..")
+
+[node name="LowBuildingJ" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 136.66, -1.77879, -29.4489)
+mesh = ExtResource("51_568bp")
+skeleton = NodePath("../..")
+
+[node name="LargeBuildingE" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(-11.9999, 0, 0.0490081, 0, 12, 0, -0.0490081, 0, -11.9999, 56.3741, -7.62939e-06, -99.993)
+mesh = ExtResource("34_cbej7")
+skeleton = NodePath("../..")
+
+[node name="LowBuildingM" type="MeshInstance3D" parent="Buildings"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 51.9498, -7.62939e-06, -61.6836)
+mesh = ExtResource("35_8gopf")
 skeleton = NodePath("../..")
 
 [node name="Roads" type="Node3D" parent="."]
@@ -675,7 +791,7 @@ shape = SubResource("BoxShape3D_duxq6")
 [node name="Lightning" type="Node3D" parent="."]
 
 [node name="LightSquare2" type="MeshInstance3D" parent="Lightning"]
-transform = Transform3D(-11.9896, 0, -0.500624, 0, 12, 0, 0.500624, 0, -11.9896, 103.153, 0.297994, -46.9039)
+transform = Transform3D(-11.9896, 0, -0.500624, 0, 12, 0, 0.500624, 0, -11.9896, 105.166, 0.054957, -46.9039)
 mesh = ExtResource("29_ka2ya")
 skeleton = NodePath("../..")
 
@@ -690,7 +806,7 @@ spot_attenuation = 0.203063
 spot_angle = 38.2802
 
 [node name="LightSquare3" type="MeshInstance3D" parent="Lightning"]
-transform = Transform3D(-11.9896, 0, -0.500624, 0, 12, 0, 0.500624, 0, -11.9896, 113.482, 0.297994, -46.9039)
+transform = Transform3D(-11.9896, 0, -0.500624, 0, 12, 0, 0.500624, 0, -11.9896, 116.952, 0.105502, -46.9039)
 mesh = ExtResource("29_ka2ya")
 skeleton = NodePath("../..")
 
@@ -705,7 +821,7 @@ spot_attenuation = 0.277393
 spot_angle = 38.2802
 
 [node name="LightSquare" type="MeshInstance3D" parent="Lightning"]
-transform = Transform3D(-11.9896, 0, -0.500624, 0, 12, 0, 0.500624, 0, -11.9896, 94.9621, 0.297994, -46.9039)
+transform = Transform3D(-11.9896, 0, -0.500624, 0, 12, 0, 0.500624, 0, -11.9896, 94.9673, 0.130802, -46.9039)
 mesh = ExtResource("29_ka2ya")
 skeleton = NodePath("../..")
 
@@ -839,130 +955,19 @@ spot_range = 9.27113
 spot_attenuation = 0.307786
 spot_angle = 38.2802
 
-[node name="LargeBuildingC2" type="MeshInstance3D" parent="Lightning"]
-transform = Transform3D(-11.9916, 0, 0.447678, 0, 12, 0, -0.447678, 0, -11.9916, 112.459, -7.62939e-06, -53.1768)
-mesh = ExtResource("19_lugie")
-skeleton = NodePath("../..")
+[node name="Details" type="Node3D" parent="."]
 
-[node name="LargeBuildingE" type="MeshInstance3D" parent="."]
-transform = Transform3D(-11.9999, 0, 0.0490081, 0, 12, 0, -0.0490081, 0, -11.9999, 56.3741, -7.62939e-06, -99.993)
-mesh = ExtResource("34_cbej7")
-
-[node name="LowBuildingM" type="MeshInstance3D" parent="."]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 51.9498, -7.62939e-06, -61.6836)
-mesh = ExtResource("35_8gopf")
-
-[node name="ground_grass" parent="." instance=ExtResource("36_lo6ha")]
+[node name="ground_grass" parent="Details" instance=ExtResource("36_lo6ha")]
 transform = Transform3D(14.87, 0, 0, 0, 14.87, 0, 0, 0, 14.87, 162.739, 0.813702, -27.715)
 
-[node name="ground_grass2" parent="." instance=ExtResource("36_lo6ha")]
+[node name="ground_grass2" parent="Details" instance=ExtResource("36_lo6ha")]
 transform = Transform3D(30.5792, 0, 0, 0, 14.87, 0, 0, 0, 41.4055, 153.297, 0.813702, -16.8994)
 
-[node name="statue_obelisk" parent="." instance=ExtResource("37_e5kv4")]
+[node name="statue_obelisk" parent="Details" instance=ExtResource("37_e5kv4")]
 transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 153.996, 1.0133, -18.2521)
 
-[node name="tree_blocks" parent="." instance=ExtResource("38_6nt6l")]
+[node name="tree_blocks" parent="Details" instance=ExtResource("38_6nt6l")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 163.602, -7.62939e-06, -13.0259)
 
-[node name="tree_default" parent="." instance=ExtResource("39_eryp6")]
+[node name="tree_default" parent="Details" instance=ExtResource("39_eryp6")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 142.94, -7.15255e-06, -6.28314)
-
-[node name="LargeBuildingF" type="MeshInstance3D" parent="."]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 156.387, -6.67572e-06, 7.5009)
-mesh = ExtResource("28_niapj")
-
-[node name="LowBuildingA" type="MeshInstance3D" parent="."]
-transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 154.209, -7.62939e-06, 16.7025)
-mesh = ExtResource("40_44epq")
-
-[node name="LowBuildingC" type="MeshInstance3D" parent="."]
-transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 140.396, -5.72204e-06, 17.8224)
-mesh = ExtResource("41_jeurv")
-
-[node name="SkyscraperF" type="MeshInstance3D" parent="."]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 99.9985, -7.62939e-06, 4.39079)
-mesh = ExtResource("42_vdisg")
-
-[node name="SmallBuildingD" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.282508, 0, 11.9967, 0, 12, 0, -11.9967, 0, 0.282508, 100.854, -5.72204e-06, -68.2016)
-mesh = ExtResource("24_fl6d7")
-
-[node name="SmallBuildingF" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.568416, 0, -11.9865, 0, 12, 0, 11.9865, 0, -0.568416, 116.295, 0.0360727, -66.6233)
-mesh = ExtResource("33_ac020")
-
-[node name="SmallBuildingB" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.85487, 0, 6.84702, 0, 12, 0, -6.84702, 0, 9.85487, 193.63, 0.092226, -26.4339)
-mesh = ExtResource("44_uaah3")
-
-[node name="SmallBuildingA" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.461073, 0, -11.9911, 0, 12, 0, 11.9911, 0, 0.461073, 73.6759, -9.53674e-06, -63.2917)
-mesh = ExtResource("45_3f8p6")
-
-[node name="SkyscraperD" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0052362, 0, -12, 0, 12, 0, 12, 0, -0.0052362, 12.1427, -6.67572e-06, -3.67724)
-mesh = ExtResource("46_xa8sj")
-
-[node name="LargeBuildingA" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.455422, 0, 11.9914, 0, 12, 0, -11.9914, 0, 0.455422, 13.5536, -8.58306e-06, -23.4609)
-mesh = ExtResource("18_1tss6")
-
-[node name="SkyscraperE" type="MeshInstance3D" parent="."]
-transform = Transform3D(-11.9968, 0, -0.279158, 0, 12, 0, 0.279158, 0, -11.9968, 40.7163, -8.58306e-06, -99.5005)
-mesh = ExtResource("15_ecu1y")
-
-[node name="LowBuildingM2" type="MeshInstance3D" parent="."]
-transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 31.8645, -9.53674e-06, -114.282)
-mesh = ExtResource("35_8gopf")
-
-[node name="LargeBuildingB" type="MeshInstance3D" parent="."]
-transform = Transform3D(-10.471, 0, -5.86163, 0, 12, 0, 5.86163, 0, -10.471, 26.87, -7.62939e-06, -93.7652)
-mesh = ExtResource("17_nt75b")
-
-[node name="LargeBuildingE2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-11.9979, 0, -0.224926, 0, 12, 0, 0.224926, 0, -11.9979, 13.9973, -5.72204e-06, -70.8732)
-mesh = ExtResource("34_cbej7")
-
-[node name="LargeBuildingC" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.204404, 0, -11.9983, 0, 12, 0, 11.9983, 0, -0.204404, 15.2419, -7.62939e-06, -43.3831)
-mesh = ExtResource("19_lugie")
-
-[node name="LowBuildingK" type="MeshInstance3D" parent="."]
-transform = Transform3D(17.49, 0, -9.70047, 0, 20, 0, 9.70047, 0, 17.49, 18.5278, -1.14441e-05, -85.0057)
-mesh = ExtResource("47_8e7bq")
-
-[node name="BridgePillarWide" type="MeshInstance3D" parent="."]
-transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 88.1735, -7.62939e-06, -15.86)
-mesh = ExtResource("48_5agkn")
-
-[node name="BridgePillarWide2" type="MeshInstance3D" parent="."]
-transform = Transform3D(16, 0, 0, 0, 16, 0, 0, 0, 16, 88.1735, -7.62939e-06, -7.59554)
-mesh = ExtResource("48_5agkn")
-
-[node name="LargeBuildingE3" type="MeshInstance3D" parent="."]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 53.7775, -7.62939e-06, 5.76457)
-mesh = ExtResource("34_cbej7")
-
-[node name="SkyscraperA" type="MeshInstance3D" parent="."]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 77.146, -7.62939e-06, 4.01515)
-mesh = ExtResource("25_sdt8h")
-
-[node name="LowBuildingL" type="MeshInstance3D" parent="."]
-transform = Transform3D(-19.9648, 0, -1.18613, 0, 20, 0, 1.18613, 0, -19.9648, 89.1109, -7.62939e-06, 8.86367)
-mesh = ExtResource("49_p6aat")
-
-[node name="LowBuildingL2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-19.9982, 0, 0.271916, 0, 20, 0, -0.271916, 0, -19.9982, 65.6035, -7.62939e-06, 8.86367)
-mesh = ExtResource("49_p6aat")
-
-[node name="LowBuildingG" type="MeshInstance3D" parent="."]
-transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 14.935, 119.921, -7.62939e-06, -28.2838)
-mesh = ExtResource("50_c4msl")
-
-[node name="LowBuildingJ" type="MeshInstance3D" parent="."]
-transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 136.66, -1.77879, -29.4489)
-mesh = ExtResource("51_568bp")
-
-[node name="LowBuildingK2" type="MeshInstance3D" parent="."]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 120.052, -7.62939e-06, -53.486)
-mesh = ExtResource("47_8e7bq")
