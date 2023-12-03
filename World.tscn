@@ -44,7 +44,7 @@ subdivide_depth = 1000
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_8fje7"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ptjyb"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pbhek"]
 seamless = true
 as_normal_map = true
 noise = SubResource("FastNoiseLite_8fje7")
@@ -53,20 +53,20 @@ noise = SubResource("FastNoiseLite_8fje7")
 noise_type = 0
 seed = 1
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r4a3k"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nau0j"]
 seamless = true
 as_normal_map = true
 noise = SubResource("FastNoiseLite_6i3b2")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_5edmb"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qdptp"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2lg40"]
 seamless = true
 noise = SubResource("FastNoiseLite_5edmb")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_vq7qh"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2unhc"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sdmuw"]
 seamless = true
 bump_strength = 28.3
 noise = SubResource("FastNoiseLite_vq7qh")
@@ -98,10 +98,10 @@ shader_parameter/border_far = 300.0
 shader_parameter/refraction_intensity = 0.4
 shader_parameter/max_visible_depth = 10.0
 shader_parameter/color_deep = Color(0, 0.1, 0.4, 1)
-shader_parameter/wave_a = SubResource("NoiseTexture2D_qdptp")
-shader_parameter/wave_b = SubResource("NoiseTexture2D_2unhc")
-shader_parameter/surface_normals_a = SubResource("NoiseTexture2D_ptjyb")
-shader_parameter/surface_normals_b = SubResource("NoiseTexture2D_r4a3k")
+shader_parameter/wave_a = SubResource("NoiseTexture2D_2lg40")
+shader_parameter/wave_b = SubResource("NoiseTexture2D_sdmuw")
+shader_parameter/surface_normals_a = SubResource("NoiseTexture2D_pbhek")
+shader_parameter/surface_normals_b = SubResource("NoiseTexture2D_nau0j")
 
 [sub_resource type="BoxMesh" id="BoxMesh_x3ff0"]
 size = Vector3(18, 0.1, 40)
@@ -173,7 +173,7 @@ transform = Transform3D(-0.745476, 0.21039, -0.632457, 0, 0.948876, 0.315649, 0.
 script = ExtResource("1_oowxb")
 
 [node name="WaterSurface" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0266228, 0.112858, -0.0368958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0266228, -0.255832, -0.0368958)
 mesh = SubResource("PlaneMesh_hnmyy")
 surface_material_override/0 = SubResource("ShaderMaterial_jsv1i")
 

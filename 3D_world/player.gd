@@ -22,12 +22,10 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	# Assign the reference to the debug Label node.
 	debug_label = $Label
-	$"../AudioStreamPlayer3D".play()
-	$"../AudioStreamPlayer3D2".play()
 	$"../AudioStreamPlayer3D3".play()
 	$"../AudioStreamPlayer3D4".play()
-
-
+	$"../AudioStreamPlayer3D3".play()
+	$"../AudioStreamPlayer3D".play()
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:	

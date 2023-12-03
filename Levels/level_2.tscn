@@ -57,12 +57,12 @@ sky_top_color = Color(0.564706, 0.631373, 0.72549, 1)
 sky_horizon_color = Color(0.34902, 0.356863, 0.368627, 1)
 sun_angle_max = 0.0
 
-[sub_resource type="Sky" id="Sky_d8gn4"]
+[sub_resource type="Sky" id="Sky_1dbcb"]
 sky_material = SubResource("ProceduralSkyMaterial_q0qn5")
 
 [sub_resource type="Environment" id="Environment_468rq"]
 background_mode = 2
-sky = SubResource("Sky_d8gn4")
+sky = SubResource("Sky_1dbcb")
 sky_rotation = Vector3(0, -0.689405, 0)
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
@@ -75,15 +75,15 @@ spread = 10.0
 initial_velocity_min = 3.0
 initial_velocity_max = 3.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldej8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmi4n"]
 albedo_color = Color(0.129412, 0.603922, 0.611765, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vvxug"]
-material = SubResource("StandardMaterial3D_ldej8")
+material = SubResource("StandardMaterial3D_hmi4n")
 size = Vector3(0.1, 0.5, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_duxq6"]
-size = Vector3(1, 0.04, 1)
+size = Vector3(1.46, 0.04, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jlegi"]
 albedo_texture = ExtResource("14_vaq3a")
