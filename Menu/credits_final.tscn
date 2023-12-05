@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://2hnylkx7cpnp"]
+
+[ext_resource type="Script" path="res://Menu/credits_final.gd" id="1_g7dj1"]
+[ext_resource type="Script" path="res://Menu/scrollabletext.gd" id="2_0ltdp"]
+
+[sub_resource type="SystemFont" id="SystemFont_mlpol"]
+font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+
+[sub_resource type="Theme" id="Theme_splj7"]
+default_font = SubResource("SystemFont_mlpol")
+default_font_size = 29
+
+[sub_resource type="SystemFont" id="SystemFont_jy1vh"]
+font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+
+[sub_resource type="Theme" id="Theme_b3b88"]
+default_font = SubResource("SystemFont_jy1vh")
+default_font_size = 48
+
+[sub_resource type="SystemFont" id="SystemFont_rm0yl"]
+font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gth6o"]
+font = SubResource("SystemFont_rm0yl")
+font_size = 42
+
+[node name="Credits_final" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g7dj1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="scrollabletext" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_splj7")
+text = "             Developers		Marcelo Gatica
+                            Millaray González
+                            Rodrigo Mendoza
+                            Dylan Riquelme		
+
+
+             Lead Programmer	Dylan Riquelme
+
+
+             3D world designer	Marcelo Gatica
+
+
+             Concept artist		Millaray González
+
+
+			 Menu & UI designer	 Rodrigo Mendoza
+
+
+
+			 Visual assets			    Kenney
+										serloke
+
+
+   		     SFX			  Laura Sluyter		
+							  Freesound
+
+
+	         Font 			  Phildjii
+
+
+"
+script = ExtResource("2_0ltdp")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 234.0
+offset_bottom = 110.0
+theme = SubResource("Theme_b3b88")
+text = "Exit"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 5.0
+offset_right = 703.0
+offset_bottom = 75.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_gth6o")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgijjtua0ww6u"]
+
+[ext_resource type="Script" path="res://Menu/counter_2.gd" id="1_5r3or"]
+[ext_resource type="Texture2D" uid="uid://dlwyeqbd3fn2q" path="res://Resources/aaa.png" id="2_yevee"]
+
+[sub_resource type="SystemFont" id="SystemFont_0amt4"]
+font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+
+[sub_resource type="LabelSettings" id="LabelSettings_56tv0"]
+font = SubResource("SystemFont_0amt4")
+font_size = 22
+
+[node name="Counter2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_5r3or")
+
+[node name="count" type="Label" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 15.0
+offset_right = 104.0
+offset_bottom = 48.0
+scale = Vector2(1.08134, 0.682274)
+text = "X "
+label_settings = SubResource("LabelSettings_56tv0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 695.0
+offset_bottom = 1239.0
+scale = Vector2(0.0850089, 0.0751005)
+texture = ExtResource("2_yevee")
