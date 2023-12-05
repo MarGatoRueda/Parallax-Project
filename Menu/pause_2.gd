@@ -1,13 +1,13 @@
 extends Control
 
 @onready var pause_2 = $"."
-@onready var resume = $Resume
-@onready var retry = $Retry
-@onready var menu = $Menu
-@onready var exit = $Exit
+@onready var resume = %Resume
+@onready var retry = %Retry
+@onready var menu = %Menu
+@onready var exit = %Exit
 
 @export var main_menu: PackedScene
-
+@export var main2 : PackedScene
 func _ready() -> void:
 	resume.pressed.connect(_on_resume_pressed)
 	retry.pressed.connect(_on_retry_pressed)
@@ -23,7 +23,7 @@ func _input(event: InputEvent) -> void:
 			get_tree().paused = false
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:
-			visible = !visible
+			visible = true
 			get_tree().paused = visible
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
@@ -41,9 +41,9 @@ func _on_retry_pressed():
 	
 	
 func _on_menu_pressed():
-	if not main_menu:
+	if not main2:
 		return
-	get_tree().change_scene_to_packed(main_menu)
+	get_tree().change_scene_to_packed(main2)
 	get_tree().paused = false
 	
 	
