@@ -24,12 +24,10 @@ func _ready():
 	# Assign the reference to the debug Label node.
 	debug_label = $Label
 	camera.current = true	
-	$"../AudioStreamPlayer3D".play()
 	$"../AudioStreamPlayer3D2".play()
-	$"../AudioStreamPlayer3D3".play()
 	$"../AudioStreamPlayer3D4".play()
-
-
+	$"../AudioStreamPlayer3D3".play()
+	$"../AudioStreamPlayer3D".play()
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:	

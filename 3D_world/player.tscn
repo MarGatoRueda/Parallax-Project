@@ -67,7 +67,7 @@ shape = SubResource("CapsuleShape3D_1d21m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
-far = 100.0
+far = 400.0
 
 [node name="Viewfinder" type="Sprite3D" parent="Head/Camera3D"]
 transform = Transform3D(0.004, 3.49691e-10, -6.38931e-10, -3.49691e-10, 0.004, 0, -2.55572e-09, -2.23428e-16, -0.001, 0, 0, -0.085)
@@ -94,6 +94,7 @@ offset_left = 4.0
 offset_top = 42.0
 offset_right = 297.0
 offset_bottom = 129.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Spotted thing" type="Label" parent="."]
 visible = false
