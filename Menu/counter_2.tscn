@@ -5,6 +5,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_0amt4"]
 font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_56tv0"]
 font = SubResource("SystemFont_0amt4")
