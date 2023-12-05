@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_jrm2f"]
 [ext_resource type="Texture2D" uid="uid://csljwcaew5kve" path="res://Resources/viewfinder.png" id="3_gtpyx"]
 [ext_resource type="PackedScene" uid="uid://cc017rqtkcq50" path="res://Resources/activities_Camera.glb" id="4_iiwkr"]
-[ext_resource type="PackedScene" uid="uid://cringcldiyxf8" path="res://Menu/pause.tscn" id="5_d5iig"]
-[ext_resource type="PackedScene" uid="uid://b0mr2dvuiwqtr" path="res://Menu/counter.tscn" id="6_nljdm"]
+[ext_resource type="PackedScene" uid="uid://cdjauypl5h8hu" path="res://Menu/pause_2.tscn" id="5_fu36p"]
+[ext_resource type="PackedScene" uid="uid://dgijjtua0ww6u" path="res://Menu/counter_2.tscn" id="6_60efw"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_83kt0"]
 
@@ -117,11 +117,9 @@ expand_mode = 1
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="Pause" parent="CanvasLayer2" instance=ExtResource("5_d5iig")]
+[node name="Pause2" parent="CanvasLayer2" instance=ExtResource("5_fu36p")]
 
-[node name="Counter" parent="CanvasLayer2" instance=ExtResource("6_nljdm")]
-offset_right = 123.0
-offset_bottom = 26.0
+[node name="Counter2" parent="CanvasLayer2" instance=ExtResource("6_60efw")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

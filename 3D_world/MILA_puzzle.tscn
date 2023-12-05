@@ -1,0 +1,67 @@
+[gd_scene load_steps=13 format=3 uid="uid://b5rqhpdobfvkp"]
+
+[ext_resource type="PackedScene" uid="uid://b6d30lbpxr0no" path="res://3D_world/base_mecanica.tscn" id="1_gcr8o"]
+[ext_resource type="PackedScene" uid="uid://d4m115d6otfef" path="res://Resources/M I L A/columpioA.glb" id="2_7thgl"]
+[ext_resource type="PackedScene" uid="uid://ibjtju5qsorj" path="res://Resources/M I L A/monkeybarsM1.glb" id="3_uggkx"]
+[ext_resource type="PackedScene" uid="uid://d0tjlmbc0gqqp" path="res://Resources/M I L A/monkeybarsM2.glb" id="4_s8eul"]
+[ext_resource type="PackedScene" uid="uid://jymx0fk561k4" path="res://Resources/M I L A/thetherball_I.glb" id="5_6wbt4"]
+[ext_resource type="PackedScene" uid="uid://cxntvima3233r" path="res://Resources/M I L A/toboganL.glb" id="6_igbpu"]
+[ext_resource type="PackedScene" uid="uid://vybk4281pvd3" path="res://Kenney Assets/Nature Kit/Models/GLTF format/tree_pineGroundB.glb" id="7_8s3rg"]
+[ext_resource type="PackedScene" uid="uid://dnp6qs5f8kr63" path="res://Kenney Assets/Nature Kit/Models/GLTF format/tree_fat.glb" id="8_mp27w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hn8uk"]
+albedo_color = Color(1, 0.643137, 0.180392, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rwg6"]
+albedo_color = Color(0.95, 0.856583, 0.3895, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qctbh"]
+resource_local_to_scene = true
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6ily"]
+resource_local_to_scene = true
+size = Vector3(1.58515, 1, 1)
+
+[node name="baseMecanica" instance=ExtResource("1_gcr8o")]
+
+[node name="columpioA" parent="Meshes" index="0" instance=ExtResource("2_7thgl")]
+transform = Transform3D(0.075, 0, -0.129904, 0, 0.15, 0, 0.129904, 0, 0.075, 8, 0.304, -7)
+
+[node name="monkeybarsM1" parent="Meshes" index="1" instance=ExtResource("3_uggkx")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -4, 0.769, -4)
+
+[node name="Cylinder_002" parent="Meshes/monkeybarsM1" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hn8uk")
+
+[node name="monkeybarsM2" parent="Meshes" index="2" instance=ExtResource("4_s8eul")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -5.5, 1.7, -10)
+
+[node name="Cylinder_016" parent="Meshes/monkeybarsM2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hn8uk")
+
+[node name="thetherball_I" parent="Meshes" index="3" instance=ExtResource("5_6wbt4")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -1.3, 1.233, -4)
+
+[node name="Cylinder" parent="Meshes/thetherball_I" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8rwg6")
+
+[node name="toboganL" parent="Meshes" index="4" instance=ExtResource("6_igbpu")]
+transform = Transform3D(0.482963, 0, -0.12941, 0, 0.5, 0, 0.12941, 0, 0.482963, 2.025, 0.957, -15)
+
+[node name="tree_pineGroundB" parent="Meshes" index="5" instance=ExtResource("7_8s3rg")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -1.3, -0.509, -11.041)
+
+[node name="tree_fat" parent="Meshes" index="6" instance=ExtResource("8_mp27w")]
+transform = Transform3D(3, 0, 0, 0, 4, 0, 0, 0, 3, -2, -0.8, -6)
+
+[node name="CollisionShape3D" parent="Detector" index="0"]
+shape = SubResource("BoxShape3D_qctbh")
+
+[node name="CollisionShape3D" parent="TargetArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.521696, -3.078)
+shape = SubResource("BoxShape3D_m6ily")
+
+[editable path="Meshes/monkeybarsM1"]
+[editable path="Meshes/monkeybarsM2"]
+[editable path="Meshes/thetherball_I"]

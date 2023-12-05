@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dq48vtnauid8g"
+path="res://.godot/imported/polaroid3.obj-0f36ef07d931e81eeeb836dbaa891a7e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/polaroid3.obj-0f36ef07d931e81eeeb836dbaa891a7e.mesh"]
+
+source_file="res://Resources/polaroid3.obj"
+dest_files=["res://.godot/imported/polaroid3.obj-0f36ef07d931e81eeeb836dbaa891a7e.mesh", "res://.godot/imported/polaroid3.obj-0f36ef07d931e81eeeb836dbaa891a7e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

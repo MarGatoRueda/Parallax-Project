@@ -17,12 +17,14 @@ var viewfinder_on = false
 @onready var debug_label = $Label
 @onready var ray_detector : RayCast3D = $Head/Camera3D/RayDetector
 @onready var viewfinder = $CanvasLayer/Viewfinder
+@onready var counter_2 = $CanvasLayer2/Counter2
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	# Assign the reference to the debug Label node.
 	debug_label = $Label
-	$"../AudioStreamPlayer3D3".play()
+	camera.current = true	
+	$"../AudioStreamPlayer3D2".play()
 	$"../AudioStreamPlayer3D4".play()
 	$"../AudioStreamPlayer3D3".play()
 	$"../AudioStreamPlayer3D".play()
@@ -92,8 +94,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("left_click") and viewfinder_on:
 		$CanvasLayer/AnimationPlayer.play("flash")
 		$AudioStreamPlayer2D.play()
-		count_counter.count -= 1
-		count_counter.count_update()
+		counter_2.count -= 1
+		counter_2.count_update()
 			
 	if not Input.is_action_pressed("right_click") and viewfinder_on:
 		viewfinder_on = false

@@ -1,0 +1,137 @@
+[gd_scene load_steps=14 format=3 uid="uid://cdjauypl5h8hu"]
+
+[ext_resource type="Script" path="res://Menu/pause_2.gd" id="1_4em3m"]
+[ext_resource type="Texture2D" uid="uid://daf47g1uxj0el" path="res://Resources/aaaaaaaaaaaaaaaaaaa.png" id="1_8iiot"]
+[ext_resource type="PackedScene" uid="uid://bmajx0ba36he" path="res://Menu/main2.tscn" id="2_j8auk"]
+
+[sub_resource type="SystemFont" id="SystemFont_s5lwg"]
+font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_g3jeo"]
+font = SubResource("SystemFont_s5lwg")
+font_size = 59
+
+[sub_resource type="SystemFont" id="SystemFont_tlnuv"]
+font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_bgr2e"]
+default_font = SubResource("SystemFont_tlnuv")
+default_font_size = 41
+
+[sub_resource type="SystemFont" id="SystemFont_lbsdw"]
+font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_mynwc"]
+default_font = SubResource("SystemFont_lbsdw")
+default_font_size = 35
+
+[sub_resource type="SystemFont" id="SystemFont_otc11"]
+font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_aqa4d"]
+default_font = SubResource("SystemFont_otc11")
+default_font_size = 35
+
+[sub_resource type="SystemFont" id="SystemFont_cn4ng"]
+font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_dhqfy"]
+default_font = SubResource("SystemFont_cn4ng")
+default_font_size = 35
+
+[node name="Pause2" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4em3m")
+main2 = ExtResource("2_j8auk")
+metadata/_edit_horizontal_guides_ = [-274.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8iiot")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.190972
+anchor_top = 0.345679
+anchor_right = 0.390625
+anchor_bottom = 0.472222
+text = "Pause"
+label_settings = SubResource("LabelSettings_g3jeo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Resume" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.0564236
+anchor_top = 0.481481
+anchor_right = 0.546875
+anchor_bottom = 0.578703
+theme = SubResource("Theme_bgr2e")
+action_mode = 0
+text = "Resume"
+flat = true
+alignment = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Retry" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.0564236
+anchor_top = 0.584876
+anchor_right = 0.546875
+anchor_bottom = 0.669753
+offset_top = 3.05176e-05
+offset_bottom = -3.05176e-05
+theme = SubResource("Theme_mynwc")
+action_mode = 0
+text = "Retry"
+flat = true
+alignment = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.0564236
+anchor_top = 0.675925
+anchor_right = 0.546875
+anchor_bottom = 0.760802
+offset_top = -3.05176e-05
+theme = SubResource("Theme_aqa4d")
+action_mode = 0
+text = "Menu"
+flat = true
+alignment = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.0564236
+anchor_top = 0.766975
+anchor_right = 0.546875
+anchor_bottom = 0.851851
+theme = SubResource("Theme_dhqfy")
+action_mode = 0
+text = "Exit"
+flat = true
+alignment = 0
+metadata/_edit_use_anchors_ = true
