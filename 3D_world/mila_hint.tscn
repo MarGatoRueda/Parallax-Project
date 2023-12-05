@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcklfptreh154"]
+
+[ext_resource type="Texture2D" uid="uid://cx57o4yp4uyf1" path="res://Resources/old_paper.jpg" id="1_fngon"]
+[ext_resource type="Texture2D" uid="uid://dedaygdqc45vd" path="res://Resources/Mila_hint.png" id="2_hvk7e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fgkuq"]
+lightmap_size_hint = Vector2i(17, 14)
+size = Vector3(1, 0.025, 1.98)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ol0ef"]
+albedo_texture = ExtResource("1_fngon")
+metallic_specular = 0.2
+
+[node name="MilaHint" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_fgkuq")
+surface_material_override/0 = SubResource("StandardMaterial3D_ol0ef")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-3.93403e-09, -0.09, -3.93403e-09, 0, -3.93403e-09, 0.09, -0.09, 3.93403e-09, 1.71962e-16, 0, 0.0199951, 0)
+texture = ExtResource("2_hvk7e")

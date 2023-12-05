@@ -21,12 +21,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.386988)
 shape = SubResource("BoxShape3D_0gkdc")
 
 [node name="LocalRotation" parent="Detector" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.139173, 0.990268, 0, -0.990268, 0.139173, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.3)
+
+[node name="Camera3D" parent="Detector/LocalRotation" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.139173, 0.990268, 0, -0.990268, 0.139173, 0, 0, -0.3)
 
 [node name="TargetArea" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5000, 0, 5000)
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape3D" parent="TargetArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.241922, -0.970296, 0, 0.970296, 0.241922, -5000, -0.654174, -5000.26)

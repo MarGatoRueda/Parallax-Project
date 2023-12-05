@@ -25,7 +25,7 @@ transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1hvtk")
 
 [node name="fountainRoundDetail2" parent="." instance=ExtResource("1_qcd76")]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0.47, 0)
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0.486602, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="fountainRoundDetail2"]
 
@@ -33,7 +33,7 @@ transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0.47, 0)
 shape = SubResource("ConvexPolygonShape3D_md2lp")
 
 [node name="fountainRoundDetail3" parent="." instance=ExtResource("1_qcd76")]
-transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0.963, 0)
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0.979602, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="fountainRoundDetail3"]
 
@@ -41,12 +41,11 @@ transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0.963, 0)
 shape = SubResource("ConvexPolygonShape3D_81vnb")
 
 [node name="fountainRoundDetail4" parent="." instance=ExtResource("1_qcd76")]
-transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, 0, 1.43285, 0)
+transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, 0, 1.44945, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="fountainRoundDetail4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fountainRoundDetail4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hh420")
 
 [editable path="fountainRoundDetail"]

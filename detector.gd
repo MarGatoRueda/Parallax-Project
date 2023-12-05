@@ -28,7 +28,7 @@ func _physics_process(delta):
 	if not is_instance_valid(player):
 		return
 	var distance = local_rotation.global_position.distance_to(target.global_position)
-	raycast.target_position = Vector3(0, distance*1.2, 0)
+	raycast.target_position = Vector3(0, distance*1.5, 0)
 	var vf = player.viewfinder
 	
 	if raycast.is_colliding() and vf.visible:
@@ -42,6 +42,7 @@ func _physics_process(delta):
 			
 		if Input.is_action_just_pressed("left_click"):
 			tween.kill()
+			tween = null
 			# Teleport
 			var tp_to = target.global_position
 			tp_to[1] = player.position.y

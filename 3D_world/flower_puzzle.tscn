@@ -76,8 +76,6 @@ shape = SubResource("BoxShape3D_he8a2")
 
 [node name="TargetArea" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.679095, -18.3281)
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape3D" parent="TargetArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.761869, 0)
