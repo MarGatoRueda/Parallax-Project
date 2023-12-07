@@ -4,7 +4,6 @@ var player : Player = null
 @onready var local_rotation : Marker3D = $LocalRotation
 @onready var camera_3d = $LocalRotation/Camera3D
 @onready var truck_crash = $"../TruckCrash"
-@onready var truck_crash_2 = $"../TruckCrash2"
 
 var tween;
 

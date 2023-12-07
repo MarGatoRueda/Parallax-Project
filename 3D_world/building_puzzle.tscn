@@ -46,7 +46,7 @@ size = Vector3(1.44923, 0.3, 3.33858)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t0mpx"]
 resource_local_to_scene = true
-size = Vector3(1, 1.55908, 0.340811)
+size = Vector3(1.33168, 2.47584, 0.340811)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c2nol"]
 size = Vector3(4.53875, 0.6391, 15.4821)
@@ -58,21 +58,6 @@ size = Vector3(4, 0.3, 1.16815)
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7jpk"]
 size = Vector3(0.742811, 0.6391, 0.74239)
 
-[sub_resource type="Animation" id="Animation_32171"]
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Flash:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_kfixj"]
 resource_name = "flash"
 tracks/0/type = "value"
@@ -82,15 +67,30 @@ tracks/0/path = NodePath("Flash:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0377379, 0.339733, 0.497383),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.35, 0.52),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_or6qs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flash:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_np4wf"]
 _data = {
-"RESET": SubResource("Animation_32171"),
+"RESET": SubResource("Animation_or6qs"),
 "flash": SubResource("Animation_kfixj")
 }
 
@@ -243,7 +243,7 @@ transform = Transform3D(0.586372, -0.380292, -0.715224, 0, 0.882948, -0.469472, 
 shape = SubResource("BoxShape3D_c5tu2")
 
 [node name="Target" parent="TargetArea" index="1"]
-transform = Transform3D(0.586372, -0.380292, -0.715225, -2.98023e-08, 0.882947, -0.469472, 0.810042, 0.275285, 0.517736, -0.364413, -15.6991, 11.4851)
+transform = Transform3D(0.586372, -0.380292, -0.715225, -5.96046e-08, 0.882947, -0.469472, 0.810042, 0.275285, 0.517736, 0.858052, -15.2837, 12.2664)
 
 [node name="Detector2" type="Area3D" parent="." index="9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0832, 1.30315, -10.6205)

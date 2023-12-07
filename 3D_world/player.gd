@@ -13,11 +13,12 @@ var viewfinder_on = false
 @onready var camera = $Head/Camera3D
 @onready var activities_camera = $Head/Camera3D/activities_Camera
 #@onready var viewfinder = $Viewfinder
-@onready var count_counter = $CanvasLayer2/Counter
+#@onready var count_counter = $CanvasLayer2/Counter
 @onready var debug_label = $Label
 @onready var ray_detector : RayCast3D = $Head/Camera3D/RayDetector
 @onready var viewfinder = $CanvasLayer/Viewfinder
 @onready var counter_2 = $CanvasLayer2/Counter2
+#@onready var dead = $CanvasLayer2/Counter2/Dead
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -80,15 +81,15 @@ func _physics_process(delta):
 			
 	move_and_slide()
 	
-	var tween_vf = create_tween()
 	
 	# Viewfinder view
 	if Input.is_action_just_pressed("right_click"):
+		var tween_vf = create_tween()
 		tween_vf.tween_property(activities_camera, "position", Vector3(0.3, -0.5, -0.6), 0.5).set_ease(Tween.EASE_IN)
 		tween_vf.parallel().tween_property(activities_camera, "rotation", Vector3(0, -PI, 0), 0.5).set_ease(Tween.EASE_IN)
 		tween_vf.parallel().tween_property(activities_camera, "scale", Vector3(0.4, 0.4, 0.4), 0.3).set_ease(Tween.EASE_IN)
 		tween_vf.tween_property(activities_camera, "visible", false, 0.0001)
-		viewfinder_on = true
+		tween_vf.tween_callback(set.bind("viewfinder_on", true))
 		tween_vf.tween_property(viewfinder, "visible", true, 0.0001)
 			
 	if Input.is_action_just_pressed("left_click") and viewfinder_on:
@@ -96,9 +97,14 @@ func _physics_process(delta):
 		$AudioStreamPlayer2D.play()
 		counter_2.count -= 1
 		counter_2.count_update()
+		if counter_2.count == 0:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			get_tree().paused = visible
+			#dead.visible = true
 			
 	if not Input.is_action_pressed("right_click") and viewfinder_on:
 		viewfinder_on = false
+		var tween_vf = create_tween()
 		tween_vf.tween_property(viewfinder, "visible", false, 0.5)
 		tween_vf.parallel().tween_property(activities_camera, "visible", true, 0.5)
 		tween_vf.tween_property(activities_camera, "position", Vector3(0.4, -0.4, -0.6), 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
@@ -120,6 +126,3 @@ func _physics_process(delta):
 
 	# Update the debug Label with the player's information.
 	debug_label.text = debug_text
-
-
-

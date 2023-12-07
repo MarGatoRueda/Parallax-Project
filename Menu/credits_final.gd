@@ -9,5 +9,6 @@ func _ready():
 	button.pressed.connect(func(): get_tree().change_scene_to_file("res://Menu/main2.tscn"))
 	
 func _on_scroll_completed():
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(0.5).timeout
 	button.show()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

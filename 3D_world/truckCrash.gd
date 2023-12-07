@@ -18,6 +18,5 @@ func _on_Area3D_body_entered(body):
 			audio.play()
 			await get_tree().create_timer(2.7).timeout
 			$AnimationPlayer.play("flash")
-			await get_tree().create_timer(1.3).timeout
-			print("Change")
-			#get_tree().change_scene_to_file("res://Levels/level_2.tscn")
+			await get_tree().create_timer(0.3).timeout
+			get_tree().change_scene_to_file("res://Levels/final_level.tscn")
