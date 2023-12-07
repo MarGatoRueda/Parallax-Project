@@ -100,7 +100,7 @@ func _physics_process(delta):
 		if counter_2.count == 0:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			get_tree().paused = visible
-			#dead.visible = true
+			dead.visible = true
 			
 	if not Input.is_action_pressed("right_click") and viewfinder_on:
 		viewfinder_on = false

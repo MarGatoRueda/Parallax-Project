@@ -1,11 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dglnejgrd3rrm"]
+[gd_scene load_steps=8 format=3 uid="uid://dglnejgrd3rrm"]
 
 [ext_resource type="Theme" uid="uid://dwcxa7tdsp227" path="res://Resources/Theme.tres" id="1_y8e28"]
 [ext_resource type="Script" path="res://Dead.gd" id="2_pwj0k"]
-[ext_resource type="PackedScene" uid="uid://dvmxgg6dgovb2" path="res://Menu/main_menu.tscn" id="3_l4jtt"]
+[ext_resource type="PackedScene" uid="uid://bmajx0ba36he" path="res://Menu/main2.tscn" id="3_m3mnh"]
+[ext_resource type="Texture2D" uid="uid://daf47g1uxj0el" path="res://Resources/aaaaaaaaaaaaaaaaaaa.png" id="4_pirhu"]
+[ext_resource type="Theme" uid="uid://s01pp18pquwq" path="res://Resources/theme_auto.tres" id="5_c5wm4"]
 
-[node name="Dead" type="MarginContainer"]
+[sub_resource type="SystemFont" id="SystemFont_m7uv4"]
+font_names = PackedStringArray("Salmon Typewriter 9 Regular")
+
+[sub_resource type="LabelSettings" id="LabelSettings_tg0b0"]
+font = SubResource("SystemFont_m7uv4")
+font_size = 55
+
+[node name="Dead" type="Control"]
 process_mode = 3
+top_level = true
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,39 +24,58 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_y8e28")
 script = ExtResource("2_pwj0k")
-main_menu = ExtResource("3_l4jtt")
+main2 = ExtResource("3_m3mnh")
 
-[node name="Panel" type="PanelContainer" parent="."]
-layout_mode = 2
+[node name="Panel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture = ExtResource("4_pirhu")
+expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+anchor_left = 0.0581597
+anchor_top = 0.362654
+anchor_right = 0.532118
+anchor_bottom = 0.910494
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
-layout_mode = 2
-
-[node name="Lose" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Lose" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Lose"
+label_settings = SubResource("LabelSettings_tg0b0")
 horizontal_alignment = 1
 
-[node name="Retry" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Retry" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
+process_mode = 3
 layout_mode = 2
+theme = ExtResource("5_c5wm4")
+action_mode = 0
 text = "Retry"
+flat = true
+alignment = 0
 
-[node name="Menu" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Menu" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("5_c5wm4")
+action_mode = 0
 text = "Menu"
+flat = true
+alignment = 0
 
-[node name="Exit" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("5_c5wm4")
+action_mode = 0
 text = "Exit"
+flat = true
+alignment = 0

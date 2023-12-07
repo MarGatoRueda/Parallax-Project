@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bn151332rn6ec" path="res://icon.svg" id="2_jrm2f"]
 [ext_resource type="Texture2D" uid="uid://csljwcaew5kve" path="res://Resources/viewfinder.png" id="3_gtpyx"]
 [ext_resource type="PackedScene" uid="uid://cc017rqtkcq50" path="res://Resources/activities_Camera.glb" id="4_iiwkr"]
-[ext_resource type="Texture2D" uid="uid://c13feahkx8i3v" path="res://Resources/Newviewfinder.png" id="5_2s77x"]
 [ext_resource type="PackedScene" uid="uid://cdjauypl5h8hu" path="res://Menu/pause_2.tscn" id="5_fu36p"]
 [ext_resource type="PackedScene" uid="uid://dgijjtua0ww6u" path="res://Menu/counter_2.tscn" id="6_60efw"]
 [ext_resource type="PackedScene" uid="uid://dglnejgrd3rrm" path="res://Menu/dead.tscn" id="7_nti0f"]
@@ -18,8 +17,8 @@ albedo_texture = ExtResource("2_jrm2f")
 
 [sub_resource type="CameraTexture" id="CameraTexture_sqiu1"]
 
-[sub_resource type="Animation" id="Animation_or6qs"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_32171"]
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -27,10 +26,10 @@ tracks/0/path = NodePath("Flash:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_kfixj"]
@@ -42,15 +41,15 @@ tracks/0/path = NodePath("Flash:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.35, 0.52),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.0377379, 0.339733, 0.497383),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_np4wf"]
 _data = {
-"RESET": SubResource("Animation_or6qs"),
+"RESET": SubResource("Animation_32171"),
 "flash": SubResource("Animation_kfixj")
 }
 
@@ -113,7 +112,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_2s77x")
+texture = ExtResource("3_gtpyx")
 expand_mode = 1
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -146,7 +145,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("5_2s77x")
+texture = ExtResource("3_gtpyx")
 expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
