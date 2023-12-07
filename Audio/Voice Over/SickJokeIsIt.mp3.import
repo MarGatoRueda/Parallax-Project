@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1kfs1x02ibpp"
+path="res://.godot/imported/SickJokeIsIt.mp3-a5ce8eb0c8a7d199176bfde9a3dcbce0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Voice Over/SickJokeIsIt.mp3"
+dest_files=["res://.godot/imported/SickJokeIsIt.mp3-a5ce8eb0c8a7d199176bfde9a3dcbce0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

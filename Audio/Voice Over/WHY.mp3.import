@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drdli7txm4hrr"
+path="res://.godot/imported/WHY.mp3-1c35534689a0bb08653f8d0efd7b9780.mp3str"
+
+[deps]
+
+source_file="res://Audio/Voice Over/WHY.mp3"
+dest_files=["res://.godot/imported/WHY.mp3-1c35534689a0bb08653f8d0efd7b9780.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3i8ex3rvdtks"
+path="res://.godot/imported/FlowerTutorial.mp3-5ce3378e0def0c6991300a7c622f30d5.mp3str"
+
+[deps]
+
+source_file="res://Audio/Voice Over/FlowerTutorial.mp3"
+dest_files=["res://.godot/imported/FlowerTutorial.mp3-5ce3378e0def0c6991300a7c622f30d5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-const SPEED = 3.5
+const SPEED = 4.2
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.01
 	
@@ -60,8 +60,8 @@ func _physics_process(delta):
 	var running = false
 	if direction and shift:
 		running = true
-		velocity.x = direction.x * 4*SPEED
-		velocity.z = direction.z * 4*SPEED
+		velocity.x = direction.x * 2*SPEED
+		velocity.z = direction.z * 2*SPEED
 		
 	elif direction:
 		velocity.x = direction.x * SPEED
@@ -121,8 +121,8 @@ func _physics_process(delta):
 		rad_to_deg(camera_rotation.y),
 	)
 
-	# Create a string with the player's position and rotation.
-	var debug_text = "Position: " + str(player_position) + "\nRotation: " + str(camera_rotation_degrees)
-
-	# Update the debug Label with the player's information.
-	debug_label.text = debug_text
+#	# Create a string with the player's position and rotation.
+#	var debug_text = "Position: " + str(player_position) + "\nRotation: " + str(camera_rotation_degrees)
+#
+#	# Update the debug Label with the player's information.
+#	debug_label.text = debug_text

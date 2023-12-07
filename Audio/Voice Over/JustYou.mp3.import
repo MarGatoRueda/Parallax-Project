@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dge3gudwxfnrn"
+path="res://.godot/imported/JustYou.mp3-5d14a9e796aeab295a108f5bc4d24fee.mp3str"
+
+[deps]
+
+source_file="res://Audio/Voice Over/JustYou.mp3"
+dest_files=["res://.godot/imported/JustYou.mp3-5d14a9e796aeab295a108f5bc4d24fee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

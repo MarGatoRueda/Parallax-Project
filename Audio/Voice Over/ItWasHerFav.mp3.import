@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2q5uru3wuya4"
+path="res://.godot/imported/ItWasHerFav.mp3-df11dff1f84a2b7b4e798a16fe191c7f.mp3str"
+
+[deps]
+
+source_file="res://Audio/Voice Over/ItWasHerFav.mp3"
+dest_files=["res://.godot/imported/ItWasHerFav.mp3-df11dff1f84a2b7b4e798a16fe191c7f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

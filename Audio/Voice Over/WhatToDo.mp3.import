@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cc0u2fklc11wm"
+path="res://.godot/imported/WhatToDo.mp3-ab6ef30815083d1fa2793c4227023205.mp3str"
+
+[deps]
+
+source_file="res://Audio/Voice Over/WhatToDo.mp3"
+dest_files=["res://.godot/imported/WhatToDo.mp3-ab6ef30815083d1fa2793c4227023205.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
