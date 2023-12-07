@@ -18,7 +18,7 @@ var viewfinder_on = false
 @onready var ray_detector : RayCast3D = $Head/Camera3D/RayDetector
 @onready var viewfinder = $CanvasLayer/Viewfinder
 @onready var counter_2 = $CanvasLayer2/Counter2
-#@onready var dead = $CanvasLayer2/Counter2/Dead
+@onready var dead = $CanvasLayer2/Counter2/Dead
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
